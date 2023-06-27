@@ -1,14 +1,28 @@
 {
-  "name": "bc-project-3",
-  "version": "1.0.0",
-  "description": "Bootcampe Project 3",
-  "main": "server/server.js",
+  "name": "oio-dev",
+  "version": "0.1.0",
+  "description": "Profesional's Portfolio Site used to solicit services",
   "private": true,
   "scripts": {
-    "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.16",
+    "autoprefixer": "10.4.14",
+    "bcrypt": "^5.1.0",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "graphql": "^16.7.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "next": "13.4.7",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2"
   },
   "repository": {
     "type": "git",
@@ -23,8 +37,5 @@
   "bugs": {
     "url": "https://github.com/CodeByDex/BC-Project-3/issues"
   },
-  "homepage": "https://github.com/CodeByDex/BC-Project-3#readme",
-  "devDependencies": {
-    "concurrently": "^8.2.0"
-  }
+  "homepage": "https://github.com/CodeByDex/BC-Project-3#readme"
 }
