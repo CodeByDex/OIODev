@@ -1,0 +1,36 @@
+{
+  "name": "oio-dev",
+  "version": "0.1.0",
+  "description": "Profesional's Portfolio Site used to solicit services",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "10.4.14",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "next": "13.4.7",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeByDex/BC-Project-3.git"
+  },
+  "keywords": [
+    "bootcamp",
+    "javascript"
+  ],
+  "author": "Chelsea Luevano, Christian Smith, Nathan Moon, Ryan Spath, Xander Wychoff, Zach Mutch",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/CodeByDex/BC-Project-3/issues"
+  },
+  "homepage": "https://github.com/CodeByDex/BC-Project-3#readme"
+}
