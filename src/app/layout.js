@@ -4,12 +4,14 @@ import { Archivo, Open_Sans } from "next/font/google";
 const archivo = Archivo({
   subsets: ["latin"],
   display: "swap",
+  weight: "500",
   variable: "--font-archivo",
 });
 
 const opensans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
+  weight: "300",
   variable: "--font-opensans",
 });
 
@@ -21,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${archivo.variable} ${opensans.variable}`}>
+      <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
         {children}
       </body>
     </html>
