@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 main {
-    margin: 2rem;
+    margin: 1rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-archivo);
 }
