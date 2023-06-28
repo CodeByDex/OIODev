@@ -21,12 +21,12 @@ export default function DevCards() {
           <h2 className="devCards--name text-xl text-brand-textHeader">
             Dave Developer
           </h2>
-          <h4 className="devCards--title text-xs">Full-stack Developer</h4>
+          <h4 className="devCards--title text-sm">Full-stack Developer</h4>
         </div>
         {/* Rates */}
-        <div className="devCards--rates leading-4 my-2">
+        <div className="devCards--rates my-2">
           <h3 className="text-brand-textHeader">$300 - $1000</h3>
-          <p>Rates</p>
+          <p className="text-sm">Rates</p>
         </div>
         {/* Bio */}
         <p className="devCards--bio text-sm">
