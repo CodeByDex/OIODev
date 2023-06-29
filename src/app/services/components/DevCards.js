@@ -58,8 +58,7 @@ export default function DevCards() {
             className="bg-brand-secondary/5 text-brand-secondary p-2 rounded-lg w-5 h-5"
           />
         </div>
-        {/* Portfolio Link */}
-        <div></div>
+        <p></p>
       </div>
     </section>
   );

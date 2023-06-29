@@ -4,7 +4,7 @@ import DevCards from "./components/DevCards";
 export default function Services() {
   return (
     <main className="flex-col">
-      <h1 className="font-primary text-brand-textHeader text-2xl m-w-full">
+      <h1 className="font-primary text-brand-textHeader text-2xl m-w-full pb-5">
         Services Page
       </h1>
       <DevCards />
