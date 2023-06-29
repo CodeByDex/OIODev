@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Archivo, Open_Sans } from "next/font/google";
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
