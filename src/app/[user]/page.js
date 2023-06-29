@@ -17,9 +17,9 @@ export default function Dashboard() {
 
 
   return (
-    <main className="flex flex-col gap-5 p-3">
-      <h1 className="font-primary text-brand-textHeader text-6xl">
-        Your Profile
+    <main className="flex">
+      <h1 className="font-primary text-brand-textHeader text-2xl m-w-full">
+        User Dashboard Page
       </h1>
       <div className="flex flex-col gap-6">
         <h2 className="font-secondary text-brand-secondary text-4xl">First Name</h2>

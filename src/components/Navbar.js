@@ -19,23 +19,22 @@ export default function Navbar() {
 
   return (
     <nav className="navbar--container flex flex-row justify-between px-10 py-9 mx-auto bg-brand-primary items-center ">
-      <div className="z-10">
-        <Link href="/" >
-          OIO Dev
-        </Link>
+      <div className="z-50">
+        <Link href="/" className="text-brand-textHeader font-primary">OIO Dev</Link>
       </div>
+
       {/* Default view */}
-      <div onClick={handleNav} className="flex sm:hidden z-10">
+      <div onClick={handleNav} className="flex sm:hidden z-50">
         <FontAwesomeIcon className="w-5" icon={faBars} />
       </div>
       <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
-        <Link href="/" className="hover:text-blue-400">
+        <Link href="/" className="hover:text-brand-textHover">
           Home
         </Link>
-        <Link href="/services" className="hover:text-blue-400">
+        <Link href="/services" className="hover:text-brand-textHover">
           Services
         </Link>
-        <Link href="/dashboard" className="hover:text-blue-400">
+        <Link href="/dashboard" className="hover:text-brand-textHover">
           Dashboard
         </Link>
         <Link className="w-5 gap-4" href="/login">
@@ -45,23 +44,23 @@ export default function Navbar() {
           <FontAwesomeIcon icon={faUser} />
         </Link>
       </div>
-      {/* Mobile view */}
 
+      {/* Mobile view */}
       <div
         className={
           nav
-            ? "fixed top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
-            : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
+            ? "fixed z-30 top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
+            : "fixed z-30 top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
         }
       >
         <div className="flex flex-col items-center justify-center gap-5">
-          <Link href="/" className="hover:text-blue-400">
+          <Link href="/" className="hover:text-brand-textHover">
             Home
           </Link>
-          <Link href="/services" className="hover:text-blue-400">
+          <Link href="/services" className="hover:text-brand-textHover">
             Services
           </Link>
-          <Link href="/dashboard" className="hover:text-blue-400">
+          <Link href="/dashboard" className="hover:text-brand-textHover">
             Dashboard
           </Link>
           <Link className="w-5 gap-4" href="/login">
