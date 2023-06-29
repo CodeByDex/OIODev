@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-export default function DevCards() {
+export default function DevCards(props) {
   return (
-    <section className="devCards--container flex gap-4 bg-gray-200/5 rounded-lg p-5">
+    <section className="devCards--container flex bg-gray-200/5 rounded-lg mb-6 p-5">
       <div className="devCards--infoContainer flex-col items-center">
         {/* Info */}
         <div className="flex gap-4">
@@ -25,11 +25,13 @@ export default function DevCards() {
               </div>
             </p>
             <h2 className="devCards--name text-2xl leading-6 text-brand-textHeader">
-              Dave Developer
+              {props.name}
             </h2>
-            <h4 className="devCards--title text-sm">Full-stack Developer</h4>
+            <h4 className="devCards--title text-sm">{props.title}</h4>
             <div className="devCards--rates my-2">
-              <h3 className="text-brand-textHeader leading-4">$300 - $1000</h3>
+              <h3 className="text-brand-textHeader leading-4">
+                ${props.rateLow} - ${props.rateHigh}
+              </h3>
               <p className="text-sm">Rates</p>
             </div>
           </div>
@@ -38,27 +40,31 @@ export default function DevCards() {
         <div className="devCards--bio text-sm my-2">
           <div className="text-brand-secondary font-bold flex justify-between mb-1">
             <p>BIO</p>
-            <p className="underline">View My Portfolio</p>
+            <Link
+              href={props.portfolioUrl}
+              target="_blank"
+              className="underline"
+            >
+              View My Portfolio
+            </Link>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <p>{props.bio}</p>
         </div>
         {/* Social Links */}
         <div className="devCards--socialsContainer flex justify-end items-center gap-2">
-          <FontAwesomeIcon
-            icon={faLinkedinIn}
-            className="bg-brand-secondary/5 text-brand-secondary p-2 rounded-lg w-5 h-5"
-          />
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="bg-brand-secondary/5 text-brand-secondary p-2 rounded-lg w-5 h-5"
-          />
+          <Link href={props.linkedinUrl} target="_blank">
+            <FontAwesomeIcon
+              icon={faLinkedinIn}
+              className="bg-brand-secondary/5 text-brand-secondary p-2 rounded-lg w-5 h-5"
+            />
+          </Link>
+          <Link href={props.githubUrl} target="_blank">
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="bg-brand-secondary/5 text-brand-secondary p-2 rounded-lg w-5 h-5"
+            />
+          </Link>
         </div>
-        <p></p>
       </div>
     </section>
   );
