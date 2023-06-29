@@ -63,7 +63,7 @@ export default function Navbar() {
       ref={navbarRef}
       className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-brand-primary items-center"
     >
-      <div className="z-10 p-4">
+      <div className="z-50 p-4">
         <Link
           href="/"
           className="text-brand-textHeader font-primary"
@@ -76,13 +76,13 @@ export default function Navbar() {
       {/* Default view */}
       <div
         onClick={handleNav}
-        className={nav ? "hidden" : "flex sm:hidden p-4 z-10"}
+        className={nav ? "hidden" : "flex sm:hidden p-4 z-50"}
       >
         <FontAwesomeIcon className="w-5" icon={faBars} />
       </div>
       <div
         onClick={handleNav}
-        className={nav ? "flex sm:hidden p-4 z-10" : "hidden"}
+        className={nav ? "flex sm:hidden p-4 z-50" : "hidden"}
       >
         <FontAwesomeIcon className="w-5" icon={faXmark} />
       </div>
@@ -109,8 +109,8 @@ export default function Navbar() {
         ref={menuRef}
         className={
           nav
-            ? "fixed top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
-            : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+            ? "fixed z-30 top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+            : "fixed z-30 top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
         }
       >
         <div className="flex flex-col items-center justify-center gap-5">
