@@ -1,11 +1,30 @@
+"use client"
+import {useState} from 'react';
+import { useStyleRegistry } from 'styled-jsx';
 //TODO add logic to pull user from URL to display correct user dashboard
 
-export default function Services() {
+const user = {
+  firstName: "John",
+  lastName: "Smith",
+  email: "johnsmith@gmail.com"
+}
+
+
+export default function Dashboard() {
+  const [firstName, setFirstName] = useState(user.firstName);
+  const [lastName, setLastName] = useState(user.lastName);
+  const [email, setEmail] = useState(user.email);
+
+  const [showInput, setShowInput] = useState(false);
+
   return (
-    <main className="flex">
+    <main className="flex flex-col gap-5 p-3">
       <h1 className="font-primary text-brand-textHeader text-6xl">
-        User Dashboard Page
+        Your Profile
       </h1>
+      <div>
+        <h2 className="font-secondary text-brand-secondary text-4xl ">Username</h2>
+      </div>
     </main>
   );
 }
