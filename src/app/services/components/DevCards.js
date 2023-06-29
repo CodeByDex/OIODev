@@ -19,10 +19,9 @@ export default function DevCards() {
               <div className="relative inline-block">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="p-2 w-2 h-2 absolute top-0 left-0 blur-sm"
-                  style={{ zIndex: -1 }}
+                  className="p-2 w-2 h-2 absolute top-0 left-0 blur-sm z-0"
                 />
-                <FontAwesomeIcon icon={faCircle} className="p-2 w-2 h-2" />
+                <FontAwesomeIcon icon={faCircle} className="p-2 w-2 h-2 z-10" />
               </div>
             </p>
             <h2 className="devCards--name text-2xl leading-6 text-brand-textHeader">
