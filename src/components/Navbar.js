@@ -49,24 +49,24 @@ export default function Navbar() {
       <div
         className={
           nav
-            ? "fixed top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
-            : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-700 ease-in"
+            ? "fixed top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+            : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
         }
       >
         <div className="flex flex-col items-center justify-center gap-5">
-          <Link href="/" className="hover:text-brand-textHover">
+          <Link onClick={handleNav} href="/" className="hover:text-brand-textHover">
             Home
           </Link>
-          <Link href="/services" className="hover:text-brand-textHover">
+          <Link onClick={handleNav} href="/services" className="hover:text-brand-textHover">
             Services
           </Link>
-          <Link href="/dashboard" className="hover:text-brand-textHover">
+          <Link onClick={handleNav} href="/dashboard" className="hover:text-brand-textHover">
             Dashboard
           </Link>
-          <Link className="w-5 gap-4" href="/login">
+          <Link onClick={handleNav} className="w-5 gap-4" href="/login">
             <FontAwesomeIcon icon={faRightToBracket} />
           </Link>
-          <Link className="w-5" href="/login">
+          <Link onClick={handleNav} className="w-5" href="/login">
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>
