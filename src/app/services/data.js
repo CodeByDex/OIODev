@@ -10,7 +10,7 @@ export default [
     portfolioUrl: "https://www.thatdevguy.app/",
     githubUrl: "https://github.com/that-devguy",
     linkedinUrl: "https://linkedin.com/in/zachmutch/",
-    available: false,
+    available: true,
   },
   {
     id: "2",
