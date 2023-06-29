@@ -8,7 +8,7 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 
 export default function Navbar() {
@@ -16,6 +16,18 @@ export default function Navbar() {
   const handleNav = () => {
     setNav(!nav);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setNav(false); // Close mobile menu when window size is larger than or equal to 640px
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="navbar--container flex flex-row justify-between px-10 py-9 mx-auto bg-brand-primary items-center ">
