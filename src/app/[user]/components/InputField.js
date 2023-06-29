@@ -13,7 +13,7 @@ export default function InputField(props) {
                         onBlur={()=> setShowInput(false)}
                         autoFocus
                         className="block w-auto rounded-md border-spacing-0 text-3xl"
-                        placeholder="Enter your name"
+                        placeholder={props.placeholder}
                     />
                 ) :
 
