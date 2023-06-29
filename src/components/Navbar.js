@@ -8,45 +8,81 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
+  const menuRef = useRef(null);
+  const navbarRef = useRef(null);
+
+  // Function for toggling nav
   const handleNav = () => {
     setNav(!nav);
   };
 
+  // Function for closing mobile menu
+  const closeMenu = () => {
+    setNav(false);
+  };
+
+  // useEffect for all contained functions
   useEffect(() => {
+    // Function for closing mobile dropdown when window is resized
     const handleResize = () => {
       if (window.innerWidth >= 640) {
-        setNav(false); // Close mobile menu when window size is larger than or equal to 640px
+        setNav(false);
       }
     };
+
+    // Function for closing mobile dropdown menu when other elements are clicked
+    const handleClickOutside = (event) => {
+      if (
+        !menuRef.current ||
+        !navbarRef.current ||
+        menuRef.current.contains(event.target) ||
+        navbarRef.current.contains(event.target)
+      ) {
+        return;
+      }
+      setNav(false);
+    };
+
+    // Event listeners for menu functions
     window.addEventListener("resize", handleResize);
+    window.addEventListener("click", handleClickOutside);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
   return (
-    <nav className="navbar--container flex flex-row justify-between px-10 py-9 mx-auto bg-brand-primary items-center ">
-      <div className="z-10">
-        <Link href="/" className="text-brand-textHeader font-primary">
+    <nav
+      ref={navbarRef}
+      className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-brand-primary items-center"
+    >
+      <div className="z-10 p-4">
+        <Link
+          href="/"
+          className="text-brand-textHeader font-primary"
+          onClick={closeMenu}
+        >
           OIO Dev
         </Link>
       </div>
-      
+
       {/* Default view */}
       <div
         onClick={handleNav}
-        className={nav ? "hidden" : "flex sm:hidden z-10"}
+        className={nav ? "hidden" : "flex sm:hidden p-4 z-10"}
       >
         <FontAwesomeIcon className="w-5" icon={faBars} />
       </div>
       <div
         onClick={handleNav}
-        className={nav ? "flex sm:hidden z-10" : "hidden"}
+        className={nav ? "flex sm:hidden p-4 z-10" : "hidden"}
       >
         <FontAwesomeIcon className="w-5" icon={faXmark} />
       </div>
@@ -70,6 +106,7 @@ export default function Navbar() {
 
       {/* Mobile view */}
       <div
+        ref={menuRef}
         className={
           nav
             ? "fixed top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
