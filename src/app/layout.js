@@ -27,8 +27,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
         <Navbar />
-        <Footer />
         {children}
+        <Footer />
       </body>
     </html>
   );

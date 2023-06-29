@@ -6,15 +6,22 @@ import "tailwindcss/tailwind.css";
 export default function Footer() {
 
     return (
-        <footer className="footer--container flex flex-row">
-            <ul>
-                <Link href="/" className=" font-primary">
+        <footer className="footer--container px-10 py-9 ">
+                <div className="footer--first-row flex flex-row justify-between ">
+                <Link href="/" className=" text-brand-accent" alt="OIO Dev Logo">
                     OIO Dev
                 </Link>
-                <a href="https://github.com/CodeByDex/OIODev" className="GitHub--Link hover:textHover font-secondary">
+                <a href="https://github.com/CodeByDex/OIODev" className="GitHub--Link hover:text-brand-textHover text-brand-secondary">
                     GitHub
                 </a>
-            </ul>
+                </div>
+
+                <span className="footer--second-row flex flex-row justify-center gap-1 ">© 2023
+                        <Link href="/" className="legal--disclaimer hover:underline hover:text-brand-accent " alt="OIO Dev Logo">
+                        OIO Dev
+                        </Link>
+                       All Rights Reserved.
+                </span>
 
 
         </footer>
