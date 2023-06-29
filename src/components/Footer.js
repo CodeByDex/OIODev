@@ -7,7 +7,9 @@ export default function Footer() {
 
     return (
         <footer className="footer--container px-10 py-9 ">
-                <div className="footer--first-row flex flex-row justify-between ">
+
+            {/* Footer Links */}
+                <div className="footer--first-row flex sm:flex-col lg:flex-row justify-between ">
                 <Link href="/" className=" text-brand-accent" alt="OIO Dev Logo">
                     OIO Dev
                 </Link>
@@ -16,13 +18,15 @@ export default function Footer() {
                 </a>
                 </div>
 
-                <span className="footer--second-row flex flex-row justify-center gap-1 ">© 2023
-                        <Link href="/" className="legal--disclaimer hover:underline hover:text-brand-accent " alt="OIO Dev Logo">
+                {/* Legal Disclaimer */}
+                <div>
+                <span className="footer--second-row hidden md:flex md:flex-row md:justify-center md:gap-1 ">© 2023 
+                        <Link href="/" passHref className="legal--disclaimer hover:underline hover:text-brand-accent " alt="OIO Dev Logo">
                         OIO Dev
                         </Link>
                        All Rights Reserved.
                 </span>
-
+                </div>
 
         </footer>
     )
