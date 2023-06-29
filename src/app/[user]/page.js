@@ -1,6 +1,6 @@
 "use client"
 import {useState} from 'react';
-import { useStyleRegistry } from 'styled-jsx';
+import InputField from './components/InputField';
 //TODO add logic to pull user from URL to display correct user dashboard
 
 const user = {
@@ -22,8 +22,15 @@ export default function Dashboard() {
       <h1 className="font-primary text-brand-textHeader text-6xl">
         Your Profile
       </h1>
-      <div>
-        <h2 className="font-secondary text-brand-secondary text-4xl ">Username</h2>
+      <div className="flex flex-col gap-4">
+        <h2 className="font-secondary text-brand-secondary text-4xl ">First Name</h2>
+        <InputField 
+          value={firstName}
+          handleChange={(e) => setFirstName(e.target.value)}
+          handleClick={() => setShowInput(true)}
+          handleBlur={() => setShowInput(false)}
+          enableEditing={showInput}
+        />
       </div>
     </main>
   );
