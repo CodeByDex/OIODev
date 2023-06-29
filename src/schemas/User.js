@@ -1,8 +1,8 @@
-
+import { User } from "../models";
 
 export const typeDef = `
     type User {
-        _id: String
+        _id: ID
     }
 
     extend type Query {
@@ -16,7 +16,7 @@ export const resolvers = {
     Query: {
         users: async () => {
             //TODO Implement User get
-            return [{ _id: 1 }];
+            return User.find({});
         },
         user: async (parent, { ID }) => {
             //TODO Implement User get
