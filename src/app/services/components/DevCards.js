@@ -6,7 +6,7 @@ import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function DevCards(props) {
   return (
-    <section className="devCards--container flex bg-gray-200/5 rounded-lg mb-6 mx-auto p-5 md:px-8 md:max-w-3xl xl:max-w-5xl">
+    <section className="devCards--container flex bg-gray-200/5 rounded-lg mb-6 mx-auto p-5 md:px-8 md:max-w-3xl xl:max-w-6xl">
       <div className="devCards--infoContainer flex flex-col items-center md:flex-row md:gap-4">
         {/* Info */}
         <div className="flex mr-auto gap-4 md:w-2/5">
@@ -14,14 +14,29 @@ export default function DevCards(props) {
             <div className="devCards--imagePlaceholder h-24 w-24 bg-brand-accent rounded-full" />
           </div>
           <div>
-            <div className="flex items-center text-xs text-brand-accent">
+            <div
+              className={
+                props.available
+                  ? "flex items-center text-xs text-brand-accent"
+                  : "flex items-center text-xs text-brand-accent/30"
+              }
+            >
               Available for Work
               <div className="relative inline-block">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="p-2 w-2 h-2 absolute top-0 left-0 blur-sm z-0"
+                  className={
+                    props.available
+                      ? "p-2 w-2 h-2 absolute top-0 left-0 blur-sm z-0"
+                      : "hidden"
+                  }
                 />
-                <FontAwesomeIcon icon={faCircle} className="p-2 w-2 h-2 z-10" />
+                <FontAwesomeIcon
+                  icon={faCircle}
+                  className={
+                    props.available ? "p-2 w-2 h-2 z-10" : "p-2 w-2 h-2 z-10"
+                  }
+                />
               </div>
             </div>
             <h2 className="devCards--name text-2xl leading-6 text-brand-textHeader sm:text-3xl md:text-4xl">
