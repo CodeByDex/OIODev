@@ -32,12 +32,23 @@ export default function Navbar() {
   return (
     <nav className="navbar--container flex flex-row justify-between px-10 py-9 mx-auto bg-brand-primary items-center ">
       <div className="z-10">
-        <Link href="/" className="text-brand-textHeader font-primary">OIO Dev</Link>
+        <Link href="/" className="text-brand-textHeader font-primary">
+          OIO Dev
+        </Link>
       </div>
-
+      
       {/* Default view */}
-      <div onClick={handleNav} className="flex sm:hidden z-10">
+      <div
+        onClick={handleNav}
+        className={nav ? "hidden" : "flex sm:hidden z-10"}
+      >
         <FontAwesomeIcon className="w-5" icon={faBars} />
+      </div>
+      <div
+        onClick={handleNav}
+        className={nav ? "flex sm:hidden z-10" : "hidden"}
+      >
+        <FontAwesomeIcon className="w-5" icon={faXmark} />
       </div>
       <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
         <Link href="/" className="hover:text-brand-textHover">
@@ -66,13 +77,25 @@ export default function Navbar() {
         }
       >
         <div className="flex flex-col items-center justify-center gap-5">
-          <Link onClick={handleNav} href="/" className="hover:text-brand-textHover">
+          <Link
+            onClick={handleNav}
+            href="/"
+            className="hover:text-brand-textHover"
+          >
             Home
           </Link>
-          <Link onClick={handleNav} href="/services" className="hover:text-brand-textHover">
+          <Link
+            onClick={handleNav}
+            href="/services"
+            className="hover:text-brand-textHover"
+          >
             Services
           </Link>
-          <Link onClick={handleNav} href="/dashboard" className="hover:text-brand-textHover">
+          <Link
+            onClick={handleNav}
+            href="/dashboard"
+            className="hover:text-brand-textHover"
+          >
             Dashboard
           </Link>
           <Link onClick={handleNav} className="w-5 gap-4" href="/login">
