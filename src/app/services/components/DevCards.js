@@ -39,7 +39,7 @@ export default function DevCards(props) {
                 />
               </div>
             </div>
-            <h2 className="devCards--name text-2xl leading-6 text-brand-textHeader sm:text-3xl md:text-4xl">
+            <h2 className="devCards--name font-semibold text-2xl leading-6 text-brand-textHeader sm:text-3xl md:text-4xl">
               {props.name}
             </h2>
             <h4 className="devCards--title text-sm">{props.title}</h4>
@@ -55,7 +55,7 @@ export default function DevCards(props) {
         <div className="devCards--bioContainer md:w-3/5 md:mt-2">
           <div className="text-sm my-2 sm:text-base">
             <div className="text-brand-secondary font-bold flex justify-between mb-1">
-              <p>BIO</p>
+              <p className="font-primary">BIO</p>
               <Link
                 href={props.portfolioUrl}
                 target="_blank"

@@ -4,6 +4,7 @@
 
 main {
     margin: 1rem;
+    font-family: var(--font-opensans);
 }
 
 h1, h2, h3 {
