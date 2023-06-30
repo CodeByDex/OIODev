@@ -22,7 +22,7 @@ export default function Services() {
               Explore Our Team of Developers
               <FontAwesomeIcon
                 icon={faArrowTurnDown}
-                className="h-6 ml-4 text-brand-accent"
+                className="h-6 ml-4 text-brand-accent animate-bounce"
               />
             </h1>
             <div className="hidden sm:flex lg:hidden">
