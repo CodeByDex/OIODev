@@ -59,7 +59,7 @@ export default function DevCards(props) {
               <Link
                 href={props.portfolioUrl}
                 target="_blank"
-                className="underline"
+                className="underline text-brand-accent"
               >
                 View My Portfolio
               </Link>

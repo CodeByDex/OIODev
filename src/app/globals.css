@@ -10,3 +10,7 @@ main {
 h1, h2, h3 {
     font-family: var(--font-archivo);
 }
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
