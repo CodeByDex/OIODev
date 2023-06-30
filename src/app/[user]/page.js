@@ -17,7 +17,7 @@ export default function Dashboard() {
 
 
   return (
-    <main className="flex">
+    <main className="flex flex-col gap-5">
       <h1 className="font-primary text-brand-textHeader text-2xl m-w-full">
         User Dashboard Page
       </h1>
