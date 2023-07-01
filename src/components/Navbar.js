@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
+import LoginButton from "./login/LoginButton.js";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -61,7 +62,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-brand-primary items-center"
+      className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-transparent items-center"
     >
       <div className="z-50 p-4">
         <Link
@@ -96,9 +97,7 @@ export default function Navbar() {
         <Link href="/dashboard" className="hover:text-brand-textHover">
           Dashboard
         </Link>
-        <Link className="w-5 gap-4" href="/login">
-          <FontAwesomeIcon icon={faRightToBracket} />
-        </Link>
+        <LoginButton />
         <Link className="w-5" href="/login">
           <FontAwesomeIcon icon={faUser} />
         </Link>
@@ -135,9 +134,7 @@ export default function Navbar() {
           >
             Dashboard
           </Link>
-          <Link onClick={handleNav} className="w-5 gap-4" href="/login">
-            <FontAwesomeIcon icon={faRightToBracket} />
-          </Link>
+          <LoginButton />
           <Link onClick={handleNav} className="w-5" href="/login">
             <FontAwesomeIcon icon={faUser} />
           </Link>

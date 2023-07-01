@@ -7,13 +7,32 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        blob: "blob 9s infinite"
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -40px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        }
+      },
       colors: {
         brand: {
           primary: "#030712",
           secondary: "#22d3ee",
           accent: "#f97316",
-          textBody: "#9ca3af",
-          textHeader: "#f9fafb",
+          textBody: "#d1d5db",
+          textHeader: "#ffffff",
           textHover: "#f9fafb",
           textActive: "#0891b2",
         },
