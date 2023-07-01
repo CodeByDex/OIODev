@@ -1,7 +1,11 @@
+"use client"
+
 import "./globals.css";
 import { Archivo, Open_Sans } from "next/font/google";
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { SessionProvider } from "next-auth/react";
+import { useState, useEffect } from "react";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -23,13 +27,29 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    const fetchSession = async () => {
+      const response = await fetch("/api/session");
+      const data = await response.json();
+      setSession(data);
+    }
+
+    fetchSession()
+  }, []);
+
+
   return (
-    <html lang="en">
-      <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <SessionProvider session={session}>
+      <html lang="en">
+        <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </SessionProvider>
   );
 }
