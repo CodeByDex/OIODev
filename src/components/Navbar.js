@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navbarRef}
-      className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-brand-primary items-center"
+      className="navbar--container flex flex-row justify-between px-10 py-5 mx-auto bg-transparent items-center"
     >
       <div className="z-50 p-4">
         <Link

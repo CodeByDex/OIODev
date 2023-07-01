@@ -1,5 +1,4 @@
 import "./globals.css";
-import Head from "next/head";
 import { Archivo, Open_Sans } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -27,19 +26,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <body
         className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody h-screen items-center justify-center`}
       >
         <Navbar />
-        <div className="sticky top-0 w-fill mx-auto max-w-xs">
+        <div className="sticky top-0 mx-auto max-w-xs md:max-w-xl z-[-10]">
           <BackgroundOrbs />
         </div>
         {children}
         <Footer />
-        
       </body>
     </html>
   );
