@@ -41,7 +41,7 @@ export default function DevCards(props) {
                 </div>
               </div>
               <h2 className="devCards--name font-semibold text-2xl leading-6 text-brand-textHeader sm:text-3xl md:text-4xl">
-                {props.name}
+                {props.firstName} {props.lastName}
               </h2>
               <h4 className="devCards--title text-sm">{props.title}</h4>
               <div className="devCards--rates my-2">

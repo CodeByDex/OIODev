@@ -2,7 +2,8 @@
 export default [
   {
     id: "1",
-    name: "Zach Mutch",
+    firstName: "Zach",
+    lastName: "Mutch",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
@@ -14,7 +15,8 @@ export default [
   },
   {
     id: "2",
-    name: "Christian Smith",
+    firstName: "Christian",
+    lastName: "Smith",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
@@ -26,7 +28,8 @@ export default [
   },
   {
     id: "3",
-    name: "Nathan Moon",
+    firstName: "Nathan",
+    lastName: "Moon",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
@@ -38,7 +41,8 @@ export default [
   },
   {
     id: "4",
-    name: "Chelsea Luevano",
+    firstName: "Chelsea",
+    lastName: "Luevano",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
@@ -50,7 +54,8 @@ export default [
   },
   {
     id: "5",
-    name: "Xander Wyckoff",
+    firstName: "Xander",
+    lastName: "Wyckoff",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
@@ -62,7 +67,8 @@ export default [
   },
   {
     id: "6",
-    name: "Ryan Spath",
+    firstName: "Ryan",
+    lastName: "Spath",
     title: "Front-end Developer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     rateLow: "300",
