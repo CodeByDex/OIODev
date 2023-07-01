@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody h-screen items-center justify-center`}
       >
         <Navbar />
-        <div className="sticky top-0 mx-auto max-w-xs md:max-w-xl z-[-10]">
+        <div className="sticky top-0 mx-auto max-w-xs md:max-w-xl lg:max-w-3xl xl:max-w-5xl z-[-10]">
           <BackgroundOrbs />
         </div>
         {children}
