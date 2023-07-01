@@ -6,15 +6,29 @@ import "tailwindcss/tailwind.css";
 export default function AboutUs() {
 
     return (
-        <main className="footer--container px-10 py-9 ">
+        <main className="about--container flex flex-col gap-4 sm:items-center sm:text-center px-10 py-9 ">
 
-            <span>
-            Welcome to OIODev, where we connect you with skilled IT professionals who specialize in creating exceptional websites and server applications.
-            By entrusting your project to a professional, you benefit from their expertise and experience, ensuring a polished and high-performing website. 
-            A modern and up-to-date website offers numerous advantages, including improved user experience, enhanced brand credibility, increased online visibility, and higher user engagement. 
-            Let us help you unlock the full potential of your online presence with a professional touch that captivates and engages your audience.
+            <span className=" sm:text-base md:text-lg sm:text-center mx-auto ">
+            Welcome to OIODev, where we connect you with skilled Technology Professionals who specialize in 
+            creating exceptional websites and server applications. We bring your digital vision to life!
             </span>
-            
+           <ul className="bullet--list list-disc sm:text-base sm:text-center mx-auto">
+                <span>
+                A modern and up-to-date website offers numerous advantages, including:
+                </span>
+                <li className="mx-4">
+                improved user experience
+                </li>
+                <li className="mx-4">
+                enhanced brand credibility
+                </li>
+                <li className="mx-4">
+                increased online visibility   
+                </li>
+                <li className="mx-4">
+                higher user engagement
+                </li>
+           </ul>
         </main>
     )
 }
