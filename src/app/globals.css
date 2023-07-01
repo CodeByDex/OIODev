@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-    margin: 1rem;
+@layer utilities {
+    .animate-delay-2 {
+        animation-delay: 2s;
+    }
+
+    .animate-delay-3 {
+        animation-delay: 3s;
+    }
+
+    .animate-delay-4 {
+        animation-delay: 4s;
+    }
 }
 
-h1, h2, h3 {
+main {
+    margin: 1rem;
+    font-family: var(--font-opensans);
+}
+
+h1,
+h2,
+h3 {
     font-family: var(--font-archivo);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
 }
