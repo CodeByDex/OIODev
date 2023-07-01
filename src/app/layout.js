@@ -31,12 +31,15 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body
-        className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}
+        className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody h-screen items-center justify-center`}
       >
         <Navbar />
+        <div className="sticky top-0 w-fill mx-auto max-w-xs">
+          <BackgroundOrbs />
+        </div>
         {children}
         <Footer />
-        <BackgroundOrbs />
+        
       </body>
     </html>
   );
