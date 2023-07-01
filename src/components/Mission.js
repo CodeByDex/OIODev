@@ -9,22 +9,20 @@ export default function Mission() {
 
     return (
 
-        <main className="hero--mission--container sm:flex sm:flex-col md:flex md:flex-row px-10 py-9 ">
-            <div className="image--container sm:w-full md:w-1/2 mr-3 my-3">
+        <main className="hero--mission--container items-center justify-center sm:flex sm:flex-col md:flex md:flex-row px-10 py-9 mx-auto">
+            <div className="image--container  sm:w-full max-w-lg mr-3 my-3">
                 <Image 
                     className="hero--image"
                     src={heroImage}
-                    // style={{ width: '100%', height: 'auto' }}
-                    width={1200}
-                    height={800}
+                    style={{ width: '100%', height: 'auto' }}
                     alt="Mission Hero Image"
                 />
             </div>
-            <div className="mission--message flex flex-col items-center gap-3 ">
-                <span className="mission--message text-center sm:text-4xl md:text-8xl">
+            <div className="flex flex-col items-center justify-center gap-3 md:gap-14 mx-auto">
+                <span className="mission--message text-center text-4xl md:text-5xl">
                 Web Apps Tailored to Perfection
                 </span>
-                <span className="slogan--message text-center font-third md:text-5xl ">
+                <span className="slogan--message text-center text-2xl font-third md:text-2xl ">
                 High-Quality ~ User-Friendly ~ Mobile Responsive 
                 </span>
             </div>
