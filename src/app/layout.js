@@ -1,7 +1,9 @@
 import "./globals.css";
+import Head from "next/head";
 import { Archivo, Open_Sans } from "next/font/google";
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import BackgroundOrbs from "../components/BackgroundOrbs";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -25,10 +27,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <body
+        className={`${archivo.variable} ${opensans.variable} bg-brand-primary text-brand-textBody`}
+      >
         <Navbar />
         {children}
         <Footer />
+        <BackgroundOrbs />
       </body>
     </html>
   );

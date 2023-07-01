@@ -44,8 +44,8 @@ export default function Services() {
       </div>
       <div className="services--devCardContainer">{devCards}</div>
       <div className="flex justify-center">
-          <FooterGraphic />
-        </div>
+        <FooterGraphic />
+      </div>
     </main>
   );
 }
