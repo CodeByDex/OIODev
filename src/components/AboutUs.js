@@ -8,8 +8,8 @@ export default function AboutUs() {
     return (
         <main className="about--container flex flex-col gap-4 sm:items-center sm:text-center px-10 py-9 ">
 
-            <span className=" text-2xl sm:text-base text-center md:text-xl mx-auto ">
-            Welcome to OIODev, where we connect you with skilled Technology Professionals who specialize in 
+            <span className=" text-2xl sm:text-base text-center md:text-xl mx-auto max-w-md:">
+            Welcome to OIO Dev, where we connect you with skilled Technology Professionals who specialize in 
             creating exceptional websites and server applications. We bring your digital vision to life!
             </span>
 
