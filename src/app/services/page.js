@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Services() {
-  const devCards = data.map((item) => {
+  const sortedData = data.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  const devCards = sortedData.map((item) => {
     return <DevCards {...item} key={item.id} />;
   });
   return (
