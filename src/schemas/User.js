@@ -1,6 +1,7 @@
 import { User } from "../models";
+import { gql } from "@apollo/server";
 
-export const typeDef = `
+export const typeDef = gql`
     type User {
         _id: ID,
         email: String,
