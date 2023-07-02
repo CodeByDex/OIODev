@@ -1,6 +1,7 @@
 //TODO - add form for signup
 "use client";
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
 
 function SignUp() {
 const [signupForm, setSignupForm] = useState({
@@ -13,6 +14,15 @@ const [signupForm, setSignupForm] = useState({
 
 const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+        company: formState.company,
+        email: formState.email,
+        password: formState.password,
+      },
+    })
 };
 
 const handleChange = (event) => {
@@ -28,7 +38,7 @@ const handleChange = (event) => {
             <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center p-'>
               <div className='bg-blue-950 px-6 py-8 rounded shadow-md text-black w-full'>
                 <h1 className='mb-8 text-4xl text-center font-bold text-white'>Sign Up</h1>
-                <form method='POST'>
+                <form method='POST' onSubmit={handleFormSubmit}>
                   <div>
                     <label className='text-white' htmlFor='firstName'>*First Name:</label>
                     <input className='block border border-grey-light w-full p-3 rounded mb-4'
@@ -37,7 +47,7 @@ const handleChange = (event) => {
                     type='firstName'
                     id='firstName'
                     required
-
+                    onChange={handleChange}
                     />
                     </div>
                     <div>
@@ -48,7 +58,7 @@ const handleChange = (event) => {
                     type='lastName'
                     id='lastName'
                     required
-
+                    onChange={handleChange}
                     />
                     <div>
                     <label className='text-white' htmlFor='company'>Company:</label>
@@ -57,7 +67,7 @@ const handleChange = (event) => {
                     name='company'
                     type='company'
                     id='company'
-
+                    onChange={handleChange}
                     />
                     </div>
                     </div>
@@ -69,7 +79,7 @@ const handleChange = (event) => {
                     type='email'
                     id='email'
                     required
-
+                    onChange={handleChange}
                     />
                     </div>
                     <div>
@@ -80,7 +90,7 @@ const handleChange = (event) => {
                     type='password'
                     id='password'
                     required
-
+                    onChange={handleChange}
                     />
                     </div>
                     <div>
@@ -91,7 +101,7 @@ const handleChange = (event) => {
                     type='password'
                     id='password'
                     required
-
+                    onChange={handleChange}
                     />
                     </div>
                     <div>
