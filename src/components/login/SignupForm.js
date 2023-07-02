@@ -12,8 +12,15 @@ const [signupForm, setSignupForm] = useState({
     password: ''
 });
 
+const [confirmPassword, setConfirmPassword] = useState('');
+
 const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    if(!validatePassword()) {
+      return;
+    }
+
     const mutationResponse = await addUser({
       variables: {
         firstName: formState.firstName,
@@ -27,10 +34,26 @@ const handleFormSubmit = async (event) => {
 
 const handleChange = (event) => {
   const { name, value } = event.target;
+  if(name === 'password') {
+    setSignupForm({
+      ...signupForm,
+    [name]: value,
+    });
+  } else if (name === 'confirmPassword') {
+    setConfirmPassword(value);
+  } else {
   setSignupForm({
     ...signupForm,
     [name]: value,
   });
+}
+}
+
+const validatePassword = () => {
+  if (signupForm.password !== confirmPassword) {
+    return false;
+  } 
+  return true;
 }
 
     return (
@@ -61,7 +84,7 @@ const handleChange = (event) => {
                     onChange={handleChange}
                     />
                     <div>
-                    <label className='text-white' htmlFor='company'>Company:</label>
+                    <label className='text-white' htmlFor='company'>Company(Optional):</label>
                     <input className='block border border-grey-light w-full p-3 rounded mb-4'
                     placeholder='Company'
                     name='company'
@@ -94,12 +117,12 @@ const handleChange = (event) => {
                     />
                     </div>
                     <div>
-                    <label className='text-white' htmlFor='password'>*Confirm Password:</label>
+                    <label className='text-white' htmlFor='confirmPassword'>*Confirm Password:</label>
                     <input className='block border border-grey-light w-full p-3 rounded mb-4'
                     placeholder='********'
-                    name='password'
+                    name='confirmPassword'
                     type='password'
-                    id='password'
+                    id='confirmPassword'
                     required
                     onChange={handleChange}
                     />
