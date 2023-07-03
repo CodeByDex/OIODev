@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
-import clientPromise from "../../../config/mongodb";
+import { mongoClient } from "../../../config/connection";
 
 export const authOptions = {
     providers: [
@@ -10,7 +10,6 @@ export const authOptions = {
             clientSecret: process.env.GITHUB_SECRET,
             //function is called at account creation to create the users object
             profile(profile) {
-                console.log(profile);
                 return { 
                     //the id prop is required, and will be persisted to the accounts collection in the db.
                     id: profile.id,
@@ -28,7 +27,7 @@ export const authOptions = {
         })
     ],
     adapter: MongoDBAdapter(
-        clientPromise
+        mongoClient
     ),
     secret: process.env.NEXTAUTH_SECRET
 }
