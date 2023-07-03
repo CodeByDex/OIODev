@@ -2,7 +2,7 @@
 import data from "./data.js";
 import DevCards from "./components/DevCards";
 import HeaderGraphic from "./components/HeaderGraphic";
-import FooterGraphic from "./components/FooterGraphic";
+import FooterGraphic from "../../components/FooterGraphic.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -44,9 +44,6 @@ export default function Services() {
         </div>
       </div>
       <div className="services--devCardContainer">{devCards}</div>
-      <div className="flex justify-center">
-        <FooterGraphic />
-      </div>
     </main>
   );
 }
