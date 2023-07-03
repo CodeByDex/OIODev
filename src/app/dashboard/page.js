@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import InputField from "./components/InputField";
-import UserDash from "./components/UserCard";
+// import InputField from "./components/InputField";
+import UserDash from "./components/UserDash";
 //TODO add logic to pull user from URL to display correct user dashboard
 //just a placeholder user for now
 const user = {
@@ -16,14 +16,10 @@ export default function Dashboard() {
   const [email, setEmail] = useState(user.email);
 
   return (
-    <main className="flex-col">
-      <div className="flex mb-8 items-center mx-auto max-w-6xl">
-        <div><UserDash /></div>
-        <div>forms</div>
-      </div>
-    </main>
+    <div className="h-full w-fit">
+      <UserDash />
+    </div>
   );
-
   // return (
   //   <main className="flex flex-col gap-5">
   //     <h1 className="font-primary text-brand-textHeader text-2xl m-w-full">
