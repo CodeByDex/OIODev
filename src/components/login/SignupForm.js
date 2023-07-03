@@ -20,16 +20,17 @@ const handleFormSubmit = async (event) => {
     if(!validatePassword()) {
       return;
     }
+    //Used for connection to the database
 
-    const mutationResponse = await addUser({
-      variables: {
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-        company: formState.company,
-        email: formState.email,
-        password: formState.password,
-      },
-    })
+    // const mutationResponse = await addUser({
+    //   variables: {
+    //     firstName: formState.firstName,
+    //     lastName: formState.lastName,
+    //     company: formState.company,
+    //     email: formState.email,
+    //     password: formState.password,
+    //   },
+    // })
 };
 
 const handleChange = (event) => {
