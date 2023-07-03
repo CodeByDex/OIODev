@@ -30,7 +30,7 @@ export default function NotFound({ error, reset }) {
             It looks like we lost what you&apos;re looking for in cyber space.
           </h4>
           <Link href="/" className="flex justify-center font-primary font-bold">
-            <div className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent py-3 px-10 rounded-lg w-fit">
+            <div className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary py-3 px-6 rounded-lg w-fit">
               BACK TO HOME
             </div>
           </Link>
