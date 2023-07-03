@@ -9,7 +9,7 @@ export default function NotFound({ error, reset }) {
   }, [error]);
 
   return (
-    <main className="flex mb-auto">
+    <main className="flex my-16">
       <section className="devCards--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto md:max-w-3xl xl:max-w-6xl">
         <div className="flex-col px-5 py-8 items-center mx-auto max-w-6xl bg-gray-200/5 rounded-lg md:px-10 md:py-16">
           <div className="flex items-center justify-center mb-3">
