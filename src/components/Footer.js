@@ -1,15 +1,10 @@
 "use client";
 import Link from "next/link";
 import "tailwindcss/tailwind.css";
-import FooterGraphic from "../components/FooterGraphic";
 
 export default function Footer() {
   return (
     <footer className="footer--container px-10 py-9">
-      <div className="flex justify-center">
-        <FooterGraphic />
-      </div>
-
       {/* Footer Links */}
       <div className="footer--first-row flex sm:flex-col lg:flex-row justify-between ">
         <Link href="/" className=" text-brand-accent" alt="OIO Dev Logo">

@@ -11,14 +11,14 @@ export default function NotFound({ error, reset }) {
   return (
     <main className="flex my-16">
       <section className="devCards--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto md:max-w-3xl xl:max-w-6xl">
-        <div className="flex-col px-5 py-8 items-center mx-auto max-w-6xl bg-gray-200/5 rounded-lg md:px-10 md:py-16">
+        <div className="flex-col px-5 py-8 items-center mx-auto max-w-6xl bg-gray-200/5 rounded-lg md:px-48 md:py-16">
           <div className="flex items-center justify-center mb-3">
             <h2 className="text-9xl text-brand-textHeader -mr-12">4</h2>
             <Image
               src="/static/space.svg"
               alt="Space Illustration"
-              width={300}
-              height={300}
+              width={288}
+              height={192}
               className="w-56 md:w-72"
             />
             <h2 className="text-9xl text-brand-textHeader -ml-12">4</h2>
