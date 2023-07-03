@@ -1,7 +1,7 @@
 {
   "name": "oio-dev",
   "version": "0.1.0",
-  "description": "Profesional's Portfolio Site used to solicit services",
+  "description": "Professional's Portfolio Site used to solicit services",
   "private": true,
   "scripts": {
     "dev": "next dev",

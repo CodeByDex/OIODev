@@ -40,6 +40,7 @@ module.exports = {
       fontFamily: {
         primary: ["var(--font-archivo)"],
         secondary: ["var(--font-opensans)"],
+        third: ["var(--font-brush-script-mt)"],
       },
     },
   },

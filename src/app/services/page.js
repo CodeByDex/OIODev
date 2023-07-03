@@ -2,12 +2,12 @@
 import data from "./data.js";
 import DevCards from "./components/DevCards";
 import HeaderGraphic from "./components/HeaderGraphic";
-import FooterGraphic from "./components/FooterGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Services() {
-  const devCards = data.map((item) => {
+  const sortedData = data.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  const devCards = sortedData.map((item) => {
     return <DevCards {...item} key={item.id} />;
   });
   return (
@@ -43,9 +43,6 @@ export default function Services() {
         </div>
       </div>
       <div className="services--devCardContainer">{devCards}</div>
-      <div className="flex justify-center">
-        <FooterGraphic />
-      </div>
     </main>
   );
 }
