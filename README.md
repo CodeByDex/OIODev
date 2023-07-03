@@ -37,9 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Next-Auth Setup
 In order to make Next-Auth work on you machine you will need to create a .env.local file in your root level of the project.  It will need to contain the following entries:
 
-GITHUB_ID=<GITHUB_CLIENT_ID>
-GITHUB_SECRET=<GITHUB_CLIENT_SECRET>
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>
-
+GITHUB_ID=<GITHUB_CLIENT_ID>  
+GITHUB_SECRET=<GITHUB_CLIENT_SECRET>  
+NEXTAUTH_URL=http://localhost:3000  
+NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>  
+  
 https://blog.logrocket.com/how-to-use-nextauth-js-client-side-authentication-next-js/
