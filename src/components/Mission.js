@@ -2,7 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import "tailwindcss/tailwind.css";
-import heroImage from "../../public/WebDevHero.jpg"
+// import heroImage from "../../public/WebDevHero.jpg"
+import heroImage from "../../public/static/ComputerDesktop.svg"
+// import heroImage from "../../public/GirlOnBooks.svg"
+
 
 
 export default function Mission() {
