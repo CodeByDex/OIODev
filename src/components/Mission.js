@@ -13,13 +13,36 @@ export default function Mission() {
             <div className="image--container  sm:w-full max-w-lg mr-3 my-3">
                 <MissionGraphic/>
             </div>
-            <div className="flex flex-col items-center justify-center gap-3 md:gap-14 mx-auto">
+            <div className="flex flex-col items-center justify-center gap-5 md:gap-8 mx-auto">
                 <span className="mission--message text-center text-4xl md:text-5xl">
                 Web Apps Tailored to Perfection
                 </span>
+                <Link href="/services" className=" text-brand-accent" alt="OIO Dev Logo">
+                    Get Started Today!
+                 </Link>
                 <span className="slogan--message text-center text-2xl font-third md:text-2xl ">
                 High-Quality ~ User-Friendly ~ Mobile Responsive 
                 </span>
+                {/* <ul className="slogan--message text-center text-2xl flex-row font-third md:text-2xl">
+                    <li>
+                    High-Quality ~
+                    </li>
+                    <li>
+                    User-Friendly ~
+                    </li>
+                    <li>
+                    Mobile Responsive
+                    </li>
+                </ul> */}
+                {/* <span className="slogan--message text-center text-2xl font-third md:text-2xl ">
+                High-Quality  
+                <span>
+                ~ User-Friendly 
+                </span>
+                <span>
+                ~ Mobile Responsive 
+                </span>
+                </span> */}
             </div>
         </main>
 
