@@ -19,6 +19,7 @@ const apolloServer = new ApolloServer({
 });
 
 const handler = startServerAndCreateNextHandler(apolloServer, {
+  //info for context and how it is used for securing graphql can be found: https://www.apollographql.com/docs/apollo-server/security/authentication/
   context: async (req, res) => {
     const session = await getServerSession(req, res, authOptions);
 
@@ -27,7 +28,7 @@ const handler = startServerAndCreateNextHandler(apolloServer, {
       LoggedIn = true;
     }
 
-    return { LoggedIn }
+    return { LoggedIn, ...session }
   }
 })
 
