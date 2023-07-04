@@ -15,7 +15,7 @@ export default function Profile() {
   const [email, setEmail] = useState(user.email);
 
   return (
-    <div className="flex flex-grow h-full">
+    <div className="flex flex-grow">
       <ProfileDash />
     </div>
   );

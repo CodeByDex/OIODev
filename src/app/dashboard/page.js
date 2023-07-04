@@ -16,7 +16,7 @@ export default function Dashboard() {
   const [email, setEmail] = useState(user.email);
 
   return (
-    <div className="h-full w-fit">
+    <div>
       <UserDash />
     </div>
   );

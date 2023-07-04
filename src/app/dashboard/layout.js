@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Layout(props) {
   return (
     <main className="flex-col">
-      <div className="flex flex-grow mb-8 items-center mx-auto max-w-6xl gap-6">
+      <div className="flex flex-grow mb-8 items-stretch mx-auto max-w-6xl gap-5">
         {props.children}
         {props.profile}
       </div>

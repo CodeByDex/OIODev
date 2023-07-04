@@ -11,7 +11,7 @@ import {
 export default function UserDash() {
   return (
     <section className="userDash--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto">
-      <div className="bg-gray-200/5 rounded-lg w-full">
+      <div className="bg-gray-200/5 rounded-lg h-full w-full">
         <div className="userDash--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:py-12 md:gap-4">
           <div className="flex mr-auto gap-4">
             <div className="userDash--imageContainer flex items-center">
