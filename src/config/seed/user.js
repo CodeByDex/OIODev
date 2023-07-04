@@ -1,10 +1,10 @@
-const  db = require("../connection");
+const  {mongooseConnection} = require("../connection");
 const { User } = require("../../models");
 
-db.once("open", async () => {
+mongooseConnection.once("open", async () => {
     await User.deleteMany({});
 
     User.create({})
 
     process.exit(0);
-})
+});
