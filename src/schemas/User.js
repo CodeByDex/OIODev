@@ -1,4 +1,5 @@
 import { User } from "../models";
+import {GraphQLError} from "graphql";
 
 export const typeDef = `
     type User {
@@ -27,7 +28,15 @@ export const resolvers = {
         }
     },
     Mutation: {
-        updateUser: async (parent, {ID, name}) => {
+        updateUser: async (parent, {ID, name}, contextValue) => {
+            if (!contextValue.LoggedIn) {
+                throw new GraphQLError('User is not authenticated', {
+                    extensions: {
+                      code: 'UNAUTHENTICATED',
+                      http: { status: 401 },
+                    },
+                  });
+            }
             return await User.findByIdAndUpdate(ID, {name}, {new: true});
         }
     }
