@@ -10,7 +10,7 @@ const userSchema = new Schema(
             match: [/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, 'Please fill a valid email address']
         },
 
-        firstName: {
+        name: {
             type: String,
             required: true
         },
@@ -55,6 +55,6 @@ userSchema.pre('save', async function(next) {
     next();
 })
 
-const User = mongoose.models.User || mongoose.model("User", userSchema);
+const User = mongoose.models.users || mongoose.model("users", userSchema);
 
 module.exports = User;

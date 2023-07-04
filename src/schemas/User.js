@@ -4,15 +4,16 @@ export const typeDef = `
     type User {
         _id: ID,
         email: String,
-        firstName: String,
-        lastName: String,
-        password: String,
-        company: String
+        name: String
     }
 
     extend type Query {
         user(ID: ID!): User
         users: [User]
+    }
+
+    extend type Mutation {
+        updateUser(ID: ID!, name: String!): User
     }
 `;
 
@@ -23,6 +24,11 @@ export const resolvers = {
         },
         user: async (parent, { ID }) => {
             return await User.findById(ID);
+        }
+    },
+    Mutation: {
+        updateUser: async (parent, {ID, name}) => {
+            return await User.findByIdAndUpdate(ID, {name}, {new: true});
         }
     }
 }

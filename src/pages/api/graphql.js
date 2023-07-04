@@ -2,7 +2,8 @@ import { ApolloServer } from "@apollo/server"
 import { startServerAndCreateNextHandler } from '@as-integrations/next'
 // import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core"
 
-import { db } from "../../config/connection";
+import {mongooseConnection} from  "../../config/connection";
+
 import { schema } from "../../schemas";
 // import allowCors from "@/utils/cors"
 
@@ -13,8 +14,8 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 const apolloServer = new ApolloServer({
   schema,
-  context: db,
   // plugins: [ApolloServerPluginLandingPageGraphQLPlayground]
+  context: mongooseConnection
 });
 
 const handler = startServerAndCreateNextHandler(apolloServer, {
