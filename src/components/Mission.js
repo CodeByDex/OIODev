@@ -23,26 +23,6 @@ export default function Mission() {
                 <span className="slogan--message text-center text-2xl font-third md:text-2xl ">
                 High-Quality ~ User-Friendly ~ Mobile Responsive 
                 </span>
-                {/* <ul className="slogan--message text-center text-2xl flex-row font-third md:text-2xl">
-                    <li>
-                    High-Quality ~
-                    </li>
-                    <li>
-                    User-Friendly ~
-                    </li>
-                    <li>
-                    Mobile Responsive
-                    </li>
-                </ul> */}
-                {/* <span className="slogan--message text-center text-2xl font-third md:text-2xl ">
-                High-Quality  
-                <span>
-                ~ User-Friendly 
-                </span>
-                <span>
-                ~ Mobile Responsive 
-                </span>
-                </span> */}
             </div>
         </main>
 
