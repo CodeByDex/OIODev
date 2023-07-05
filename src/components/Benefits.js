@@ -8,15 +8,9 @@ import {faDesktop} from "@fortawesome/free-solid-svg-icons"
 import {faPeopleGroup} from "@fortawesome/free-solid-svg-icons"
 
 
-export default function AboutUs() {
-    return (
-        <main className="about--container flex flex-col gap-4 sm:items-center sm:text-center px-10 py-9 ">
-
-            <span className=" text-2xl mx-auto sm:text-base text-center md:text-xl max-w-4xl">
-            Welcome to OIO Dev, where we connect you with skilled Technology Professionals who specialize in 
-            creating exceptional websites and server applications. We bring your digital vision to life!
-            </span>
-            {/* <br></br>
+export default function Benefits(){
+    return(
+        <main>
             <section className="bg-brand-primary/60 rounded-lg mb-6 mx-auto md:max-w-3xl xl:max-w-6xl">
                <div className="bg-gray-200/5 rounded-lg">
                     <h2 className="underline text-center text-2xl md:text-2xl">Unlocking the Benefits </h2> 
@@ -42,7 +36,7 @@ export default function AboutUs() {
                             </li>
                     </ul>
                 </div> 
-           </section> */}
+           </section>
         </main>
     )
 }

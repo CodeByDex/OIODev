@@ -9,7 +9,7 @@ export default function Mission() {
 
     return (
 
-        <main className="hero--mission--container items-center justify-center sm:flex sm:flex-col md:flex md:flex-row px-10 py-9 mx-auto">
+        <main className="hero--mission--container items-center justify-center sm:flex sm:flex-col md:flex md:flex-row px-10 py-9 mx-auto" >
             <div className="image--container  sm:w-full max-w-lg mr-3 my-3">
                 <MissionGraphic/>
             </div>

@@ -9,7 +9,7 @@ export default function MissionGraphic() {
                     src={heroImage}
                     style={{ width: '100%', height: 'auto' }}
                     alt="Mission Hero Image"
-                    className="hero--image brand-secondary"
+                    className=""
                 />
         </div>
     )
