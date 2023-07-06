@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+<<<<<<< HEAD
+// const bcrypt = require('bcrypt');
+=======
+>>>>>>> bc06a7dbe454a9e7f3501866b1381d608e1b928f
 
 const userSchema = new Schema(
     {
