@@ -53,6 +53,7 @@ export default function Navbar() {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setScrollBackground(true);
+        setNav(false)
       } else {
         setScrollBackground(false);
       }
