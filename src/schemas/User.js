@@ -1,7 +1,8 @@
 import { User } from "../models";
+import { gql } from "@apollo/server";
 import {GraphQLError} from "graphql";
 
-export const typeDef = `
+export const typeDef = gql`
     type User {
         _id: ID,
         email: String,
