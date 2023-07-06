@@ -127,7 +127,7 @@ export default function Navbar() {
         ref={menuRef}
         className={
           nav
-            ? "fixed top-24 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+            ? "fixed top-24 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
             : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
         }
       >
