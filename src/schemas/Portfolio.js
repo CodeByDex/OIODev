@@ -1,7 +1,6 @@
 import { Portfolio } from "../models/";
-import { gql } from "@apollo/server";
 
-export const typeDef = gql`
+export const typeDef = `
     type Portfolio {
         _id: ID!
         firstName: String!
