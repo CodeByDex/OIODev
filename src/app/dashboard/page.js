@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 // import InputField from "./components/InputField";
-import ProfileDash from "./components/ProfileDash";
+import ProfileForm from "./components/ProfileForm";
 import AppointmentDash from "./components/AppointmentDash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -31,8 +31,8 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="flex-col">
-      <div className="flex flex-grow mb-8 items-stretch mx-auto max-w-6xl gap-5">
+    <main className="flex-col my-8 lg:my-16">
+      <div className="mb-8 items-stretch mx-auto max-w-6xl gap-5 lg:flex">
         <section className="userDash--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto">
           <div className="bg-gray-200/5 rounded-lg h-full w-full">
             <div className="userDash--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:py-12 md:gap-4">
@@ -49,7 +49,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="userDash--linksContainer pb-10 flex flex-col md:px-8 md:gap-2 text-lg font-primary">
+            <div className="userDash--linksContainer px-5 pb-5 flex gap-4 text-lg font-primary lg:flex-col md:px-8 lg:pb-10 lg:gap-2">
               <button
                 onClick={() => toggleTab(1)}
                 className="flex items-center justify-between"
@@ -59,11 +59,13 @@ export default function Dashboard() {
                     icon={faUser}
                     className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                   />
-                  Profile
+                  <p className="hidden sm:flex">Profile</p>
                 </div>
                 <FontAwesomeIcon
                   icon={faAngleRight}
-                  className={toggleState === 1 ? "w-4 h-4" : "hidden"}
+                  className={
+                    toggleState === 1 ? "hidden lg:flex w-4 h-4" : "hidden"
+                  }
                 />
               </button>
               <button
@@ -75,11 +77,13 @@ export default function Dashboard() {
                     icon={faCalendarCheck}
                     className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                   />
-                  Upcoming Appointments
+                  <p className="hidden sm:flex">Upcoming Appointments</p>
                 </div>
                 <FontAwesomeIcon
                   icon={faAngleRight}
-                  className={toggleState === 2 ? "w-4 h-4" : "hidden"}
+                  className={
+                    toggleState === 2 ? "hidden lg:flex w-4 h-4" : "hidden"
+                  }
                 />
               </button>
               <button
@@ -91,7 +95,7 @@ export default function Dashboard() {
                     icon={faRightFromBracket}
                     className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent p-2 rounded-lg w-5 h-5"
                   />
-                  Log Out
+                  <p className="hidden sm:flex">Log Out</p>
                 </div>
                 <FontAwesomeIcon
                   icon={faAngleRight}
@@ -104,21 +108,19 @@ export default function Dashboard() {
         <section className="flex flex-grow items-center bg-brand-primary/60 rounded-lg mb-6 mx-auto">
           {/* Profile user form dashboard component */}
           <div
-            className={
-              toggleState === 1
-                ? "bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12"
-                : "hidden"
+            className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${
+              toggleState === 1 ? "" : "hidden"
             }
+            `}
           >
-            <ProfileDash />
+            <ProfileForm />
           </div>
           {/* Upcoming appoinments dashboard component */}
           <div
-            className={
-              toggleState === 2
-                ? "bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12"
-                : "hidden"
+            className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${
+              toggleState === 2 ? "" : "hidden"
             }
+            `}
           >
             <AppointmentDash />
           </div>
