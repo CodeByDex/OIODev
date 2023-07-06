@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const bcrypt = require('bcrypt');
+<<<<<<< HEAD
+// const bcrypt = require('bcrypt');
+=======
+>>>>>>> bc06a7dbe454a9e7f3501866b1381d608e1b928f
 
 const userSchema = new Schema(
     {
@@ -11,7 +14,7 @@ const userSchema = new Schema(
             match: [/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, 'Please fill a valid email address']
         },
 
-        firstName: {
+        name: {
             type: String,
             required: true
         },
@@ -56,6 +59,6 @@ userSchema.pre('save', async function(next) {
     next();
 })
 
-const User = mongoose.models.User || mongoose.model("User", userSchema);
+const User = mongoose.models.users || mongoose.model("users", userSchema);
 
 module.exports = User;
