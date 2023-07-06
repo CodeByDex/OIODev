@@ -32,3 +32,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Next-Auth Setup
+In order to make Next-Auth work on you machine you will need to create a .env.local file in your root level of the project.  It will need to contain the following entries:
+
+GITHUB_ID=<GITHUB_CLIENT_ID>  
+GITHUB_SECRET=<GITHUB_CLIENT_SECRET>  
+NEXTAUTH_URL=http://localhost:3000  
+NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>  
+  
+https://blog.logrocket.com/how-to-use-nextauth-js-client-side-authentication-next-js/

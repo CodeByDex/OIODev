@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
+import LoginButton from "./login/LoginButton.js";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -91,77 +92,72 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Default view */}
-        <div
-          onClick={handleNav}
-          className={nav ? "hidden" : "flex sm:hidden p-4 z-50"}
-        >
-          <FontAwesomeIcon className="w-5" icon={faBars} />
-        </div>
-        <div
-          onClick={handleNav}
-          className={nav ? "flex sm:hidden p-4 z-50" : "hidden"}
-        >
-          <FontAwesomeIcon className="w-5" icon={faXmark} />
-        </div>
-        <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
-          <Link href="/" className="hover:text-brand-textHover">
+      {/* Default view */}
+      <div
+        onClick={handleNav}
+        className={nav ? "hidden" : "flex sm:hidden p-4 z-50"}
+      >
+        <FontAwesomeIcon className="w-5" icon={faBars} />
+      </div>
+      <div
+        onClick={handleNav}
+        className={nav ? "flex sm:hidden p-4 z-50" : "hidden"}
+      >
+        <FontAwesomeIcon className="w-5" icon={faXmark} />
+      </div>
+      <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
+        <Link href="/" className="hover:text-brand-textHover">
+          Home
+        </Link>
+        <Link href="/services" className="hover:text-brand-textHover">
+          Services
+        </Link>
+        <Link href="/dashboard" className="hover:text-brand-textHover">
+          Dashboard
+        </Link>
+        <LoginButton />
+        <Link className="w-5" href="/login">
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      </div>
+
+      {/* Mobile view */}
+      <div
+        ref={menuRef}
+        className={
+          nav
+            ? "fixed z-30 top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+            : "fixed z-30 top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+        }
+      >
+        <div className="flex flex-col items-center justify-center gap-5">
+          <Link
+            onClick={handleNav}
+            href="/"
+            className="hover:text-brand-textHover"
+          >
             Home
           </Link>
-          <Link href="/services" className="hover:text-brand-textHover">
+          <Link
+            onClick={handleNav}
+            href="/services"
+            className="hover:text-brand-textHover"
+          >
             Services
           </Link>
-          <Link href="/dashboard" className="hover:text-brand-textHover">
+          <Link
+            onClick={handleNav}
+            href="/dashboard"
+            className="hover:text-brand-textHover"
+          >
             Dashboard
           </Link>
-          <Link className="w-5 gap-4" href="/login">
-            <FontAwesomeIcon icon={faRightToBracket} />
-          </Link>
-          <Link className="w-5" href="/login">
+          <LoginButton />
+          <Link onClick={handleNav} className="w-5" href="/login">
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>
-
-        {/* Mobile view */}
-        <div
-          ref={menuRef}
-          className={
-            nav
-              ? "fixed z-30 top-0 pt-20 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
-              : "fixed z-30 top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
-          }
-        >
-          <div className="flex flex-col items-center justify-center gap-5">
-            <Link
-              onClick={handleNav}
-              href="/"
-              className="hover:text-brand-textHover"
-            >
-              Home
-            </Link>
-            <Link
-              onClick={handleNav}
-              href="/services"
-              className="hover:text-brand-textHover"
-            >
-              Services
-            </Link>
-            <Link
-              onClick={handleNav}
-              href="/dashboard"
-              className="hover:text-brand-textHover"
-            >
-              Dashboard
-            </Link>
-            <Link onClick={handleNav} className="w-5 gap-4" href="/login">
-              <FontAwesomeIcon icon={faRightToBracket} />
-            </Link>
-            <Link onClick={handleNav} className="w-5" href="/login">
-              <FontAwesomeIcon icon={faUser} />
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }
