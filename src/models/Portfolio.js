@@ -24,12 +24,7 @@ const portfolioSchema = new Schema(
             maxLength: 256
         },
 
-        rateLow: {
-            type: Number,
-            required: true
-        },
-
-        rateHigh: {
+        rate: {
             type: Number,
             required: true
         },
