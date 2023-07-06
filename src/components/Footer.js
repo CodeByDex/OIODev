@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer--container px-10 py-9">
       {/* Footer Links */}
       <div className="footer--first-row flex sm:flex-row lg:flex-row justify-between ">
-        <Link href="/" className=" text-brand-accent" alt="OIO Dev Logo">
+        <Link href="/" className=" text-brand-accent hover:text-brand-textHover" alt="OIO Dev Logo">
           OIO Dev
         </Link>
         <a
@@ -25,7 +25,7 @@ export default function Footer() {
           <Link
             href="/"
             passHref
-            className="legal--disclaimer hover:underline hover:text-brand-accent "
+            className="legal--disclaimer hover:underline hover:text-brand-textHover text-brand-accent"
             alt="OIO Dev Logo"
           >
             OIO Dev

@@ -13,7 +13,7 @@ export default function Benefits(){
         <main>
             <section className="bg-brand-primary/60 rounded-lg mb-6 mx-auto md:max-w-3xl xl:max-w-6xl">
                <div className="bg-gray-200/5 rounded-lg">
-                    <h2 className="underline text-center text-2xl md:text-2xl">Unlocking the Benefits </h2> 
+                    <h2 className="underline text-center text-2xl my-3 md:text-2xl">Unlocking the Benefits </h2> 
                     <ul className="bullet--list list-inside text-2xl sm:text-base mx-auto">
                             <span>
                             A modern and up-to-date website offers numerous advantages, including:

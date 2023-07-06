@@ -4,7 +4,7 @@ import GirlWithDesktopGraphic from "../../public/static/GirlWithDesktop.svg"
 
 export default function GirlDesktopGraphic() {
     return(
-        <div className="">
+        <div className="sm:w-full max-w-lg mr-3 my-3">
             <Image 
                     src={GirlWithDesktopGraphic}
                     style={{ width: '100%', height: 'auto' }}
