@@ -28,7 +28,7 @@ export default function ProfileForm() {
           <div className="flex flex-col w-1/2">
             <label className="text-sm md:text-base">First Name</label>
             <input
-              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg ${
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg ${
                 isEditable
                   ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                   : "bg-transparent outline-none"
@@ -41,7 +41,7 @@ export default function ProfileForm() {
           <div className="flex flex-col w-1/2">
             <label className="text-sm md:text-base">Last Name</label>
             <input
-              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
                 isEditable
                   ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                   : "bg-transparent outline-none"
@@ -55,7 +55,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Email</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -68,7 +68,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Company</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -81,7 +81,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Title</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -94,7 +94,7 @@ export default function ProfileForm() {
         <div className="flex flex-col w-fit">
           <label className="text-sm md:text-base">Rates</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -107,12 +107,12 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Bio</label>
           <textarea
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
             }`}
-            rows="6"
+            rows="5"
             defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             readOnly={!isEditable}
           ></textarea>
@@ -120,7 +120,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Portfolio URL</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -133,7 +133,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">GitHub URL</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
@@ -146,7 +146,7 @@ export default function ProfileForm() {
         <div className="flex flex-col">
           <label className="text-sm md:text-base">LinkedIn URL</label>
           <input
-            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 px-2 mr-1 rounded-lg  ${
+            className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
