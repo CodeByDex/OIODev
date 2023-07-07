@@ -29,7 +29,7 @@ export const ApolloProviderWrapper = ({ children }) => {
   
 
     const client = new ApolloClient({
-      link: from([httpLink]),
+      link: from([authMiddleware, httpLink]),
       cache: new InMemoryCache()
     })
   

@@ -27,9 +27,6 @@ const portfolioQuery = gql`
 
 export default function Services() {
   const { data, error, loading } = useQuery(portfolioQuery);
-  console.log(data);
-  console.log(error);
-  console.log(loading);
 
   const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
   const devCards = sortedData.map((item) => {
