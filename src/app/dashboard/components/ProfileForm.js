@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProfileForm() {
   const [isEditable, setIsEditable] = useState(false);
@@ -9,16 +9,40 @@ export default function ProfileForm() {
     setIsEditable(true);
   };
 
+  const handleSaveClick = () => {
+    setIsEditable(false);
+  };
+
   return (
     <div className="flex flex-col">
       <button
         onClick={handleEditClick}
-        className="flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto"
+        className={`flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto ${
+          isEditable ? "hidden" : ""
+        } `}
       >
         <div className="delay-75 duration-300 rounded-lg flex items-center gap-3">
-          <p className="flex gap-1">Edit<span className="hidden md:flex">Profile</span></p>
+          <p className="flex gap-1">
+            Edit<span className="hidden md:flex">Profile</span>
+          </p>
           <FontAwesomeIcon
             icon={faPenToSquare}
+            className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent p-2 rounded-lg w-5 h-5"
+          />
+        </div>
+      </button>
+      <button
+        onClick={handleSaveClick}
+        className={`flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto ${
+          isEditable ? "" : "hidden"
+        } `}
+      >
+        <div className="delay-75 duration-300 rounded-lg flex items-center gap-3">
+          <p className="flex gap-1">
+            Save<span className="hidden md:flex">Changes</span>
+          </p>
+          <FontAwesomeIcon
+            icon={faFloppyDisk}
             className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
           />
         </div>
