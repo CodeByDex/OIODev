@@ -38,7 +38,7 @@ export default function Dashboard() {
             <div className="userDash--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:py-12 md:gap-4">
               <div className="flex mr-auto gap-4">
                 <div className="userDash--imageContainer flex items-center">
-                  <div className="userDash--imagePlaceholder h-24 w-24 bg-brand-accent rounded-full" />
+                  <div className="userDash--imagePlaceholder h-20 w-20 bg-brand-accent rounded-full md:h-24 md:w-24" />
                 </div>
                 <div>
                   <h4 className="userDash--title text-base">Welcome back,</h4>
@@ -108,7 +108,7 @@ export default function Dashboard() {
         <section className="flex flex-grow items-center bg-brand-primary/60 rounded-lg mb-6 mx-auto">
           {/* Profile user form dashboard component */}
           <div
-            className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${
+            className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
               toggleState === 1 ? "" : "hidden"
             }
             `}
