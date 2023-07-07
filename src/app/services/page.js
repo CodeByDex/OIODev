@@ -1,12 +1,34 @@
+"use client"
+
 //This page returns a listing of all portfolios and displays the summary 'card'
-import data from "./data.js";
+import data2 from "./data.js";
 import DevCards from "./components/DevCards";
 import HeaderGraphic from "./components/HeaderGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
+import { useQuery, gql } from "@apollo/client";
+
+const portfolioQuery = gql`
+{
+  portfolios {
+    _id
+    firstName
+    lastName
+    title
+    bio
+    rate
+    portfolioUrl
+    githubUrl
+    linkedinUrl
+    available
+  }
+}
+`
 
 export default function Services() {
-  const sortedData = data.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  const { data, error, loading } = useQuery(portfolioQuery);
+
+  const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
   const devCards = sortedData.map((item) => {
     return <DevCards {...item} key={item.id} />;
   });

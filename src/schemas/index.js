@@ -6,6 +6,11 @@ import {
     resolvers as UserResolver
     } from "./User";
 
+import {
+    typeDef as Portfolio,
+    resolvers as PortfolioResolver 
+} from "./Portfolio";
+
 const GlobalQuery = `#graphql
     type Query {
         _empty: String
@@ -19,7 +24,7 @@ const GlobalQuery = `#graphql
 const GlobalResolvers = {};
 
 export const schema = makeExecutableSchema({
-    typeDefs: [GlobalQuery, User],
-    resolvers: merge(GlobalResolvers, UserResolver)
+    typeDefs: [GlobalQuery, User, Portfolio],
+    resolvers: merge(GlobalResolvers, UserResolver, PortfolioResolver)
 });
 
