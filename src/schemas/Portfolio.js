@@ -3,6 +3,7 @@ import { Portfolio } from "../models/";
 export const typeDef = `
     type Portfolio {
         _id: ID
+        userID: ID
         firstName: String
         lastName: String
         title: String
@@ -15,6 +16,7 @@ export const typeDef = `
     }
 
     input portfolioInput {
+        userID: ID
         firstName: String
         lastName: String
         title: String
