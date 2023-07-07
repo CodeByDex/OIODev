@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-// import InputField from "./components/InputField";
 import ProfileForm from "./components/ProfileForm";
 import AppointmentDash from "./components/AppointmentDash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,13 +9,8 @@ import {
   faRightFromBracket,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-//TODO add logic to pull user from URL to display correct user dashboard
-//just a placeholder user for now
-
 
 export default function Dashboard() {
-  
-
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -122,31 +115,4 @@ export default function Dashboard() {
       </div>
     </main>
   );
-  // return (
-  //   <main className="flex flex-col gap-5">
-  //     <h1 className="font-primary text-brand-textHeader text-2xl m-w-full">
-  //       User Dashboard Page
-  //     </h1>
-  //     <div className="flex flex-col gap-6">
-  //       <h2 className="font-secondary text-brand-secondary text-4xl">First Name</h2>
-  //       <InputField
-  //         value={firstName}
-  //         handleChange={(e) => setFirstName(e.target.value)}
-  //         placeholder="Enter your first name"
-  //       />
-  //       <h2 className="font-secondary text-brand-secondary text-4xl">Last Name</h2>
-  //       <InputField
-  //         value={lastName}
-  //         handleChange={(e) => setLastName(e.target.value)}
-  //         placeholder="Enter your last name"
-  //       />
-  //       <h2 className='font-secondary text-brand-secondary text-4xl'>Email Address</h2>
-  //       <InputField
-  //         value={email}
-  //         handleChange={(e) => setEmail(e.target.value)}
-  //         placeholder="Enter your email"
-  //       />
-  //     </div>
-  //   </main>
-  // );
 }

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
+//TODO add logic to pull user from URL to display correct user dashboard
+//just a placeholder user for now
 const user = {
   firstName: "John",
   lastName: "Smith",
@@ -77,6 +79,7 @@ export default function ProfileForm() {
       {/* Form */}
       <form className="flex flex-col gap-2 p-5 pt-0 md:p-0">
         <div className="flex">
+          {/* First and Last Name Field */}
           <div className="flex flex-col w-1/2">
             <label className="text-sm md:text-base">First Name</label>
             <input
@@ -106,6 +109,7 @@ export default function ProfileForm() {
             ></input>
           </div>
         </div>
+        {/* Email Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Email</label>
           <input
@@ -120,6 +124,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Company Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Company</label>
           <input
@@ -134,6 +139,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Title Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Title</label>
           <input
@@ -148,6 +154,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Rates Field */}
         <div className="flex flex-col w-fit">
           <label className="text-sm md:text-base">Rates</label>
           <input
@@ -162,6 +169,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Bio Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Bio</label>
           <textarea
@@ -176,6 +184,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></textarea>
         </div>
+        {/* Portfolio Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">Portfolio URL</label>
           <input
@@ -190,6 +199,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Github Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">GitHub URL</label>
           <input
@@ -204,6 +214,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* LinkedIn Field */}
         <div className="flex flex-col">
           <label className="text-sm md:text-base">LinkedIn URL</label>
           <input
@@ -218,6 +229,7 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
+        {/* Availability Field */}
         <div className="flex items-center">
           <input
             className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
