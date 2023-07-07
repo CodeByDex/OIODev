@@ -109,13 +109,15 @@ export default function Navbar() {
         }`}
       >
         <div className="z-40 p-4">
-          <Link
-            href="/"
-            className="text-brand-textHeader font-primary"
-            onClick={closeMenu}
+          <div
+            className="text-brand-textHover cursor-pointer font-primary"
+            onClick={() => {
+              closeMenu;
+              urlCheck("/") ? scrollToTop() : redirectToPath("/");
+            }}
           >
             OIO Dev
-          </Link>
+          </div>
         </div>
 
         {/* Default view */}
@@ -189,22 +191,26 @@ export default function Navbar() {
               Home
             </div>
             <div
-            className="hover:text-brand-textHover cursor-pointer"
-            onClick={() => {
-              closeMenu();
-              urlCheck("/services") ? scrollToTop() : redirectToPath("/services");
-            }}
+              className="hover:text-brand-textHover cursor-pointer"
+              onClick={() => {
+                closeMenu();
+                urlCheck("/services")
+                  ? scrollToTop()
+                  : redirectToPath("/services");
+              }}
             >
-            Services
+              Services
             </div>
             <div
-            className="hover:text-brand-textHover cursor-pointer"
-            onClick={() => {
-              closeMenu();
-              urlCheck("/dashboard") ? scrollToTop() : redirectToPath("/dashboard");
-            }}
+              className="hover:text-brand-textHover cursor-pointer"
+              onClick={() => {
+                closeMenu();
+                urlCheck("/dashboard")
+                  ? scrollToTop()
+                  : redirectToPath("/dashboard");
+              }}
             >
-            Dashboard
+              Dashboard
             </div>
             <LoginButton />
             <Link onClick={handleNav} className="w-5" href="/login">
