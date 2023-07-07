@@ -2,27 +2,24 @@ import { Portfolio } from "../models/";
 
 export const typeDef = `
     type Portfolio {
-        _id: ID!
-        firstName: String!
-        lastName: String!
-        title: String!
-        bio: String!
-        rateLow: Number!
-        rateHigh: Number!
-        portfolioUrl: String!
-        githubUrl: String
-        linkedinUrl: String
-        available: Boolean!
-    }
-
-    input portfolioInput {
-        _id: ID!
+        _id: ID
         firstName: String
         lastName: String
         title: String
         bio: String
-        rateLow: Number
-        rateHigh: Number
+        rate: Float
+        portfolioUrl: String
+        githubUrl: String
+        linkedinUrl: String
+        available: Boolean
+    }
+
+    input portfolioInput {
+        firstName: String
+        lastName: String
+        title: String
+        bio: String
+        rate: Float
         portfolioUrl: String
         githubUrl: String
         linkedinUrl: String
@@ -34,21 +31,30 @@ export const typeDef = `
         portfolios: [Portfolio]
     }
     
-    extend type Mutation($portfolio: portfolioInput) {
-        updatePortfolio(portfolio: $portfolio): Portfolio
+    extend type Mutation {
+        updatePortfolio(portfolio: portfolioInput, ID: ID): Portfolio
+        createPortfolio(portfolio: portfolioInput): Portfolio
     }
 `
 
 export const resolvers = {
-    portfolios: async () => {
-        return await Portfolio.find({});
-    },
-    
-    portfolio: async (parent, { portfolioID }) => {
-        return await Portfolio.findById(portfolioID);
+    Query: {
+        portfolios: async () => {
+            return await Portfolio.find({});
+        },
+        
+        portfolio: async (parent, { portfolioID }) => {
+            return await Portfolio.findById(portfolioID);
+        },
     },
 
-    updatePortfolio: async(parent, args) => {
-        return await Portfolio.findOneAndUpdate({_id: args.id }, {$set: {...args}});
+    Mutation: {
+        updatePortfolio: async(parent, args) => {
+            return await Portfolio.findOneAndUpdate({_id: args.ID }, {$set: {...args.portfolio}}, {upsert: true, new: true});
+        },
+
+        createPortfolio: async(parent, args) => {
+            return await Portfolio.create({...args.portfolio});
+        }
     }
 }
