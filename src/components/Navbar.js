@@ -27,6 +27,16 @@ export default function Navbar() {
     setNav(false);
   };
 
+  // function to scroll to top
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   // useEffect for all contained functions
   useEffect(() => {
     // Function for closing mobile dropdown when window is resized
@@ -53,7 +63,7 @@ export default function Navbar() {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setScrollBackground(true);
-        setNav(false)
+        setNav(false);
       } else {
         setScrollBackground(false);
       }
@@ -71,11 +81,26 @@ export default function Navbar() {
     };
   }, []);
 
+  const redirectToPath = (path) => {
+    if (typeof window !== "undefined") {
+      window.location.href = path;
+    }
+  };
+
+  const urlCheck = (url) => {
+    console.log(url);
+    console.log(window.location.pathname);
+    if (typeof window !== "undefined" && window.location.pathname === url) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <div>
       {/* Spacer div */}
-      <div className=" pb-20" />
-      
+      <div id="home" className=" pb-20" />
+
       {/* Navbar */}
       <nav
         ref={navbarRef}
@@ -93,73 +118,95 @@ export default function Navbar() {
           </Link>
         </div>
 
-      {/* Default view */}
-      <div
-        onClick={handleNav}
-        className={nav ? "hidden" : "flex sm:hidden p-4 z-50"}
-      >
-        <FontAwesomeIcon className="w-5" icon={faBars} />
-      </div>
-      <div
-        onClick={handleNav}
-        className={nav ? "flex sm:hidden p-4 z-50" : "hidden"}
-      >
-        <FontAwesomeIcon className="w-5" icon={faXmark} />
-      </div>
-      <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
-        <Link href="/" className="hover:text-brand-textHover">
-          Home
-        </Link>
-        <Link href="/services" className="hover:text-brand-textHover">
-          Services
-        </Link>
-        <Link href="/dashboard" className="hover:text-brand-textHover">
-          Dashboard
-        </Link>
-        <LoginButton />
-        <Link className="w-5" href="/login">
-          <FontAwesomeIcon icon={faUser} />
-        </Link>
-      </div>
-
-      {/* Mobile view */}
-      <div
-        ref={menuRef}
-        className={
-          nav
-            ? "fixed top-24 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
-            : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
-        }
-      >
-        <div className="flex flex-col items-center justify-center gap-5">
-          <Link
-            onClick={handleNav}
-            href="/"
-            className="hover:text-brand-textHover"
+        {/* Default view */}
+        <div
+          onClick={handleNav}
+          className={nav ? "hidden" : "flex sm:hidden p-4 z-50"}
+        >
+          <FontAwesomeIcon className="w-5" icon={faBars} />
+        </div>
+        <div
+          onClick={handleNav}
+          className={nav ? "flex sm:hidden p-4 z-50" : "hidden"}
+        >
+          <FontAwesomeIcon className="w-5" icon={faXmark} />
+        </div>
+        <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
+          <div
+            className="hover:text-brand-textHover cursor-pointer"
+            onClick={() => {
+              closeMenu;
+              urlCheck("/") ? scrollToTop() : redirectToPath("/");
+            }}
           >
             Home
-          </Link>
-          <Link
-            onClick={handleNav}
-            href="/services"
-            className="hover:text-brand-textHover"
+          </div>
+          <div
+            className="hover:text-brand-textHover cursor-pointer"
+            onClick={() => {
+              closeMenu;
+              urlCheck("/services")
+                ? scrollToTop()
+                : redirectToPath("/services");
+            }}
           >
             Services
-          </Link>
-          <Link
-            onClick={handleNav}
-            href="/dashboard"
-            className="hover:text-brand-textHover"
+          </div>
+          <div
+            className="hover:text-brand-textHover cursor-pointer"
+            onClick={() => {
+              closeMenu;
+              urlCheck("/dashboard")
+                ? scrollToTop()
+                : redirectToPath("/dashboard");
+            }}
           >
-            Dashboard
-          </Link>
+            dashboard
+          </div>
           <LoginButton />
-          <Link onClick={handleNav} className="w-5" href="/login">
+          <Link className="w-5" href="/login">
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>
-      </div>
-    </nav>
-  </div>  
+
+        {/* Mobile view */}
+        <div
+          ref={menuRef}
+          className={
+            nav
+              ? "fixed top-24 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
+              : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+          }
+        >
+          <div className="flex flex-col items-center justify-center gap-5">
+            <Link
+              onClick={handleNav}
+              href="/"
+              className="hover:text-brand-textHover"
+            >
+              Home
+            </Link>
+            <Link
+              onClick={handleNav}
+              href="/services"
+              className="hover:text-brand-textHover"
+            >
+              Services
+            </Link>
+            <Link
+              onClick={handleNav}
+              href="/dashboard"
+              className="hover:text-brand-textHover"
+            >
+              Dashboard
+            </Link>
+            <LoginButton />
+            <Link onClick={handleNav} className="w-5" href="/login">
+              <FontAwesomeIcon icon={faUser} />
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
