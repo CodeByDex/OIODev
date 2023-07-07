@@ -2,6 +2,20 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
+const user = {
+  firstName: "John",
+  lastName: "Smith",
+  email: "johnsmith@gmail.com",
+  company: "Google",
+  title: "Full-stack Developer",
+  rates: "100",
+  bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  portfolioUrl: "https://www.portfoliolink.com/",
+  githubUrl: "https://github.com/",
+  linkedinUrl: "https://www.linkedin.com/",
+  available: true,
+};
+
 export default function ProfileForm() {
   const [isEditable, setIsEditable] = useState(false);
 
@@ -13,8 +27,21 @@ export default function ProfileForm() {
     setIsEditable(false);
   };
 
+  const [firstName, setFirstName] = useState(user.firstName);
+  const [lastName, setLastName] = useState(user.lastName);
+  const [email, setEmail] = useState(user.email);
+  const [company, setCompany] = useState(user.company);
+  const [title, setTitle] = useState(user.title);
+  const [rates, setRates] = useState(user.rates);
+  const [bio, setBio] = useState(user.bio);
+  const [portfolioUrl, setPortfolioUrl] = useState(user.portfolioUrl);
+  const [githubUrl, setGithubUrl] = useState(user.githubUrl);
+  const [linkedinUrl, setLinkedinUrl] = useState(user.linkedinUrl);
+  const [available, setAvailable] = useState(user.available);
+
   return (
     <div className="flex flex-col">
+      {/* Edit and Save Button */}
       <button
         onClick={handleEditClick}
         className={`flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto ${
@@ -47,6 +74,7 @@ export default function ProfileForm() {
           />
         </div>
       </button>
+      {/* Form */}
       <form className="flex flex-col gap-2 p-5 pt-0 md:p-0">
         <div className="flex">
           <div className="flex flex-col w-1/2">
@@ -58,7 +86,8 @@ export default function ProfileForm() {
                   : "bg-transparent outline-none"
               }`}
               type="text"
-              defaultValue="Zach"
+              value={firstName}
+              handleChange={(e) => setFirstName(e.target.value)}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -71,7 +100,8 @@ export default function ProfileForm() {
                   : "bg-transparent outline-none"
               }`}
               type="text"
-              defaultValue="Mutch"
+              value={lastName}
+              handleChange={(e) => setLastName(e.target.value)}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -84,8 +114,9 @@ export default function ProfileForm() {
                 ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
                 : "bg-transparent outline-none"
             }`}
-            type="text"
-            defaultValue="zkmutch@gmail.com"
+            type="email"
+            value={email}
+            handleChange={(e) => setEmail(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -98,7 +129,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="text"
-            defaultValue="OSU Bootcamp"
+            value={company}
+            handleChange={(e) => setCompany(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -111,7 +143,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="text"
-            defaultValue="Front-end Developer"
+            value={title}
+            handleChange={(e) => setTitle(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -124,7 +157,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="number"
-            defaultValue="300"
+            value={rates}
+            handleChange={(e) => setRates(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -137,7 +171,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             rows="5"
-            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            value={bio}
+            handleChange={(e) => setBio(e.target.value)}
             readOnly={!isEditable}
           ></textarea>
         </div>
@@ -150,7 +185,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="url"
-            defaultValue="https://www.thatdevguy.app/"
+            value={portfolioUrl}
+            handleChange={(e) => setPortfolioUrl(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -163,7 +199,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="url"
-            defaultValue="https://github.com/that-devguy"
+            value={githubUrl}
+            handleChange={(e) => setGithubUrl(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -176,7 +213,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="url"
-            defaultValue="https://linkedin.com/in/zachmutch/"
+            value={linkedinUrl}
+            handleChange={(e) => setLinkedinUrl(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>
@@ -184,7 +222,8 @@ export default function ProfileForm() {
           <input
             className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
             type="checkbox"
-            defaultValue="true"
+            value={available}
+            handleChange={(e) => setAvailable(e.target.value)}
             readOnly={!isEditable}
           />
           <label className="text-sm md:text-base">Available for Work</label>
