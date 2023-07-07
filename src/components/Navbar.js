@@ -179,27 +179,33 @@ export default function Navbar() {
           }
         >
           <div className="flex flex-col items-center justify-center gap-5">
-            <Link
-              onClick={handleNav}
-              href="/"
-              className="hover:text-brand-textHover"
+            <div
+              className="hover:text-brand-textHover cursor-pointer"
+              onClick={() => {
+                closeMenu();
+                urlCheck("/") ? scrollToTop() : redirectToPath("/");
+              }}
             >
               Home
-            </Link>
-            <Link
-              onClick={handleNav}
-              href="/services"
-              className="hover:text-brand-textHover"
+            </div>
+            <div
+            className="hover:text-brand-textHover cursor-pointer"
+            onClick={() => {
+              closeMenu();
+              urlCheck("/services") ? scrollToTop() : redirectToPath("/services");
+            }}
             >
-              Services
-            </Link>
-            <Link
-              onClick={handleNav}
-              href="/dashboard"
-              className="hover:text-brand-textHover"
+            Services
+            </div>
+            <div
+            className="hover:text-brand-textHover cursor-pointer"
+            onClick={() => {
+              closeMenu();
+              urlCheck("/dashboard") ? scrollToTop() : redirectToPath("/dashboard");
+            }}
             >
-              Dashboard
-            </Link>
+            Dashboard
+            </div>
             <LoginButton />
             <Link onClick={handleNav} className="w-5" href="/login">
               <FontAwesomeIcon icon={faUser} />
