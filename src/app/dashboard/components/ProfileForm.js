@@ -18,7 +18,7 @@ const user = {
   available: true,
 };
 
-export default function ProfileForm() {
+export default function ProfileForm(props) {
   const [isEditable, setIsEditable] = useState(false);
 
   const handleEditClick = () => {

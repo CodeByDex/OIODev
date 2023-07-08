@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import ProfileForm from "./ProfileForm";
-import AppointmentDash from "./AppointmentDash";
+import ProfileForm from "./components/ProfileForm";
+import AppointmentDash from "./components/AppointmentDash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
