@@ -41,5 +41,12 @@ GITHUB_ID=<GITHUB_CLIENT_ID>
 GITHUB_SECRET=<GITHUB_CLIENT_SECRET>  
 NEXTAUTH_URL=http://localhost:3000  
 NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>  
+WHITELIST_EMAILS="foo@foo.foo, bar@foo.foo"  
   
 https://blog.logrocket.com/how-to-use-nextauth-js-client-side-authentication-next-js/
+
+## MongoDB
+In order to use the mongo db components of this project you will need to configure a environment variable for the db connection:
+
+MONGODB_URI="mongodb://127.0.0.1:27017/OIODevDB"
+
