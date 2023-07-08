@@ -163,7 +163,7 @@ export default function Navbar() {
                 : redirectToPath("/dashboard");
             }}
           >
-            dashboard
+            Dashboard
           </div>
           <LoginButton />
           <Link className="w-5" href="/login">
