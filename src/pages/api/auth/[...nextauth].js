@@ -3,6 +3,13 @@ import GitHubProvider from "next-auth/providers/github";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import { mongoClient } from "../../../config/mongodb";
 
+let whiteList = [];
+
+if (process.env.WHITELIST_EMAILS)
+{
+    whiteList = process.env.WHITELIST_EMAILS.split(",").map(s=>s.trim().toLowerCase());
+}
+
 export const authOptions = {
     providers: [
         GitHubProvider({
@@ -21,7 +28,7 @@ export const authOptions = {
                     githubProfile: profile.html_url,
                     githubUserName: profile.login,
                     created_at: new Date(),
-                    role: "user"
+                    role: GetUserRole(profile.email)
                 }
             }
         })
@@ -30,6 +37,19 @@ export const authOptions = {
         mongoClient
     ),
     secret: process.env.NEXTAUTH_SECRET
+}
+
+function GetUserRole(email) {
+    email = email.toLowerCase();
+
+    let role = "user";
+
+    if (whiteList.includes(email))
+    {
+        role = "admin";
+    }
+
+    return role;
 }
 
 export default NextAuth(authOptions)
