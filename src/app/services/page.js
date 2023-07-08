@@ -27,11 +27,18 @@ const portfolioQuery = gql`
 
 export default function Services() {
   const { data, error, loading } = useQuery(portfolioQuery);
+  
+  let devCards;
 
-  const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
-  const devCards = sortedData.map((item) => {
-    return <DevCards {...item} key={item.id} />;
-  });
+  if (loading) {
+    devCards = <main><p>Loading...</p></main>
+  } else {
+    const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    devCards = sortedData.map((item) => {
+      return <DevCards {...item} key={item.id} />;
+    });
+  }
+
   return (
     <main className="flex-col">
       <div className="flex mb-8 items-center mx-auto max-w-6xl">
