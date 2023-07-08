@@ -32,9 +32,11 @@ export default function Services() {
 
   if (loading) {
     devCards = <main><p>Loading...</p></main>
+  } else if (data == undefined) {
+    devCards = <main><p>No Data Found</p></main>
   } else {
     const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
-    devCards = sortedData.map((item) => {
+    devCards = data.map((item) => {
       return <DevCards {...item} key={item.id} />;
     });
   }
