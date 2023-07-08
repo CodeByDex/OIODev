@@ -34,7 +34,7 @@ export default function ProfileForm() {
   const [email, setEmail] = useState(user.email);
   const [company, setCompany] = useState(user.company);
   const [title, setTitle] = useState(user.title);
-  const [rates, setRates] = useState(user.rates);
+  const [rate, setRate] = useState(user.rate);
   const [bio, setBio] = useState(user.bio);
   const [portfolioUrl, setPortfolioUrl] = useState(user.portfolioUrl);
   const [githubUrl, setGithubUrl] = useState(user.githubUrl);
@@ -154,9 +154,9 @@ export default function ProfileForm() {
             readOnly={!isEditable}
           ></input>
         </div>
-        {/* Rates Field */}
+        {/* Rate Field */}
         <div className="flex flex-col w-fit">
-          <label className="text-sm md:text-base">Rates</label>
+          <label className="text-sm md:text-base">Rate</label>
           <input
             className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
               isEditable
@@ -164,8 +164,8 @@ export default function ProfileForm() {
                 : "bg-transparent outline-none"
             }`}
             type="number"
-            value={rates}
-            handleChange={(e) => setRates(e.target.value)}
+            value={rate}
+            handleChange={(e) => setRate(e.target.value)}
             readOnly={!isEditable}
           ></input>
         </div>

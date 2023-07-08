@@ -1,9 +1,10 @@
 import { Portfolio } from "../models/";
+import { ObjectId } from "mongodb";
 
 export const typeDef = `
     type Portfolio {
         _id: ID
-        userID: ID
+        user: ID
         firstName: String
         lastName: String
         title: String
@@ -16,7 +17,7 @@ export const typeDef = `
     }
 
     input portfolioInput {
-        userID: ID
+        user: ID
         firstName: String
         lastName: String
         title: String
@@ -31,6 +32,7 @@ export const typeDef = `
     extend type Query {
         portfolio(ID: ID!): Portfolio
         portfolios: [Portfolio]
+        getUserPortfolioByUser(user: ID!): Portfolio
     }
     
     extend type Mutation {
@@ -48,6 +50,10 @@ export const resolvers = {
         portfolio: async (parent, { portfolioID }) => {
             return await Portfolio.findById(portfolioID);
         },
+
+        getUserPortfolioByUser: async (parent, { user }) => {
+            return await Portfolio.findOne({user: new ObjectId(user)});
+        }
     },
 
     Mutation: {
