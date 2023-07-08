@@ -29,7 +29,6 @@ export const resolvers = {
     },
     Mutation: {
         updateUser: async (parent, {ID, name}, contextValue) => {
-            console.log(contextValue);
             if (!contextValue.LoggedIn) {
                 throw new GraphQLError('User is not authenticated', {
                     extensions: {

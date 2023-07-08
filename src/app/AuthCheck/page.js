@@ -7,15 +7,15 @@ export default async function Services() {
 
     if (session) {
         return ( 
-            <div>
-                <p>{session.user.name} is authorized to see this page.</p>
-            </div>
+            <main>
+                <p>{session.user.name} is authorized to see this page with role {session.user.role}</p>
+            </main>
         )
     } else {
         return ( 
-            <div>
+            <main>
                 <p>You are NOT authorized to see this page.</p>
-            </div>
+            </main>
         )
     }
 }
