@@ -35,8 +35,8 @@ export default function Services() {
   } else if (data == undefined) {
     devCards = <main><p>No Data Found</p></main>
   } else {
-    const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
-    devCards = data.map((item) => {
+    devCards = data.portfolios.map((item) => {
+      console.log(item);
       return <DevCards {...item} key={item.id} />;
     });
   }
