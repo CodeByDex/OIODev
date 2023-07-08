@@ -1,7 +1,6 @@
 "use client"
 
 //This page returns a listing of all portfolios and displays the summary 'card'
-import data2 from "./data.js";
 import DevCards from "./components/DevCards";
 import HeaderGraphic from "./components/HeaderGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
