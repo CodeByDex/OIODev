@@ -7,8 +7,6 @@ import {
   InMemoryCache,
   from
 } from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
-import { getCsrfToken } from "next-auth/react"
 
 const httpLink = new HttpLink({
   uri: "/api/graphql"
