@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
-import CalendlyBtn from "./Calendly"
 
 
 export default function DevCards(props) {
@@ -66,7 +65,6 @@ export default function DevCards(props) {
                 >
                   View My Portfolio
                 </Link>
-                <CalendlyBtn/>
               </div>
               <p>{props.bio}</p>
             </div>
