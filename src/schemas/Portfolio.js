@@ -1,5 +1,6 @@
 import { Portfolio } from "../models/";
 import { ObjectId } from "mongodb";
+import { IsAuthenticated } from "./util";
 
 export const typeDef = `
     type Portfolio {
@@ -57,11 +58,15 @@ export const resolvers = {
     },
 
     Mutation: {
-        updatePortfolio: async(parent, args) => {
-            return await Portfolio.findOneAndUpdate({_id: args.ID }, {$set: {...args.portfolio}}, {upsert: true, new: true});
+        updatePortfolio: async(parent, args, context) => {
+            IsAuthenticated(context);
+
+            return await Portfolio.findOneAndUpdate({_id: args.ID, user: new ObjectId(context.user.id) }, {$set: {...args.portfolio}}, {upsert: true, new: true});
         },
 
-        createPortfolio: async(parent, args) => {
+        createPortfolio: async(parent, args, context) => {
+            IsAuthenticated(context);
+
             return await Portfolio.create({...args.portfolio});
         }
     }
