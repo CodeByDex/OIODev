@@ -47,7 +47,7 @@ export default function DevCards(props) {
               <h4 className="devCards--title text-sm">{props.title}</h4>
               <div className="devCards--rates my-2">
                 <h3 className="text-brand-textHeader leading-4">
-                  ${props.rateLow} - ${props.rateHigh}
+                  ${props.rate} per hour
                 </h3>
                 <p className="text-sm">Rates</p>
               </div>

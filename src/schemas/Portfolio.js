@@ -1,9 +1,11 @@
 import { Portfolio } from "../models/";
+import { ObjectId } from "mongodb";
+import { IsAuthenticated } from "./util";
 
 export const typeDef = `
     type Portfolio {
         _id: ID
-        userID: ID
+        user: ID
         firstName: String
         lastName: String
         title: String
@@ -16,7 +18,7 @@ export const typeDef = `
     }
 
     input portfolioInput {
-        userID: ID
+        user: ID
         firstName: String
         lastName: String
         title: String
@@ -31,6 +33,7 @@ export const typeDef = `
     extend type Query {
         portfolio(ID: ID!): Portfolio
         portfolios: [Portfolio]
+        getUserPortfolioByUser(user: ID!): Portfolio
     }
     
     extend type Mutation {
@@ -48,14 +51,22 @@ export const resolvers = {
         portfolio: async (parent, { portfolioID }) => {
             return await Portfolio.findById(portfolioID);
         },
+
+        getUserPortfolioByUser: async (parent, { user }) => {
+            return await Portfolio.findOne({user: new ObjectId(user)});
+        }
     },
 
     Mutation: {
-        updatePortfolio: async(parent, args) => {
-            return await Portfolio.findOneAndUpdate({_id: args.ID }, {$set: {...args.portfolio}}, {upsert: true, new: true});
+        updatePortfolio: async(parent, args, context) => {
+            IsAuthenticated(context);
+
+            return await Portfolio.findOneAndUpdate({_id: args.ID, user: new ObjectId(context.user.id) }, {$set: {...args.portfolio}}, {upsert: true, new: true});
         },
 
-        createPortfolio: async(parent, args) => {
+        createPortfolio: async(parent, args, context) => {
+            IsAuthenticated(context);
+
             return await Portfolio.create({...args.portfolio});
         }
     }

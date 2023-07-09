@@ -1,7 +1,6 @@
 "use client"
 
 //This page returns a listing of all portfolios and displays the summary 'card'
-import data2 from "./data.js";
 import DevCards from "./components/DevCards";
 import HeaderGraphic from "./components/HeaderGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,11 +26,20 @@ const portfolioQuery = gql`
 
 export default function Services() {
   const { data, error, loading } = useQuery(portfolioQuery);
+  
+  let devCards;
 
-  const sortedData = data2.sort((a, b) => a.lastName.localeCompare(b.lastName));
-  const devCards = sortedData.map((item) => {
-    return <DevCards {...item} key={item.id} />;
-  });
+  if (loading) {
+    devCards = <main><p>Loading...</p></main>
+  } else if (data == undefined) {
+    devCards = <main><p>No Data Found</p></main>
+  } else {
+    devCards = data.portfolios.map((item) => {
+      console.log(item);
+      return <DevCards {...item} key={item.id} />;
+    });
+  }
+
   return (
     <main className="flex-col">
       <div className="flex mb-8 items-center mx-auto max-w-6xl">

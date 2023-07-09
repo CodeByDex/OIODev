@@ -2,7 +2,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const portfolioSchema = new Schema(
-    {
+    {   
+        user: {
+            type: Schema.Types.ObjectId,
+            required: true,
+            ref: 'user',
+        },
+
         firstName: {
             type: String,
             required: true
