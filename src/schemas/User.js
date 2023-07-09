@@ -1,4 +1,5 @@
 import { User } from "../models";
+import { IsAuthenticated } from "./util";
 import {GraphQLError} from "graphql";
 
 export const typeDef = `
@@ -29,15 +30,20 @@ export const resolvers = {
     },
     Mutation: {
         updateUser: async (parent, {ID, name}, contextValue) => {
-            if (!contextValue.LoggedIn) {
-                throw new GraphQLError('User is not authenticated', {
+            IsAuthenticated(contextValue);
+
+            if(ID != contextValue.user.id) {
+                throw new GraphQLError('User is not Authorized to Update this record', {
                     extensions: {
-                      code: 'UNAUTHENTICATED',
-                      http: { status: 401 },
+                        code: 'UNAUTHENTICATED',
+                        http: { status: 401 },
                     },
-                  });
+                });
             }
+
             return await User.findByIdAndUpdate(ID, {name}, {new: true});
         }
     }
 }
+
+
