@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import ProfileForm from "./ProfileForm";
+import ProfilePanel from "./tempProfilePanel";
 import AppointmentDash from "./AppointmentDash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -99,7 +99,7 @@ export default function UserPanel(props) {
           }
                   `}
         >
-          <ProfileForm {...props}/>
+          <ProfilePanel {...props} />
         </div>
         {/* Upcoming appoinments dashboard component */}
         <div
