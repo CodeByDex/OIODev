@@ -51,6 +51,10 @@ const portfolioSchema = new Schema(
         available: {
             type: Boolean,
             required: true
+        },
+        
+        calendlyUrl: {
+            type: String
         }
     },
     {

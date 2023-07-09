@@ -15,6 +15,7 @@ export const typeDef = `
         githubUrl: String
         linkedinUrl: String
         available: Boolean
+        calendlyUrl: String
     }
 
     input portfolioInput {
@@ -27,7 +28,8 @@ export const typeDef = `
         portfolioUrl: String
         githubUrl: String
         linkedinUrl: String
-        available: Boolean   
+        available: Boolean
+        calendlyUrl: String   
     }
 
     extend type Query {
