@@ -102,7 +102,7 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  value={userData.firstName}
+                  defaultValue={userData.firstName}
                   handleChange={(e) => setFirstName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
@@ -116,7 +116,7 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  value={userData.lastName}
+                  defaultValue={userData.lastName}
                   handleChange={(e) => setLastName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
@@ -132,14 +132,14 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="text"
-                value={userData.title}
+                defaultValue={userData.title}
                 handleChange={(e) => setTitle(e.target.value)}
                 readOnly={!isEditable}
               ></input>
             </div>
             {/* Rate Field */}
             <div className="flex flex-col w-fit">
-              <label className="text-sm md:text-base">Rate</label>
+              <label className="text-sm md:text-base">Hourly Rate</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
                   isEditable
@@ -147,7 +147,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="number"
-                value={userData.rate}
+                defaultValue={userData.rate}
                 handleChange={(e) => setRate(e.target.value)}
                 readOnly={!isEditable}
               ></input>
@@ -162,7 +162,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 rows="5"
-                value={userData.bio}
+                defaultValue={userData.bio}
                 handleChange={(e) => setBio(e.target.value)}
                 readOnly={!isEditable}
               ></textarea>
@@ -177,7 +177,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="url"
-                value={userData.portfolioUrl}
+                defaultValue={userData.portfolioUrl}
                 handleChange={(e) => setPortfolioUrl(e.target.value)}
                 readOnly={!isEditable}
               ></input>
@@ -192,7 +192,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="url"
-                value={userData.githubUrl}
+                defaultValue={userData.githubUrl}
                 handleChange={(e) => setGithubUrl(e.target.value)}
                 readOnly={!isEditable}
               ></input>
@@ -207,7 +207,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="url"
-                value={userData.linkedinUrl}
+                defaultValue={userData.linkedinUrl}
                 handleChange={(e) => setLinkedinUrl(e.target.value)}
                 readOnly={!isEditable}
               ></input>
@@ -217,7 +217,7 @@ export default function ProfilePanel(props) {
               <input
                 className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
                 type="checkbox"
-                value={userData.available}
+                defaultValue={userData.available}
                 handleChange={(e) => setAvailable(e.target.value)}
                 readOnly={!isEditable}
               />
