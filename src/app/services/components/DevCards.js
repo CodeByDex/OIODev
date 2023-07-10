@@ -7,7 +7,7 @@ import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 export default function DevCards(props) {
   return (
     <section className="devCards--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto max-w-6xl">
-      <div className="bg-gray-200/5 rounded-lg">
+      <div className="bg-gray-200/5 rounded-lg w-full">
         <div className="devCards--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:gap-4">
           {/* Info */}
           <div className="flex mr-auto gap-4 md:w-2/5">
@@ -22,7 +22,7 @@ export default function DevCards(props) {
                     : "flex items-center text-xs text-brand-accent/30"
                 }
               >
-                Available for Work
+                {props.available ? `Available for Work` : `Unavailable`}
                 <div className="relative inline-block">
                   <FontAwesomeIcon
                     icon={faCircle}
@@ -46,14 +46,14 @@ export default function DevCards(props) {
               <h4 className="devCards--title text-sm">{props.title}</h4>
               <div className="devCards--rates my-2">
                 <h3 className="text-brand-textHeader leading-4">
-                  ${props.rate} per hour
+                  ${props.rate}
                 </h3>
-                <p className="text-sm">Rates</p>
+                <p className="text-sm">Hourly Rate</p>
               </div>
             </div>
           </div>
           {/* Bio */}
-          <div className="devCards--bioContainer md:w-3/5 md:mt-2">
+          <div className="devCards--bioContainer w-full md:w-3/5 md:mt-2">
             <div className="text-sm my-2 sm:text-base">
               <div className="text-brand-secondary font-bold flex justify-between mb-1">
                 <p className="font-primary">BIO</p>
