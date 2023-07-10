@@ -315,7 +315,7 @@ export default function ProfilePanel(props) {
               className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
               type="checkbox"
               defaultValue={portfolioState.available}
-              handleChange={handleProfileChange)}
+              handleChange={handleProfileChange}
               readOnly={!isEditable}
             />
             <label className="text-sm md:text-base">Available for Work</label>
