@@ -1,13 +1,15 @@
 "use client";
 import { useState } from "react";
-import ProfilePanel from "./tempProfilePanel";
-import AppointmentDash from "./AppointmentDash";
+import ProfilePanel from "./ProfilePanel";
+import SettingsPanel from "./SettingsPanel";
+import AppointmentDash from "./AppointmentPanel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faCalendarCheck,
   faRightFromBracket,
   faAngleRight,
+  faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function UserPanel(props) {
@@ -66,7 +68,7 @@ export default function UserPanel(props) {
                   icon={faCalendarCheck}
                   className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                 />
-                <p className="hidden sm:flex">Upcoming Appointments</p>
+                <p className="hidden sm:flex gap-1"><span className="hidden lg:flex">Upcoming</span>Appointments</p>
               </div>
               <FontAwesomeIcon
                 icon={faAngleRight}
@@ -75,6 +77,24 @@ export default function UserPanel(props) {
                 }
               />
             </button>
+            <button
+                  onClick={() => toggleTab(3)}
+                  className="flex items-center justify-between"
+                >
+                  <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
+                    <FontAwesomeIcon
+                      icon={faGear}
+                      className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                    />
+                    <p className="hidden sm:flex">Settings</p>
+                  </div>
+                  <FontAwesomeIcon
+                    icon={faAngleRight}
+                    className={
+                      toggleState === 3 ? "hidden lg:flex w-4 h-4" : "hidden"
+                    }
+                  />
+                </button>
             <button
               href="/dashboard"
               className="flex items-center justify-between"
@@ -92,7 +112,7 @@ export default function UserPanel(props) {
         </div>
       </section>
       <section className="flex flex-grow items-center bg-brand-primary/60 rounded-lg mb-6 mx-auto">
-        {/* Profile user form dashboard component */}
+        {/* Portfolio form dashboard component */}
         <div
           className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
             toggleState === 1 ? "" : "hidden"
@@ -109,6 +129,15 @@ export default function UserPanel(props) {
                   `}
         >
           <AppointmentDash />
+        </div>
+        {/* User form dashboard component */}
+        <div
+          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
+            toggleState === 3 ? "" : "hidden"
+          }
+                  `}
+        >
+          <SettingsPanel {...props} />
         </div>
       </section>
     </>
