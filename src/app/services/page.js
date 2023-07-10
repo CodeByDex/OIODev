@@ -2,6 +2,7 @@
 
 //This page returns a listing of all portfolios and displays the summary 'card'
 import DevCards from "./components/DevCards";
+import DevCardLoading from "./components/DevCardLoading";
 import HeaderGraphic from "./components/HeaderGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
@@ -31,9 +32,11 @@ export default function Services() {
 
   if (loading) {
     devCards = (
-      <main>
-        <p>Loading...</p>
-      </main>
+      <>
+        <DevCardLoading />
+        <DevCardLoading />
+        <DevCardLoading />
+      </>
     );
   } else if (data == undefined) {
     devCards = (

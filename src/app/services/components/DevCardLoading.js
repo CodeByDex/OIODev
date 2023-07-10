@@ -9,40 +9,45 @@ export default function DevCardLoading() {
       <div className="bg-gray-200/5 rounded-lg w-full">
         <div className="devCards--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:gap-4">
           {/* Info */}
-          <div className="flex mr-auto gap-4 md:w-2/5">
+          <div className="flex mr-auto gap-4 w-5/6 md:w-2/5">
             <div className="devCards--imageContainer flex items-center">
-              <div className="devCards--imagePlaceholder h-24 w-24 bg-neutral-800 rounded-full animate-pulse" />
+              <div className="devCards--imagePlaceholder h-24 w-24 bg-gray-800 rounded-full animate-pulse" />
             </div>
-            <div>
-              {/* Availability Loader */}
-              <div className="bg-neutral-800 w-1/2 h-4 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
+            <div className="w-full">
               {/* Name Loader */}
-              <div className="bg-neutral-800 w-full h-8 sm:h-9 md:h-10 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
+              <div className="bg-gray-800 w-3/4 h-8 sm:h-9 md:h-10 my-2 mr-4 px-2 rounded-lg animate-pulse" />
               {/* Title Loader */}
-              <h4 className="devCards--title text-sm">{props.title}</h4>
+              <div className="bg-gray-800 w-4/6 h-5 my-2 mr-4 px-2 rounded-lg animate-pulse" />
               {/* Rates Loader */}
               <div className="devCards--rates my-2">
-                <h3 className="text-brand-textHeader leading-4">
-                  ${props.rate}
-                </h3>
-                <p className="text-sm">Hourly Rate</p>
+                <div className="bg-gray-800 w-2/6 h-5 my-2 mr-4 px-2 rounded-lg animate-pulse" />
+                <div className="bg-gray-800 w-3/6 h-5 my-2 mr-4 px-2 rounded-lg animate-pulse" />
               </div>
             </div>
           </div>
           {/* Bio Loader */}
           <div className="devCards--bioContainer w-full md:w-3/5 md:mt-2">
             <div className="text-sm my-2 sm:text-base">
-              <div className="text-brand-secondary font-bold flex justify-between mb-1">
-                <p className="font-primary">BIO</p>
+              <div className="flex justify-between mb-1">
+                <div className="bg-gray-800 w-1/5 h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+
                 <Link
                   href=""
                   target="_blank"
-                  className="underline text-brand-accent"
+                  className="underline text-brand-accent font-bold"
                 >
                   View My Portfolio
                 </Link>
               </div>
-              <p>{props.bio}</p>
+              <div className="bg-gray-800 w-full h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+              <div className="flex">
+                <div className="bg-gray-800 w-1/2 h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+                <div className="bg-gray-800 w-1/2 h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+              </div>
+              <div className="flex">
+                <div className="bg-gray-800 w-1/4 h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+                <div className="bg-gray-800 w-1/2 h-5 sm:h-6 my-1 mr-4 px-2 rounded-lg animate-pulse" />
+              </div>
             </div>
             {/* Social Links */}
             <div className="devCards--socialsContainer flex justify-end items-center gap-2">
