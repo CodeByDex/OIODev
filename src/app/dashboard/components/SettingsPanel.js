@@ -52,7 +52,6 @@ export default function ProfilePanel(props) {
       </main>
     );
   } else {
-    const userData = data.getUserPortfolioByUser;
     return (
       <>
         <div className="flex flex-col">
@@ -65,7 +64,7 @@ export default function ProfilePanel(props) {
           >
             <div className="delay-75 duration-300 rounded-lg flex items-center gap-3">
               <p className="flex gap-1">
-                Edit<span className="hidden md:flex">Profile</span>
+                Edit<span className="hidden md:flex">Settings</span>
               </p>
               <FontAwesomeIcon
                 icon={faPenToSquare}
@@ -102,7 +101,7 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  defaultValue={userData.firstName}
+                  defaultValue={props.user.name}
                   handleChange={(e) => setFirstName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
@@ -116,7 +115,7 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  defaultValue={userData.lastName}
+                  defaultValue={props.user.lastName}
                   handleChange={(e) => setLastName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
@@ -132,7 +131,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="text"
-                defaultValue={userData.email}
+                defaultValue={props.user.email}
                 handleChange={(e) => setEmail(e.target.value)}
                 readOnly={!isEditable}
               ></input>
