@@ -1,6 +1,5 @@
 //modeled after: https://dev.to/sebiweise/effortlessly-schedule-meetings-with-a-custom-calendly-nextjs-application-2il7
 import Script from 'next/script'
-import { CalendlyData } from './CalendlyData'
 
 const CalendlyForm = ( props ) => {
     // const username = "chelsea-luevano"
