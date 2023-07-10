@@ -54,10 +54,6 @@ export default function ProfileLoading() {
               <div className="bg-neutral-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
               <div className="bg-neutral-800 w-1/4 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
             </div>
-            <div className="flex">
-              <div className="bg-neutral-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
-              <div className="bg-neutral-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
-            </div>
             <div className="bg-neutral-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
           </div>
           {/* Portfolio Field */}
