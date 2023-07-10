@@ -206,6 +206,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                   }`}
                 type="text"
+                name="firstName"
                 defaultValue={portfolioState.firstName}
                 handleChange={handleProfileChange}
                 readOnly={!isEditable}
@@ -219,6 +220,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                   }`}
                 type="text"
+                name="lastName"
                 defaultValue={portfolioState.lastName}
                 handleChange={handleProfileChange}
                 readOnly={!isEditable}
@@ -234,6 +236,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               type="text"
+              name="title"
               defaultValue={portfolioState.title}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -248,6 +251,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               type="number"
+              name="rate"
               defaultValue={portfolioState.rate}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -262,6 +266,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               rows="5"
+              name="bio"
               defaultValue={portfolioState.bio}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -276,6 +281,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               type="url"
+              name="portfolioUrl"
               defaultValue={portfolioState.portfolioUrl}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -290,6 +296,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               type="url"
+              name="githubUrl"
               defaultValue={portfolioState.githubUrl}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -304,6 +311,7 @@ export default function ProfilePanel(props) {
                   : "bg-transparent outline-none"
                 }`}
               type="url"
+              name="linkedinUrl"
               defaultValue={portfolioState.linkedinUrl}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
@@ -314,6 +322,7 @@ export default function ProfilePanel(props) {
             <input
               className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
               type="checkbox"
+              name="available"
               defaultValue={portfolioState.available}
               handleChange={handleProfileChange}
               readOnly={!isEditable}
