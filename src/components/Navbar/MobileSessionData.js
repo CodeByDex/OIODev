@@ -6,14 +6,14 @@ export default function MobileSessionData() {
   if (session) {
     return (
       <>
-        <div className="flex flex-row">
-          <p className="pr-5">{session.user.name}</p>
+        <div className="flex flex-row items center">
+          <p className=" pr-10 text-brand-accent">{session.user.name}</p>
           <Image
-          className=" rounded-full hover: bg-white mb"
+          className="rounded-full hover: bg-white mb"
           src={session.user.image}
           width={30}
           height={30}
-        />
+          />
         </div>
       </>
     )

@@ -12,6 +12,7 @@ import "tailwindcss/tailwind.css";
 import LoginButton from "../login/LoginButton.js";
 import UserDisplayData from "./UserDisplayData.js";
 import MobileSessionData from "./MobileSessionData.js";
+import LoggingButton from "./LoggingButton.js"
 
 
 export default function Navbar() {
@@ -213,10 +214,10 @@ export default function Navbar() {
             >
               Dashboard
             </div>
-            <LoginButton />
-            <Link onClick={handleNav} className="w-5" href="/login">
+            <LoggingButton />
+            {/* <Link onClick={handleNav} className="w-5" href="/login">
               <FontAwesomeIcon icon={faUser} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
