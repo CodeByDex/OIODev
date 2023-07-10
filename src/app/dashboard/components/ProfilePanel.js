@@ -83,25 +83,29 @@ export default function ProfilePanel(props) {
 
   useEffect(() => {
 
-    if (!loading && data.getUserPortfolioByUser) {
-      userData = data.getUserPortfolioByUser;
-    } else {
-      userData = {
-        _id: null,
-        user: props.user.id,
-        firstName: props.user.name,
-        lastName: "",
-        title: null,
-        bio: null,
-        rate: null,
-        portfolioUrl: null,
-        githubUrl: null,
-        linkedinUrl: null,
-        available: false
+    if (!loading)
+    {
+      if (data.getUserPortfolioByUser) {
+        userData = data.getUserPortfolioByUser;
+      } else {
+        userData = {
+          _id: null,
+          user: props.user.id,
+          firstName: props.user.name,
+          lastName: "",
+          title: null,
+          bio: null,
+          rate: null,
+          portfolioUrl: null,
+          githubUrl: null,
+          linkedinUrl: null,
+          available: false
+        }
       }
+
+      setPortfolioState({ IsLoaded: true, ...userData });
     }
 
-    setPortfolioState({ IsLoaded: true, ...userData });
   }, [loading])
 
   if (loading) {
