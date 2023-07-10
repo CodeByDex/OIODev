@@ -10,6 +10,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
 import LoginButton from "./login/LoginButton.js";
+import UserDisplayData from "./login/UserDisplayData.js";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -165,7 +166,7 @@ export default function Navbar() {
           >
             Dashboard
           </div>
-          <LoginButton />
+          <UserDisplayData />
           <Link className="w-5" href="/login">
             <FontAwesomeIcon icon={faUser} />
           </Link>
