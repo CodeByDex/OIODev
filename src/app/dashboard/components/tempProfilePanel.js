@@ -44,7 +44,7 @@ mutation Mutation($portfolio: portfolioInput)
 const updatePortfolioMutation = gql`
 mutation Mutation($portfolio: portfolioInput, $id: ID) 
 {
-  updatePortfolio(portfolio: $updatePortfolioPortfolio, ID: $id) {
+  updatePortfolio(portfolio: $portfolio, ID: $id) {
     _id
     user
     firstName
@@ -62,9 +62,10 @@ mutation Mutation($portfolio: portfolioInput, $id: ID)
 
 export default function ProfilePanel(props) {
   let userData;
-  let neededMutation;
   const [isEditable, setIsEditable] = useState(false);
   const [portfolioState, setPortfolioState] = useState({ IsLoaded: false });
+  const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation);
+  const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation);
 
   const handleEditClick = () => {
     setIsEditable(true);
@@ -82,9 +83,8 @@ export default function ProfilePanel(props) {
 
   useEffect(() => {
 
-    if (data && data.getUserPortfolioByUser) {
+    if (!loading && data.getUserPortfolioByUser) {
       userData = data.getUserPortfolioByUser;
-      neededMutation = updatePortfolioMutation;
     } else {
       userData = {
         _id: null,
@@ -102,7 +102,6 @@ export default function ProfilePanel(props) {
     }
 
     setPortfolioState({ IsLoaded: true, ...userData });
-    neededMutation = addPortfolioMutation;
   }, [loading])
 
   if (loading) {
@@ -123,25 +122,45 @@ export default function ProfilePanel(props) {
     event.preventDefault();
 
     try {
-      const { data } = portfolioUpdate({
-        variables: { ...portfolioState }
-      })
+      if (portfolioState._id == null)
+      {
+        // const { data } = addPortfolio({
+        //   variables:  {...portfolioState}
+          
+        // })
 
-      setPortfolioState(data);
+        // if (!addPortErr) {
+        //   console.log(data.updatePortfolio);
+        //   // setPortfolioState(...data.updatePortfolio);
+        // }
+
+        console.log("Create", portfolioState)
+  
+      } else {
+        // const { data } = updatePortfolio({
+        //   variables: { 
+        //     portfolioInput: portfolioState,
+        //     id: portfolioState._id
+        //   }
+        // })
+  
+        // //setPortfolioState(data);
+        console.log("Update", portfolioState)
+
+      }
     } catch (err) {
       console.log("mutate error", err);
     }
+
+    setIsEditable(false);
   };
 
   const handleProfileChange = (event) => {
-    const { name, value } = event.target;
-
-    console.log(name, value);
+    const { name, value } = event.target;;
 
     portfolioState
 
     setPortfolioState({ ...portfolioState, [name]: value });
-
   }
 
   return (
@@ -164,7 +183,7 @@ export default function ProfilePanel(props) {
           </div>
         </button>
         <button
-          onClick={handleSaveClick}
+          onClick={handlePortfolioSubmit}
           className={`flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto ${isEditable ? "" : "hidden"
             } `}
         >
@@ -190,6 +209,7 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                   }`}
                 type="text"
+                name="firstName"
                 defaultValue={portfolioState.firstName}
                 onChange={handleProfileChange}
                 readOnly={!isEditable}
