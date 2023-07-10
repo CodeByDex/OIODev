@@ -24,20 +24,19 @@ const userQuery = gql`
 `;
 
 const addPortfolioMutation = gql`
-mutation Mutation($portfolio: portfolioInput) 
-{
-  createPortfolio(portfolio: $portfolio) {
+mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
+  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
     _id
-    user
-    firstName
-    lastName
-    title
-    bio
-    rate
-    portfolioUrl
-    githubUrl
-    linkedinUrl
     available
+    bio
+    firstName
+    githubUrl
+    lastName
+    linkedinUrl
+    portfolioUrl
+    rate
+    title
+    user
   }
 }
 `;
@@ -120,17 +119,19 @@ export default function ProfilePanel(props) {
   const handlePortfolioSubmit = async (event) => {
     event.preventDefault();
 
+    portfolioState.rate = parseFloat(portfolioState.rate);
+
     try {
       if (portfolioState._id == null) {
-        // const { data } = addPortfolio({
-        //   variables:  {...portfolioState}
+        const { data } = addPortfolio({
+          variables:  {...portfolioState}
 
-        // })
+        })
 
-        // if (!addPortErr) {
-        //   console.log(data.updatePortfolio);
-        //   // setPortfolioState(...data.updatePortfolio);
-        // }
+        if (!addPortErr) {
+          console.log(data.updatePortfolio);
+          setPortfolioState(...data.updatePortfolio);
+        }
 
         console.log("Create", portfolioState)
 
@@ -155,8 +156,6 @@ export default function ProfilePanel(props) {
 
   const handleProfileChange = (event) => {
     const { name, value } = event.target;;
-
-    portfolioState
 
     setPortfolioState({ ...portfolioState, [name]: value });
   }
@@ -208,7 +207,7 @@ export default function ProfilePanel(props) {
                 type="text"
                 name="firstName"
                 defaultValue={portfolioState.firstName}
-                handleChange={handleProfileChange}
+                onChange={handleProfileChange}
                 readOnly={!isEditable}
               ></input>
             </div>
@@ -222,7 +221,7 @@ export default function ProfilePanel(props) {
                 type="text"
                 name="lastName"
                 defaultValue={portfolioState.lastName}
-                handleChange={handleProfileChange}
+                onChange={handleProfileChange}
                 readOnly={!isEditable}
               ></input>
             </div>
@@ -238,7 +237,7 @@ export default function ProfilePanel(props) {
               type="text"
               name="title"
               defaultValue={portfolioState.title}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -253,7 +252,7 @@ export default function ProfilePanel(props) {
               type="number"
               name="rate"
               defaultValue={portfolioState.rate}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -268,7 +267,7 @@ export default function ProfilePanel(props) {
               rows="5"
               name="bio"
               defaultValue={portfolioState.bio}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></textarea>
           </div>
@@ -283,7 +282,7 @@ export default function ProfilePanel(props) {
               type="url"
               name="portfolioUrl"
               defaultValue={portfolioState.portfolioUrl}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -298,7 +297,7 @@ export default function ProfilePanel(props) {
               type="url"
               name="githubUrl"
               defaultValue={portfolioState.githubUrl}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -313,7 +312,7 @@ export default function ProfilePanel(props) {
               type="url"
               name="linkedinUrl"
               defaultValue={portfolioState.linkedinUrl}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
           </div>
@@ -324,7 +323,7 @@ export default function ProfilePanel(props) {
               type="checkbox"
               name="available"
               defaultValue={portfolioState.available}
-              handleChange={handleProfileChange}
+              onChange={handleProfileChange}
               readOnly={!isEditable}
             />
             <label className="text-sm md:text-base">Available for Work</label>

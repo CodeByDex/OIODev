@@ -39,6 +39,7 @@ export const typeDef = `
     extend type Mutation {
         updatePortfolio(portfolio: portfolioInput, ID: ID): Portfolio
         createPortfolio(portfolio: portfolioInput): Portfolio
+        createPortfolioByField(user: ID, firstName: String, lastName: String, title: String, bio: String, rate: Float, portfolioUrl: String, githubUrl: String, linkedinUrl: String, available: Boolean ): Portfolio
     }
 `
 
@@ -68,6 +69,12 @@ export const resolvers = {
             IsAuthenticated(context);
 
             return await Portfolio.create({...args.portfolio});
+        },
+
+        createPortfolioByField: async (parent, args, context) => {
+            IsAuthenticated(context);
+
+            return await Portfolio.create({...args})
         }
     }
 }
