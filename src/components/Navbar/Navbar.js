@@ -9,8 +9,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
-import LoginButton from "./login/LoginButton.js";
-import UserDisplayData from "./login/UserDisplayData.js";
+import LoginButton from "../login/LoginButton.js";
+import UserDisplayData from "./UserDisplayData.js";
+import MobileSessionData from "./MobileSessionData.js";
+
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -167,9 +169,6 @@ export default function Navbar() {
             Dashboard
           </div>
           <UserDisplayData />
-          <Link className="w-5" href="/login">
-            <FontAwesomeIcon icon={faUser} />
-          </Link>
         </div>
 
         {/* Mobile view */}
@@ -182,6 +181,7 @@ export default function Navbar() {
           }
         >
           <div className="flex flex-col items-center justify-center gap-5">
+            <MobileSessionData onClick={closeMenu}/>
             <div
               className="hover:text-brand-textHover cursor-pointer"
               onClick={() => {

@@ -8,7 +8,7 @@ export default function UserDisplayData() {
   const Console = () => {
     console.log(session);
   };
-  const [subNav, setSubNav] = useState(true);
+  const [subNav, setSubNav] = useState(false);
 
   const OpenSubNav = () => {
     setSubNav(true)
@@ -25,7 +25,6 @@ export default function UserDisplayData() {
   if (session) {
     return (
       <>
-        <button onClick={() => Console()}>console.log</button>
         <Image
           className=" rounded-full hover: bg-white mb"
           onMouseEnter={OpenSubNav}
@@ -42,11 +41,11 @@ export default function UserDisplayData() {
           onMouseLeave={CloseSubNav}
           className={
             subNav
-              ? "fixed top-20 right-16 bg-brand-tertiary rounded-bl-2xl items-center p-5 duration-500"
+              ? "fixed top-24 right-16 bg-brand-tertiary rounded-bl-2xl items-center p-5 duration-500"
               : "fixed right-[-10%] top-24 p-5 duration-500 ease-in"
           }
         >
-          <p>Hello, {session.user.name}</p>
+          <p>{session.user.name}</p>
           <p>dashboard</p>          
           <button onClick={() => signOut()}>Sign out</button>
           
