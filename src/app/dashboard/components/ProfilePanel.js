@@ -3,6 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import ProfileLoading from "./ProfileLoading.js";
 
 const userQuery = gql`
   query Query($user: ID!) {
@@ -41,9 +42,7 @@ export default function ProfilePanel(props) {
 
   if (loading) {
     return (
-      <main>
-        <p>Loading...</p>
-      </main>
+        <ProfileLoading />
     );
   } else if (error) {
     return (
