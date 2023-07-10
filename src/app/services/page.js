@@ -1,38 +1,49 @@
-"use client"
+"use client";
 
 //This page returns a listing of all portfolios and displays the summary 'card'
 import DevCards from "./components/DevCards";
+import DevCardLoading from "./components/DevCardLoading";
 import HeaderGraphic from "./components/HeaderGraphic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 import { useQuery, gql } from "@apollo/client";
 
 const portfolioQuery = gql`
-{
-  portfolios {
-    _id
-    firstName
-    lastName
-    title
-    bio
-    rate
-    portfolioUrl
-    githubUrl
-    linkedinUrl
-    available
+  {
+    portfolios {
+      _id
+      firstName
+      lastName
+      title
+      bio
+      rate
+      portfolioUrl
+      githubUrl
+      linkedinUrl
+      available
+    }
   }
-}
-`
+`;
 
 export default function Services() {
   const { data, error, loading } = useQuery(portfolioQuery);
-  
+
   let devCards;
 
   if (loading) {
-    devCards = <main><p>Loading...</p></main>
+    devCards = (
+      <>
+        <DevCardLoading />
+        <DevCardLoading />
+        <DevCardLoading />
+      </>
+    );
   } else if (data == undefined) {
-    devCards = <main><p>No Data Found</p></main>
+    devCards = (
+      <main>
+        <p>No Data Found</p>
+      </main>
+    );
   } else {
     devCards = data.portfolios.map((item) => {
       console.log(item);

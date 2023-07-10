@@ -52,7 +52,6 @@ export default function ProfilePanel(props) {
       </main>
     );
   } else {
-    const userData = data.getUserPortfolioByUser;
     return (
       <>
         <div className="flex flex-col">
@@ -65,7 +64,7 @@ export default function ProfilePanel(props) {
           >
             <div className="delay-75 duration-300 rounded-lg flex items-center gap-3">
               <p className="flex gap-1">
-                Edit<span className="hidden md:flex">Profile</span>
+                Edit<span className="hidden md:flex">Settings</span>
               </p>
               <FontAwesomeIcon
                 icon={faPenToSquare}
@@ -102,7 +101,7 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  value={userData.firstName}
+                  defaultValue={props.user.name}
                   handleChange={(e) => setFirstName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
@@ -116,15 +115,15 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  value={userData.lastName}
+                  defaultValue={props.user.lastName}
                   handleChange={(e) => setLastName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
               </div>
             </div>
-            {/* Title Field */}
+            {/* Email Field */}
             <div className="flex flex-col">
-              <label className="text-sm md:text-base">Title</label>
+              <label className="text-sm md:text-base">Email</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
                   isEditable
@@ -132,100 +131,16 @@ export default function ProfilePanel(props) {
                     : "bg-transparent outline-none"
                 }`}
                 type="text"
-                value={userData.title}
-                handleChange={(e) => setTitle(e.target.value)}
+                defaultValue={props.user.email}
+                handleChange={(e) => setEmail(e.target.value)}
                 readOnly={!isEditable}
               ></input>
             </div>
-            {/* Rate Field */}
-            <div className="flex flex-col w-fit">
-              <label className="text-sm md:text-base">Rate</label>
-              <input
-                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                  isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
-                }`}
-                type="number"
-                value={userData.rate}
-                handleChange={(e) => setRate(e.target.value)}
-                readOnly={!isEditable}
-              ></input>
-            </div>
-            {/* Bio Field */}
-            <div className="flex flex-col">
-              <label className="text-sm md:text-base">Bio</label>
-              <textarea
-                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                  isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
-                }`}
-                rows="5"
-                value={userData.bio}
-                handleChange={(e) => setBio(e.target.value)}
-                readOnly={!isEditable}
-              ></textarea>
-            </div>
-            {/* Portfolio Field */}
-            <div className="flex flex-col">
-              <label className="text-sm md:text-base">Portfolio URL</label>
-              <input
-                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                  isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
-                }`}
-                type="url"
-                value={userData.portfolioUrl}
-                handleChange={(e) => setPortfolioUrl(e.target.value)}
-                readOnly={!isEditable}
-              ></input>
-            </div>
-            {/* Github Field */}
-            <div className="flex flex-col">
-              <label className="text-sm md:text-base">GitHub URL</label>
-              <input
-                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                  isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
-                }`}
-                type="url"
-                value={userData.githubUrl}
-                handleChange={(e) => setGithubUrl(e.target.value)}
-                readOnly={!isEditable}
-              ></input>
-            </div>
-            {/* LinkedIn Field */}
-            <div className="flex flex-col">
-              <label className="text-sm md:text-base">LinkedIn URL</label>
-              <input
-                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                  isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
-                }`}
-                type="url"
-                value={userData.linkedinUrl}
-                handleChange={(e) => setLinkedinUrl(e.target.value)}
-                readOnly={!isEditable}
-              ></input>
-            </div>
-            {/* Availability Field */}
-            <div className="flex items-center">
-              <input
-                className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
-                type="checkbox"
-                value={userData.available}
-                handleChange={(e) => setAvailable(e.target.value)}
-                readOnly={!isEditable}
-              />
-              <label className="text-sm md:text-base">Available for Work</label>
-            </div>
+            
           </form>
         </div>
       </>
     );
   }
 }
+
