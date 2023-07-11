@@ -1,6 +1,7 @@
+"use client"
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 export default function UserDisplayData() {
   const { data: session } = useSession();
@@ -83,9 +84,8 @@ export default function UserDisplayData() {
     );
   }
   return (
-    <div className="hover:text-brand-textHover">
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+    <div>
+      <button className=" hover:text-brand-textHover" onClick={() => signIn()}>Sign in</button>
     </div>
   );
 }

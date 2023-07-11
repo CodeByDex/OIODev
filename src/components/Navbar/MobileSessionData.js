@@ -1,4 +1,5 @@
-import { useSession, signIn, signOut } from "next-auth/react"
+"use client"
+import { useSession, signIn } from "next-auth/react"
 import Image from "next/image"
 
 export default function MobileSessionData() {

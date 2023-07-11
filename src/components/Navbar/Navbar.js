@@ -1,15 +1,11 @@
 "use client";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faRightToBracket,
-  faUser,
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
-import LoginButton from "../login/LoginButton.js";
 import UserDisplayData from "./UserDisplayData.js";
 import MobileSessionData from "./MobileSessionData.js";
 import LoggingButton from "./LoggingButton.js"
