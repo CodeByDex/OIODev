@@ -1,15 +1,15 @@
 "use client";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faRightToBracket,
-  faUser,
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
-import LoginButton from "./login/LoginButton.js";
+import UserDisplayData from "./UserDisplayData.js";
+import MobileSessionData from "./MobileSessionData.js";
+import LoggingButton from "./LoggingButton.js"
+
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -154,21 +154,7 @@ export default function Navbar() {
           >
             Services
           </div>
-          <div
-            className="hover:text-brand-textHover cursor-pointer"
-            onClick={() => {
-              closeMenu;
-              urlCheck("/dashboard")
-                ? scrollToTop()
-                : redirectToPath("/dashboard");
-            }}
-          >
-            Dashboard
-          </div>
-          <LoginButton />
-          <Link className="w-5" href="/login">
-            <FontAwesomeIcon icon={faUser} />
-          </Link>
+          <UserDisplayData />
         </div>
 
         {/* Mobile view */}
@@ -181,6 +167,7 @@ export default function Navbar() {
           }
         >
           <div className="flex flex-col items-center justify-center gap-5">
+            <MobileSessionData onClick={closeMenu}/>
             <div
               className="hover:text-brand-textHover cursor-pointer"
               onClick={() => {
@@ -212,10 +199,10 @@ export default function Navbar() {
             >
               Dashboard
             </div>
-            <LoginButton />
-            <Link onClick={handleNav} className="w-5" href="/login">
+            <LoggingButton />
+            {/* <Link onClick={handleNav} className="w-5" href="/login">
               <FontAwesomeIcon icon={faUser} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
