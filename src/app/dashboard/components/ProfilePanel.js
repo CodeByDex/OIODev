@@ -60,9 +60,8 @@ mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String,
 `;
 
 export default function ProfilePanel(props) {
-  let userData;
   const [isEditable, setIsEditable] = useState(false);
-  const [portfolioState, setPortfolioState] = useState({ IsLoaded: false });
+  const [portfolioState, setPortfolioState] = useState({});
   const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation, {onCompleted(args){onMutateComplete(args, true);}});
   const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation, {onCompleted(args){onMutateComplete(args, false);}});
 
@@ -80,10 +79,6 @@ export default function ProfilePanel(props) {
     setIsEditable(true);
   };
 
-  const handleSaveClick = () => {
-    setIsEditable(false);
-  };
-
   const { data, error, loading } = useQuery(userQuery, {
     variables: {
       user: props.user.id,
@@ -95,9 +90,9 @@ export default function ProfilePanel(props) {
     if (!loading)
     {
       if (data.getUserPortfolioByUser) {
-        userData = data.getUserPortfolioByUser;
+        setPortfolioState({...data.getUserPortfolioByUser})
       } else {
-        userData = {
+        setPortfolioState({ 
           _id: null,
           user: props.user.id,
           firstName: props.user.name,
@@ -109,10 +104,9 @@ export default function ProfilePanel(props) {
           githubUrl: null,
           linkedinUrl: null,
           available: false
-        }
+         });
       }
 
-      setPortfolioState({ IsLoaded: true, ...userData });
     }
 
   }, [loading])
@@ -132,36 +126,28 @@ export default function ProfilePanel(props) {
   const handlePortfolioSubmit = async (event) => {
     event.preventDefault();
 
+    //cast values to their actual data types, they are getting saved as strings when pulled from the form
     portfolioState.rate = parseFloat(portfolioState.rate);
+    portfolioState.available = Boolean(portfolioState.available);
 
     try {
       if (portfolioState._id == null) {
-        const { data } = addPortfolio({
+        addPortfolio({
           variables:  {...portfolioState}
         })
-
-        // if (!addPortErr) {
-        //   setPortfolioState(...data.updatePortfolio);
-        // }
 
       } else {
         const vars = {...portfolioState, portId: portfolioState._id};
 
-        const { data } = updatePortfolio({
+        updatePortfolio({
           variables:  vars
 
         })
-
-        // if (!upPortErr) {
-        //   setPortfolioState(...data.updatePortfolioByField);
-        // }
 
       }
     } catch (err) {
       console.log("mutate error", err);
     }
-
-    setIsEditable(false);
   };
 
   const handleProfileChange = (event) => {
