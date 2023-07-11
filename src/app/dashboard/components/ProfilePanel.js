@@ -63,8 +63,18 @@ export default function ProfilePanel(props) {
   let userData;
   const [isEditable, setIsEditable] = useState(false);
   const [portfolioState, setPortfolioState] = useState({ IsLoaded: false });
-  const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation);
-  const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation);
+  const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation, {onCompleted(args){onMutateComplete(args, true);}});
+  const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation, {onCompleted(args){onMutateComplete(args, false);}});
+
+  function onMutateComplete(args, isAdd){
+    if (isAdd) {
+      setPortfolioState({...args.createPortfolioByField})
+    } else {
+      setPortfolioState({...args.updatePortfolioByField})
+    }
+
+    setIsEditable(false);
+  }
 
   const handleEditClick = () => {
     setIsEditable(true);
@@ -128,14 +138,11 @@ export default function ProfilePanel(props) {
       if (portfolioState._id == null) {
         const { data } = addPortfolio({
           variables:  {...portfolioState}
-
         })
 
-        if (!addPortErr) {
-          setPortfolioState(...data.updatePortfolio);
-        }
-
-        console.log("Create", portfolioState)
+        // if (!addPortErr) {
+        //   setPortfolioState(...data.updatePortfolio);
+        // }
 
       } else {
         const vars = {...portfolioState, portId: portfolioState._id};
@@ -145,9 +152,9 @@ export default function ProfilePanel(props) {
 
         })
 
-        if (!upPortErr) {
-          setPortfolioState(...data.updatePortfolioByField);
-        }
+        // if (!upPortErr) {
+        //   setPortfolioState(...data.updatePortfolioByField);
+        // }
 
       }
     } catch (err) {
