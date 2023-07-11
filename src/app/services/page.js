@@ -54,7 +54,7 @@ export default function Services() {
   return (
     <main className="flex-col my-16">
       <div className="flex mb-8 items-center mx-auto max-w-6xl">
-        <div className="services--header mx-auto px-4 md:px-0">
+        <div className="services--header mx-auto px-1 md:px-0">
           <div className="flex sm:hidden">
             <HeaderGraphic />
           </div>
