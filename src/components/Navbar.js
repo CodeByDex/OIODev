@@ -105,7 +105,7 @@ export default function Navbar() {
       <nav
         ref={navbarRef}
         className={`navbar--container flex flex-row justify-between px-10 py-5 mx-auto items-center fixed top-0 w-full z-50 transition-colors duration-700 ${
-          scrollBackground ? " bg-brand-tertiary" : "bg-brand-primary"
+          scrollBackground ? " bg-brand-tertiary" : "bg-transparent"
         }`}
       >
         <div className="z-40 p-4">
