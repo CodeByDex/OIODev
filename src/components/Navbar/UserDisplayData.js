@@ -1,6 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function UserDisplayData() {
   const { data: session } = useSession();
@@ -61,20 +61,20 @@ export default function UserDisplayData() {
           onMouseLeave={CloseSubNav}
           className={
             subNav
-              ? "fixed top-24 right-16 bg-brand-quaternary rounded-bl-2xl items-center p-5 duration-500"
+              ? "fixed top-24 right-0 pr-32 bg-brand-quaternary rounded-bl-2xl items-center p-5 duration-500"
               : "fixed right-[-10%] top-24 p-5 duration-500 ease-in"
           }
         >
-          <p className=" text-brand-accent">{session.user.name}</p>
+          <p className="py-3 pt-0 text-brand-accent">{session.user.name}</p>
           <div
-            className="hover:text-brand-textHover cursor-pointer"
+            className="hover:text-brand-textHover cursor-pointer pb-3"
             onClick={() => {
-              urlCheck("/")
+              urlCheck("/dashboard")
                 ? scrollToTop()
-                : redirectToPath("/");
+                : redirectToPath("/dashboard");
             }}
           >
-            Home
+            Dashboard
           </div>       
           <button className="hover:text-brand-textHover" onClick={() => signOut()}>Sign out</button>
           

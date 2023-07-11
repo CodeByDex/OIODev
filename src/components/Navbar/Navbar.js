@@ -158,17 +158,6 @@ export default function Navbar() {
           >
             Services
           </div>
-          <div
-            className="hover:text-brand-textHover cursor-pointer"
-            onClick={() => {
-              closeMenu;
-              urlCheck("/dashboard")
-                ? scrollToTop()
-                : redirectToPath("/dashboard");
-            }}
-          >
-            Dashboard
-          </div>
           <UserDisplayData />
         </div>
 
