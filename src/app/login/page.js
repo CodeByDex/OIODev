@@ -27,7 +27,7 @@ export default function LoginPage() {
                   <h1 className='mb-8 mt-4 text-4xl text-center font-bold text-brand-secondary'>Sign In</h1>
                   {data.map(provider => (
                       <div key={provider.name}>
-                    <button className='w-full text-center py-3 px-24 rounded bg-brand-secondary text-white my-5 text-2xl' type="submit" onClick={() => signIn(provider.id)}> {provider.name} </button>
+                    <button className='w-full text-center py-3 px-24 rounded bg-brand-secondary text-white my-5 text-2xl' type="submit" onClick={() => signIn(provider.id, {callbackUrl: '/'})}> {provider.name} </button>
                     </div>
                   ))}
                   </div>
