@@ -13,7 +13,7 @@ export default function Home() {
       <div>
         <AboutUs />
       </div>
-      <div className="items-center justify-center sm:flex sm:flex-col md:flex md:flex-row px-10 py-9 mx-auto">
+      <div>
         <Benefits />
         <GirlDesktopGraphic />
       </div>

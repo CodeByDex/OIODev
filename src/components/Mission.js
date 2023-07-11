@@ -14,7 +14,7 @@ export default function Mission() {
         </div>
         <div className="flex flex-col gap-5 w-full sm:mt-auto md:w-1/2 px-4 sm:pr-0">
           <h1 className="mission--message text-left text-brand-textHeader font-primary font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
-            Web Apps Tailored for You & Your <span className="text-brand-secondary font-secondary">{`<`}</span>Brand<span className="text-brand-secondary font-secondary">{`/>`}</span>
+            Web Apps Tailored for You & Your <span className="text-brand-secondary font-secondary pr-2">{`<`}</span>Brand<span className="text-brand-secondary font-secondary pl-2">{`/>`}</span>
           </h1>
           <Link
             href="/services"
