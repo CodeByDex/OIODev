@@ -42,9 +42,8 @@ mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: Stri
 `;
 
 const updatePortfolioMutation = gql`
-mutation Mutation($portfolio: portfolioInput, $id: ID) 
-{
-  updatePortfolio(portfolio: $portfolio, ID: $id) {
+mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
+  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
     _id
     user
     firstName
@@ -133,22 +132,22 @@ export default function ProfilePanel(props) {
         })
 
         if (!addPortErr) {
-          console.log(data.updatePortfolio);
           setPortfolioState(...data.updatePortfolio);
         }
 
         console.log("Create", portfolioState)
 
       } else {
-        // const { data } = updatePortfolio({
-        //   variables: { 
-        //     portfolioInput: portfolioState,
-        //     id: portfolioState._id
-        //   }
-        // })
+        const vars = {...portfolioState, portId: portfolioState._id};
 
-        // //setPortfolioState(data);
-        console.log("Update", portfolioState)
+        const { data } = updatePortfolio({
+          variables:  vars
+
+        })
+
+        if (!upPortErr) {
+          setPortfolioState(...data.updatePortfolioByField);
+        }
 
       }
     } catch (err) {
