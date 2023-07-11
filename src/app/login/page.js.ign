@@ -20,6 +20,7 @@ export default function loginPage() {
     }
 
     fetchProviders();
+    
     return (
         <main className="flex">
         <h1 className="font-primary text-brand-textHeader text-6xl">
