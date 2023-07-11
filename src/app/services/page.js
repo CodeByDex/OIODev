@@ -52,14 +52,14 @@ export default function Services() {
   }
 
   return (
-    <main className="flex-col">
+    <main className="flex-col my-16">
       <div className="flex mb-8 items-center mx-auto max-w-6xl">
-        <div className="services--header mx-auto">
+        <div className="services--header mx-auto px-1 md:px-0">
           <div className="flex sm:hidden">
             <HeaderGraphic />
           </div>
           <div className="flex items-end">
-            <h1 className="font-primary font-semibold text-brand-textHeader text-5xl max-w-full pb-5 sm:max-w-sm sm:text-6xl sm:pl-5">
+            <h1 className="font-primary font-semibold text-brand-textHeader text-5xl md:text-6xl max-w-full pb-5 sm:max-w-sm sm:pl-5">
               Explore Our Team of Developers
               <FontAwesomeIcon
                 icon={faArrowTurnDown}
