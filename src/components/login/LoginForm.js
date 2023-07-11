@@ -38,7 +38,7 @@ export default function loginForm() {
           </div>
           </div>
           {/* create link to sign up form */}
-          <p className="text-grey-dark mt-3">Don't have an account?</p>
+          <p className="text-grey-dark mt-3">Don&apos;t have an account?</p>
           {/* <Link href='/Signup'>Sign up</Link> */}
           <p className="no-underline border-b hover:to-brand-secondary">Sign up</p>
       </main>
