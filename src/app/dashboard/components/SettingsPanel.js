@@ -102,7 +102,7 @@ export default function ProfilePanel(props) {
                   }`}
                   type="text"
                   defaultValue={props.user.name}
-                  handleChange={(e) => setFirstName(e.target.value)}
+                  onChange={(e) => setFirstName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
               </div>
@@ -116,7 +116,7 @@ export default function ProfilePanel(props) {
                   }`}
                   type="text"
                   defaultValue={props.user.lastName}
-                  handleChange={(e) => setLastName(e.target.value)}
+                  onChange={(e) => setLastName(e.target.value)}
                   readOnly={!isEditable}
                 ></input>
               </div>
@@ -132,7 +132,7 @@ export default function ProfilePanel(props) {
                 }`}
                 type="text"
                 defaultValue={props.user.email}
-                handleChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 readOnly={!isEditable}
               ></input>
             </div>

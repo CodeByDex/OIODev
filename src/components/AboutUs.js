@@ -1,48 +1,39 @@
-"use client"
-import Link from "next/link";
+"use client";
 import "tailwindcss/tailwind.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUserCheck} from "@fortawesome/free-solid-svg-icons"
-import {faCommentsDollar} from "@fortawesome/free-solid-svg-icons"
-import {faDesktop} from "@fortawesome/free-solid-svg-icons"
-import {faPeopleGroup} from "@fortawesome/free-solid-svg-icons"
-
 
 export default function AboutUs() {
-    return (
-        <main className="about--container flex flex-col gap-4 sm:items-center sm:text-center px-10 py-9 ">
-
-            <span className=" text-2xl mx-auto sm:text-base text-center md:text-xl max-w-4xl">
-            Welcome to OIO Dev, where we connect you with skilled Technology Professionals who specialize in 
-            creating exceptional websites and server applications. We bring your digital vision to life!
-            </span>
-            {/* <br></br>
-            <section className="bg-brand-primary/60 rounded-lg mb-6 mx-auto md:max-w-3xl xl:max-w-6xl">
-               <div className="bg-gray-200/5 rounded-lg">
-                    <h2 className="underline text-center text-2xl md:text-2xl">Unlocking the Benefits </h2> 
-                    <ul className="bullet--list list-inside text-2xl sm:text-base mx-auto">
-                            <span>
-                            A modern and up-to-date website offers numerous advantages, including:
-                            </span>
-                            <li className="mx-4">
-                            <FontAwesomeIcon icon={faUserCheck} className="mr-4"/>
-                            Improved User Experience
-                            </li>
-                            <li className="mx-4">
-                            <FontAwesomeIcon icon={faCommentsDollar} className="mr-4"/>
-                            Enhanced Brand Credibility
-                            </li>
-                            <li className="mx-4">
-                            <FontAwesomeIcon icon={faDesktop} className="mr-4"/>
-                            Increased Online Visibility   
-                            </li>
-                            <li className="mx-4">
-                            <FontAwesomeIcon icon={faPeopleGroup} className="mr-4"/>
-                            Higher User Engagement
-                            </li>
-                    </ul>
-                </div> 
-           </section> */}
-        </main>
-    )
+  return (
+    <main className="about--container flex flex-col items-center justify-start gap-3 max-w-6xl">
+      <h2 className="font-primary font-semibold text-brand-textHeader text-left text-3xl md:text-4xl mr-auto">
+        Welcome to OIO Dev
+      </h2>
+      <p>
+        Your gateway to skilled freelance developers who specialize in creating
+        exceptional websites and server applications. We connect you with
+        talented professionals who bring your digital vision to life on a
+        freelance basis.
+      </p>
+      <p>
+        At OIO Dev, we understand the importance of finding the right freelance
+        developer to meet your specific needs. Our platform allows you to browse
+        through our pool of freelancers who excel in their respective fields.
+        Whether you need a freelance developer for a short-term project or
+        ongoing collaboration, we have the perfect match for you.
+      </p>
+      <p>
+        By working with a freelance developer from OIO Dev, you gain the
+        advantage of flexibility and cost-effectiveness. You have the freedom to
+        collaborate directly with the freelancer, providing input and feedback
+        throughout the development process. Our platform streamlines the hiring
+        and onboarding process, making it easy for you to connect with the right
+        freelance developer and start your project without any hassle.
+      </p>
+      <p>
+        Unlock the full potential of your digital presence with a freelance
+        developer from OIO Dev. Let our talented freelancers transform your
+        ideas into remarkable websites and server applications that align with
+        your vision and goals.
+      </p>
+    </main>
+  );
 }
