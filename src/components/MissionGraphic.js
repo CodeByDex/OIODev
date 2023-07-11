@@ -8,8 +8,8 @@ export default function MissionGraphic() {
     <div className="">
       <Image
         src={gardenCoding}
-        width={600}
-        height={500}
+        width={1200}
+        height={1000}
         alt="Mission Hero Image"
         className=""
       />

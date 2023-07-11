@@ -7,7 +7,7 @@ import GirlDesktopGraphic from "@/components/GirlDesktopGraphic";
 // Home Landing Page
 export default function Home() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col max-w-6xl mx-auto">
       <Mission />
 
       <div>
