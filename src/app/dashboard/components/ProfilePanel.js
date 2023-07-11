@@ -19,13 +19,14 @@ const userQuery = gql`
       githubUrl
       linkedinUrl
       available
+      calendlyUrl
     }
   }
 `;
 
 const addPortfolioMutation = gql`
 mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
-  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
+  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available, calendlyUrl: $calendlyUrl) {
     _id
     available
     bio
@@ -37,13 +38,14 @@ mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: Stri
     rate
     title
     user
+    calendlyUrl
   }
 }
 `;
 
 const updatePortfolioMutation = gql`
 mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
-  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
+  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl,calendlyUrl: $calendlyUrl, available: $available) {
     _id
     user
     firstName
@@ -54,6 +56,7 @@ mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String,
     portfolioUrl
     githubUrl
     linkedinUrl
+    calendlyUrl
     available
   }
 }
@@ -103,6 +106,7 @@ export default function ProfilePanel(props) {
           portfolioUrl: null,
           githubUrl: null,
           linkedinUrl: null,
+          calendlyUrl: null,
           available: false
          });
       }
@@ -315,6 +319,20 @@ export default function ProfilePanel(props) {
               onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
+          </div>
+          <div className="flex flex-col">
+            <label className="text-sm md:text-base">Calendly URL</label>
+            <input
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
+                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                  : "bg-transparent outline-none"
+                }`}
+              type="url"
+              name="calendlyUrl"
+              defaultValue={portfolioState.calendlyUrl}
+              onChange={handleProfileChange}
+              readOnly={!isEditable}
+            ></input>    
           </div>
           {/* Availability Field */}
           <div className="flex items-center">

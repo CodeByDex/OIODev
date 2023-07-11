@@ -17,6 +17,7 @@ const userQuery = gql`
       portfolioUrl
       githubUrl
       linkedinUrl
+      calendlyUrl
       available
     }
   }

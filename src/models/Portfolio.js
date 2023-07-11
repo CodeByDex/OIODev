@@ -47,15 +47,15 @@ const portfolioSchema = new Schema(
         linkedinUrl: {
             type: String
         },
+
+        calendlyUrl: {
+            type: String
+        },
         
         available: {
             type: Boolean,
             required: true
         },
-        
-        calendlyUrl: {
-            type: String
-        }
     },
     {
 

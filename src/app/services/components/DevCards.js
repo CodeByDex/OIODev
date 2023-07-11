@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn, faGithub, faCalendarDays } from "@fortawesome/free-brands-svg-icons";
 
 
 export default function DevCards(props) {
@@ -82,6 +82,10 @@ export default function DevCards(props) {
                   className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                 />
               </Link>
+              {/* <Link href={props.calendlyUrl} target="_blank">
+                    icon={faCalendarDays}
+                    className=""
+              </Link> */}
             </div>
           </div>
         </div>
