@@ -8,7 +8,7 @@ config.autoAddCss = false; /* eslint-disable import/first */
 
 import "./globals.css";
 import { Archivo, Open_Sans } from "next/font/google";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
 import BackgroundOrbs from "../components/BackgroundOrbs";
 import { SessionProvider } from "next-auth/react";

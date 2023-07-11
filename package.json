@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p $PORT",
+    "lint": "next lint",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@apollo/client": "^3.7.16",
@@ -32,6 +33,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "3.3.2"
   },
   "repository": {

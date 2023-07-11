@@ -49,9 +49,9 @@ export const authOptions = {
         })
     ],
 
-    pages: {
-        signIn: '/login'
-    },
+    // pages: {
+    //     signIn: '/login'
+    // },
     adapter: MongoDBAdapter(
         mongoClient
     ),
