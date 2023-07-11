@@ -48,6 +48,10 @@ export const authOptions = {
             }
         })
     ],
+
+    pages: {
+        signIn: '/login'
+    },
     adapter: MongoDBAdapter(
         mongoClient
     ),
