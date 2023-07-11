@@ -151,7 +151,11 @@ export default function ProfilePanel(props) {
   };
 
   const handleProfileChange = (event) => {
-    const { name, value } = event.target;;
+    let { name, value } = event.target;
+
+    if (name === "available") {
+      value = event.target.checked;
+    }
 
     setPortfolioState({ ...portfolioState, [name]: value });
   }
@@ -318,6 +322,7 @@ export default function ProfilePanel(props) {
               className="bg-transparent font-primary text-brand-textHeader text-base md:text-lg my-1 mr-3"
               type="checkbox"
               name="available"
+              checked={portfolioState.available}
               defaultValue={portfolioState.available}
               onChange={handleProfileChange}
               readOnly={!isEditable}
