@@ -71,14 +71,14 @@ export default function DevCards(props) {
             </div>
             {/* Social Links */}
             <div className="devCards--socialsContainer flex justify-between items-center gap-2">
-              <Link href={props.calendlyUrl} target="_blank" className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-semibold font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
+              <Link href={"/calendly"} target="_blank" className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-semibold font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
             alt="CalendlyModal"> Book a Consult
                   <FontAwesomeIcon
                     icon={faCalendarDays}
                     className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                   />
               </Link>
-              <CalendlyModal/>
+              {/* <CalendlyModal/> */}
               <div>
                 <Link href={props.linkedinUrl} target="_blank">
                   <FontAwesomeIcon

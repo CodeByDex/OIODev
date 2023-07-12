@@ -2,7 +2,6 @@
 import Script from 'next/script'
 
 const CalendlyForm = ( props ) => {
-    // const username = "chelsea-luevano"
     const showDetails = process.env.NEXT_PUBLIC_CALENDLY_SHOW_DETAILS == "false" ? 1 : 0;
     const showCookies = process.env.NEXT_PUBLIC_CALENDLY_SHOW_COOKIES == "false" ? 1 : 0;
 
