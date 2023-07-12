@@ -18,14 +18,16 @@ const userQuery = gql`
       portfolioUrl
       githubUrl
       linkedinUrl
+      calendlyUrl
+      imageUrl
       available
     }
   }
 `;
 
 const addPortfolioMutation = gql`
-mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
-  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
+mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $imageUrl: String, $available: Boolean) {
+  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available, calendlyUrl: $calendlyUrl, imageUrl: $imageUrl) {
     _id
     available
     bio
@@ -37,13 +39,15 @@ mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: Stri
     rate
     title
     user
+    calendlyUrl
+    imageUrl
   }
 }
 `;
 
 const updatePortfolioMutation = gql`
-mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $available: Boolean) {
-  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available) {
+mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $imageUrl: String, $available: Boolean) {
+  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, calendlyUrl: $calendlyUrl, imageUrl: $imageUrl, available: $available) {
     _id
     user
     firstName
@@ -54,6 +58,8 @@ mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String,
     portfolioUrl
     githubUrl
     linkedinUrl
+    calendlyUrl
+    imageUrl
     available
   }
 }
@@ -62,14 +68,14 @@ mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String,
 export default function ProfilePanel(props) {
   const [isEditable, setIsEditable] = useState(false);
   const [portfolioState, setPortfolioState] = useState({});
-  const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation, {onCompleted(args){onMutateComplete(args, true);}});
-  const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation, {onCompleted(args){onMutateComplete(args, false);}});
+  const [addPortfolio, { addPortErr }] = useMutation(addPortfolioMutation, { onCompleted(args) { onMutateComplete(args, true); } });
+  const [updatePortfolio, { upPortErr }] = useMutation(updatePortfolioMutation, { onCompleted(args) { onMutateComplete(args, false); } });
 
-  function onMutateComplete(args, isAdd){
+  function onMutateComplete(args, isAdd) {
     if (isAdd) {
-      setPortfolioState({...args.createPortfolioByField})
+      setPortfolioState({ ...args.createPortfolioByField })
     } else {
-      setPortfolioState({...args.updatePortfolioByField})
+      setPortfolioState({ ...args.updatePortfolioByField })
     }
 
     setIsEditable(false);
@@ -87,12 +93,11 @@ export default function ProfilePanel(props) {
 
   useEffect(() => {
 
-    if (!loading)
-    {
+    if (!loading) {
       if (data.getUserPortfolioByUser) {
-        setPortfolioState({...data.getUserPortfolioByUser})
+        setPortfolioState({ ...data.getUserPortfolioByUser })
       } else {
-        setPortfolioState({ 
+        setPortfolioState({
           _id: null,
           user: props.user.id,
           firstName: props.user.name,
@@ -103,8 +108,10 @@ export default function ProfilePanel(props) {
           portfolioUrl: null,
           githubUrl: null,
           linkedinUrl: null,
+          calendlyUrl: null,
+          imageUrl: props.user.image,
           available: false
-         });
+        });
       }
 
     }
@@ -133,14 +140,14 @@ export default function ProfilePanel(props) {
     try {
       if (portfolioState._id == null) {
         addPortfolio({
-          variables:  {...portfolioState}
+          variables: { ...portfolioState }
         })
 
       } else {
-        const vars = {...portfolioState, portId: portfolioState._id};
+        const vars = { ...portfolioState, portId: portfolioState._id };
 
         updatePortfolio({
-          variables:  vars
+          variables: vars
 
         })
 
@@ -201,8 +208,8 @@ export default function ProfilePanel(props) {
               <label className="text-sm md:text-base">First Name</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg ${isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
+                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                  : "bg-transparent outline-none"
                   }`}
                 type="text"
                 name="firstName"
@@ -215,8 +222,8 @@ export default function ProfilePanel(props) {
               <label className="text-sm md:text-base">Last Name</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                    : "bg-transparent outline-none"
+                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                  : "bg-transparent outline-none"
                   }`}
                 type="text"
                 name="lastName"
@@ -231,8 +238,8 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Title</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               type="text"
               name="title"
@@ -246,8 +253,8 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Hourly Rate</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               type="number"
               name="rate"
@@ -261,8 +268,8 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Bio</label>
             <textarea
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               rows="5"
               name="bio"
@@ -276,8 +283,8 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Portfolio URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               type="url"
               name="portfolioUrl"
@@ -291,8 +298,8 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">GitHub URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               type="url"
               name="githubUrl"
@@ -306,12 +313,42 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">LinkedIn URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
-                  : "bg-transparent outline-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
                 }`}
               type="url"
               name="linkedinUrl"
               defaultValue={portfolioState.linkedinUrl}
+              onChange={handleProfileChange}
+              readOnly={!isEditable}
+            ></input>
+          </div>
+          {/* Calendly Field */}
+          <div className="flex flex-col">
+            <label className="text-sm md:text-base">Calendly URL</label>
+            <input
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
+                }`}
+              type="url"
+              name="calendlyUrl"
+              defaultValue={portfolioState.calendlyUrl}
+              onChange={handleProfileChange}
+              readOnly={!isEditable}
+            ></input>
+          </div>
+          {/* Image Field */}
+          <div className="flex flex-col">
+            <label className="text-sm md:text-base">Image URL</label>
+            <input
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
+                }`}
+              type="url"
+              name="imageUrl"
+              defaultValue={portfolioState.imageUrl}
               onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>

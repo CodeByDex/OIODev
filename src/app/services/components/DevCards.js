@@ -1,18 +1,24 @@
 "use client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCircle, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
+import CalendlyModal from "./CalendlyModal";
 
 export default function DevCards(props) {
   return (
     <section className="devCards--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto max-w-6xl">
-      <div className="bg-gray-200/5 rounded-lg w-full">
+      <div className="bg-gray-200/5 border-gray-800 border rounded-lg w-full">
         <div className="devCards--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:gap-4">
           {/* Info */}
           <div className="flex mr-auto gap-4 md:w-2/5">
             <div className="devCards--imageContainer flex items-center">
-              <div className="devCards--imagePlaceholder h-24 w-24 bg-brand-accent rounded-full" />
+              <div className="devCards--imagePlaceholder h-24 w-24 bg-transparent rounded-full">
+                <img
+                  src={props.imageUrl}
+                  className="rounded-full h-24 w-24"
+                ></img>
+              </div>
             </div>
             <div>
               <div
@@ -65,22 +71,37 @@ export default function DevCards(props) {
                   View My Portfolio
                 </Link>
               </div>
-              <p>{props.bio}</p>
+              <p className="mb-2">{props.bio}</p>
             </div>
             {/* Social Links */}
-            <div className="devCards--socialsContainer flex justify-end items-center gap-2">
-              <Link href={props.linkedinUrl} target="_blank">
+            <div className="devCards--socialsContainer flex justify-between items-center gap-2 h-fit mb-2">
+              <Link
+                href={"/calendly"}
+                target="_blank"
+                className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-primary text-base pl-3 flex items-center rounded-lg w-fit"
+                alt="CalendlyModal"
+              >
+                Book a Consult
                 <FontAwesomeIcon
-                  icon={faLinkedinIn}
-                  className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                  icon={faAngleRight}
+                  className="delay-75 duration-300 text-brand-secondary items-center p-2 rounded-lg w-5 h-5"
                 />
               </Link>
-              <Link href={props.githubUrl} target="_blank">
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
-                />
-              </Link>
+              {/* <CalendlyModal/> */}
+              <div className="flex gap-2 items-center h-5">
+                <Link href={props.linkedinUrl} target="_blank">
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                  />
+                </Link>
+                <Link href={props.githubUrl} target="_blank">
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

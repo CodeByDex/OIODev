@@ -20,6 +20,8 @@ const portfolioQuery = gql`
       portfolioUrl
       githubUrl
       linkedinUrl
+      calendlyUrl
+      imageUrl
       available
     }
   }
