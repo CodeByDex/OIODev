@@ -7,7 +7,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Mission() {
   return (
-    <section className="hero--missionContainer flex flex-col items-center justify-start h-screen sm:h-fit gap-4 md:my-16">
+    <section className="hero--missionContainer flex flex-col items-center justify-start h-screen sm:h-fit sm:mb-20 gap-4 md:my-16">
       <div className="flex flex-col items-start justify-start overflow-clip sm:flex-row">
         <div className="image--container max-w-2xl -mb-6 -mr-40 sm:hidden">
           <MissionGraphic />
@@ -29,7 +29,7 @@ export default function Mission() {
           <MissionGraphic />
         </div>
       </div>
-      <h2 className="slogan--message text-left font-secondary px-4 pt-1 mr-auto sm:w-4/5 lg:w-3/5">
+      <h2 className="slogan--message text-lg text-left text-brand-textHeader font-secondary px-4 pt-1 mr-auto sm:w-4/5 lg:w-3/5">
         Unleash your digital potential with OIO Dev. Our developers transform
         your ideas into remarkable websites and server applications.
       </h2>

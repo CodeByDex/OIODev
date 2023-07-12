@@ -9,15 +9,12 @@ export default function Home() {
   return (
     <main className="flex flex-col max-w-6xl mx-auto">
       <Mission />
-
       <div>
         <AboutUs />
-      </div>
-      <div>
-        <Benefits />
-        <GirlDesktopGraphic />
-      </div>
-      <div>
+        <div className="w-full mx-none p-0">
+          <Benefits />
+        </div>
+
         <Process />
       </div>
     </main>
