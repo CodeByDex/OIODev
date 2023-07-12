@@ -19,7 +19,7 @@ export default function Mission() {
           <Link
             href="/services"
             className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent font-semibold font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
-            alt="OIO Dev Logo"
+            alt="Find a Developer"
           >
             Find a Developer
             <FontAwesomeIcon icon={faAngleRight} className="" />
