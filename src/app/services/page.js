@@ -20,8 +20,9 @@ const portfolioQuery = gql`
       portfolioUrl
       githubUrl
       linkedinUrl
-      available
       calendlyUrl
+      imageUrl
+      available
     }
   }
 `;
