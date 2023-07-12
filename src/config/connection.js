@@ -1,11 +1,19 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import {uri, options} from "./mongodb"
+
+if (!process.env.MONGODB_URI) {
+    throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
+}
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bcp3',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
+    uri,
+    options
 );
 
-module.exports = mongoose.connection;
+//Mongoose is required for graphQL
+export const mongooseConnection = mongoose.connection;
+
+
+
+
+

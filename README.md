@@ -82,4 +82,4 @@ Github Repository: https://github.com/CodeByDex/OIODev
 
 Team: [ChelseaLuevano](https://github.com/ChelseaLuevano), [Christianmsm](https://github.com/Christianmsm), [CodeByDex](https://github.com/CodeByDex), [Cyanasaurusrex](https://github.com/Cyanasaurusrex), [xwykoff](https://github.com/xwyckoff), [that_devguy](https://github.com/that_devguy)
 
-If you have any questions or issues, feel free to reach out to us via my GitHub repo: [OIO Dev] (https://github.com/CodeByDex/OIODev)
+
