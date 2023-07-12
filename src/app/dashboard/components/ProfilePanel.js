@@ -19,14 +19,15 @@ const userQuery = gql`
       githubUrl
       linkedinUrl
       calendlyUrl
+      imageUrl
       available
     }
   }
 `;
 
 const addPortfolioMutation = gql`
-mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $available: Boolean) {
-  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available, calendlyUrl: $calendlyUrl) {
+mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $imageUrl: String, $available: Boolean) {
+  createPortfolioByField(user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, available: $available, calendlyUrl: $calendlyUrl, imageUrl: $imageUrl) {
     _id
     available
     bio
@@ -39,13 +40,14 @@ mutation Mutation($user: ID, $firstName: String, $lastName: String, $title: Stri
     title
     user
     calendlyUrl
+    imageUrl
   }
 }
 `;
 
 const updatePortfolioMutation = gql`
-mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $available: Boolean) {
-  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, calendlyUrl: $calendlyUrl, available: $available) {
+mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String, $title: String, $bio: String, $rate: Float, $portfolioUrl: String, $githubUrl: String, $linkedinUrl: String, $calendlyUrl: String, $imageUrl: String, $available: Boolean) {
+  updatePortfolioByField(portID: $portId, user: $user, firstName: $firstName, lastName: $lastName, title: $title, bio: $bio, rate: $rate, portfolioUrl: $portfolioUrl, githubUrl: $githubUrl, linkedinUrl: $linkedinUrl, calendlyUrl: $calendlyUrl, imageUrl: $imageUrl, available: $available) {
     _id
     user
     firstName
@@ -57,6 +59,7 @@ mutation Mutation($portId: ID, $user: ID, $firstName: String, $lastName: String,
     githubUrl
     linkedinUrl
     calendlyUrl
+    imageUrl
     available
   }
 }
@@ -106,6 +109,7 @@ export default function ProfilePanel(props) {
           githubUrl: null,
           linkedinUrl: null,
           calendlyUrl: null,
+          imageUrl: props.user.image,
           available: false
         });
       }
@@ -319,6 +323,7 @@ export default function ProfilePanel(props) {
               readOnly={!isEditable}
             ></input>
           </div>
+          {/* Calendly Field */}
           <div className="flex flex-col">
             <label className="text-sm md:text-base">Calendly URL</label>
             <input
@@ -329,6 +334,21 @@ export default function ProfilePanel(props) {
               type="url"
               name="calendlyUrl"
               defaultValue={portfolioState.calendlyUrl}
+              onChange={handleProfileChange}
+              readOnly={!isEditable}
+            ></input>
+          </div>
+          {/* Image Field */}
+          <div className="flex flex-col">
+            <label className="text-sm md:text-base">Image URL</label>
+            <input
+              className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                : "bg-transparent outline-none"
+                }`}
+              type="url"
+              name="imageUrl"
+              defaultValue={portfolioState.imageUrl}
               onChange={handleProfileChange}
               readOnly={!isEditable}
             ></input>
