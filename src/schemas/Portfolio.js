@@ -15,6 +15,7 @@ export const typeDef = `
         githubUrl: String
         linkedinUrl: String
         imageUrl: String
+        calendlyUrl: String  
         available: Boolean
     }
 
@@ -30,6 +31,8 @@ export const typeDef = `
         linkedinUrl: String
         imageUrl: String
         available: Boolean   
+        calendlyUrl: String  
+        available: Boolean
     }
 
     extend type Query {
@@ -41,8 +44,8 @@ export const typeDef = `
     extend type Mutation {
         updatePortfolio(portfolio: portfolioInput, ID: ID): Portfolio
         createPortfolio(portfolio: portfolioInput): Portfolio
-        createPortfolioByField(user: ID, firstName: String, lastName: String, title: String, bio: String, rate: Float, portfolioUrl: String, githubUrl: String, linkedinUrl: String, imageUrl: String, available: Boolean ): Portfolio
-        updatePortfolioByField(portID: ID, user: ID, firstName: String, lastName: String, title: String, bio: String, rate: Float, portfolioUrl: String, githubUrl: String, linkedinUrl: String, imageUrl: String, available: Boolean ): Portfolio
+        createPortfolioByField(user: ID, firstName: String, lastName: String, title: String, bio: String, rate: Float, portfolioUrl: String, githubUrl: String, linkedinUrl: String, calendlyUrl: String, imageUrl: String, available: Boolean ): Portfolio
+        updatePortfolioByField(portID: ID, user: ID, firstName: String, lastName: String, title: String, bio: String, rate: Float, portfolioUrl: String, githubUrl: String, linkedinUrl: String, imageUrl: String, calendlyUrl: String, available: Boolean ): Portfolio
     }
 `
 

@@ -21,6 +21,7 @@ const portfolioQuery = gql`
       githubUrl
       linkedinUrl
       available
+      calendlyUrl
     }
   }
 `;
