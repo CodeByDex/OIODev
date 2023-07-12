@@ -4,7 +4,7 @@ export default function HeaderGraphic() {
   return (
     <div className="">
       <Image
-        src="/static/dev-team.svg"
+        src="/static/devTeam.svg"
         alt="3D Character"
         width={600}
         height={500}
