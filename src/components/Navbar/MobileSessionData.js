@@ -1,6 +1,6 @@
 "use client"
 import { useSession, signIn } from "next-auth/react"
-import Image from "next/image"
+
 
 export default function MobileSessionData() {
   const { data: session } = useSession()
@@ -9,9 +9,10 @@ export default function MobileSessionData() {
       <>
         <div className="flex flex-row items center">
           <p className=" pr-10 text-brand-accent">{session.user.name}</p>
-          <Image
+          <img
           className="rounded-full hover: bg-white mb"
           src={session.user.image}
+          alt="Your profile Picture"
           width={30}
           height={30}
           />

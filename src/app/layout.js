@@ -12,7 +12,6 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
 import BackgroundOrbs from "../components/BackgroundOrbs";
 import { SessionProvider } from "next-auth/react";
-import { useState, useEffect } from "react";
 import { ApolloProviderWrapper } from "@/components/apollo-provider";
 
 const archivo = Archivo({
@@ -35,20 +34,9 @@ const opensans = Open_Sans({
 // };
 
 export default function RootLayout({ children }) {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    const fetchSession = async () => {
-      const response = await fetch("/api/session");
-      const data = await response.json();
-      setSession(data);
-    };
-
-    fetchSession();
-  }, []);
 
   return (
-    <SessionProvider session={session}>
+    <SessionProvider>
       <ApolloProviderWrapper>
         <html lang="en">
           <body

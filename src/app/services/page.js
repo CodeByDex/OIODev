@@ -46,7 +46,6 @@ export default function Services() {
     );
   } else {
     devCards = data.portfolios.map((item) => {
-      console.log(item);
       return <DevCards {...item} key={item.id} />;
     });
   }

@@ -1,3 +1,4 @@
+"use client"
 //adapted from https://grafbase.com/guides/how-to-use-nextauthjs-jwt-auth-with-apollo-client
 //https://lyonwj.com/blog/grandstack-podcast-app-next-js-graphql-authentication
 import {

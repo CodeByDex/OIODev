@@ -1,6 +1,5 @@
 "use client"
 import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
 import { useState} from "react";
 
 export default function UserDisplayData() {
@@ -20,8 +19,7 @@ export default function UserDisplayData() {
   };
 
   const urlCheck = (url) => {
-    console.log(url);
-    console.log(window.location.pathname);
+
     if (typeof window !== "undefined" && window.location.pathname === url) {
       return true;
     }
@@ -46,8 +44,9 @@ export default function UserDisplayData() {
   if (session) {
     return (
       <>
-        <Image
+        <img
           className=" rounded-full border-4 border-brand-tertiary hover: bg-white mb"
+          alt="Your Profile Picture"
           onMouseEnter={OpenSubNav}
           onClick={OpenSubNav}
           src={session.user.image}
