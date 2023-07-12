@@ -52,6 +52,10 @@ const portfolioSchema = new Schema(
             type: String
         },
         
+        imageUrl: {
+            type: String
+        },
+        
         available: {
             type: Boolean,
             required: true
