@@ -1,7 +1,5 @@
 "use client"
-import Link from "next/link";
 import "tailwindcss/tailwind.css";
-import GirlWithDesktopGraphic from "../components/GirlDesktopGraphic"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {fa1} from "@fortawesome/free-solid-svg-icons"
 import {fa2} from "@fortawesome/free-solid-svg-icons"

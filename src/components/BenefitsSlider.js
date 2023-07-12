@@ -29,7 +29,7 @@ const BenefitsSlider = () => {
             icon={faUserCheck}
             className="bg-brand-secondary/5 text-brand-secondary p-5 rounded-full w-10 h-10 m-3"
           />
-          <div className="flex mb-3 px-5 items-center gap-2">
+          <div className="flex mb-3 px-5 items-center justify-center gap-2">
             <p className="font-bold text-2xl text-brand-secondary/40">{`{/*`}</p>
             <h3 className="font-semibold text-lg text-brand-textHeader">
               Improved User Experience
@@ -49,7 +49,7 @@ const BenefitsSlider = () => {
             icon={faAward}
             className="bg-brand-secondary/5 text-brand-secondary p-5 rounded-full w-10 h-10 m-3"
           />
-          <div className="flex mb-3 px-5 items-center gap-2">
+          <div className="flex mb-3 px-5 items-center justify-center gap-2">
             <p className="font-bold text-2xl text-brand-secondary/40">{`{/*`}</p>
             <h3 className="font-semibold text-lg text-brand-textHeader">
               Enhanced Brand Credibility
@@ -69,7 +69,7 @@ const BenefitsSlider = () => {
             icon={faEye}
             className="bg-brand-secondary/5 text-brand-secondary p-5 rounded-full w-10 h-10 m-3"
           />
-          <div className="flex mb-3 px-5 items-center gap-2">
+          <div className="flex mb-3 px-5 items-center justify-center gap-2">
             <p className="font-bold text-2xl text-brand-secondary/40">{`{/*`}</p>
             <h3 className="font-semibold text-lg text-brand-textHeader">
               Increased Online Visibility
@@ -88,7 +88,7 @@ const BenefitsSlider = () => {
             icon={faPeopleGroup}
             className="bg-brand-secondary/5 text-brand-secondary p-5 rounded-full w-10 h-10 m-3"
           />
-          <div className="flex mb-3 px-5 items-center gap-2">
+          <div className="flex mb-3 px-5 items-center justify-center gap-2">
             <p className="font-bold text-2xl text-brand-secondary/40">{`{/*`}</p>
             <h3 className="font-semibold text-lg text-brand-textHeader">
               Higher User Engagement

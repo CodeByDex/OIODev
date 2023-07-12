@@ -2,7 +2,6 @@ import Mission from "@/components/Mission";
 import AboutUs from "@/components/AboutUs";
 import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
-import GirlDesktopGraphic from "@/components/GirlDesktopGraphic";
 
 // Home Landing Page
 export default function Home() {
