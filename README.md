@@ -1,6 +1,36 @@
+# OIO Dev 
+
+OIO is a full-stack web application built using Next.JS to enables our dev team to market their software development services as freelance developers. Users can browse portfolios, create an account, and book a consult with developers. Consults are scheduled using the Calendly API to streamline for process.
+
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Application Demo](#application-demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Links](#project-links)
+- [Questions](#questions)
+
+
+## Technologies Used
+[![Next.js](https://img.shields.io/badge/Next.js-v12.0.7-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-v17.0.2-blue)](https://reactjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)](https://www.ecma-international.org/ecma-262/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v2.2.19-38B2AC)](https://tailwindcss.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-v5.0-green)](https://www.mongodb.com/)
+[![NextAuth.js](https://img.shields.io/badge/NextAuth.js-v4.1.0-000000)](https://next-auth.js.org/)
+[![GraphQL](https://img.shields.io/badge/GraphQL-v15.6.0-pink)](https://graphql.org/)
+[![Heroku](https://img.shields.io/badge/Heroku-deployed-purple)](https://www.heroku.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-v14.17.0-green)](https://nodejs.org/)
+[![Apollo Server](https://img.shields.io/badge/Apollo_Server-v3.4.0-blue)](https://www.apollographql.com/)
+[![Mongoose](https://img.shields.io/badge/Mongoose-v6.1.2-880000)](https://mongoosejs.com/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+
+## Application Demo
+PHOTOS OF APP GO HERE
+
+## Installation
 
 First, run the development server:
 
@@ -18,17 +48,38 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Next-Auth Setup:
+In order to make Next-Auth work on you machine you will need to create a .env.local file in your root level of the project.  It will need to contain the following entries:
 
-To learn more about Next.js, take a look at the following resources:
+GITHUB_ID=<GITHUB_CLIENT_ID>  
+GITHUB_SECRET=<GITHUB_CLIENT_SECRET>  
+NEXTAUTH_URL=http://localhost:3000  
+NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>  
+WHITELIST_EMAILS="foo@foo.foo, bar@foo.foo"  
+  
+https://blog.logrocket.com/how-to-use-nextauth-js-client-side-authentication-next-js/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### MongoDB:
+In order to use the mongo db components of this project you will need to configure a environment variable for the db connection:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+MONGODB_URI="mongodb://127.0.0.1:27017/OIODevDB"
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+To use this project, follow these steps:
+1. Go to the site and create an account: https://www.oiodev.com/
+2. Click "Find a Developer" to view developers' portfolios.
+3. Click "Book a Consult" to schedule time with a developer.
+4. Manage your account settings.
+
+
+## Project Links
+  
+Deployed Application: https://www.oiodev.com/ 
+
+Github Repository: https://github.com/CodeByDex/OIODev
+
+Team: [ChelseaLuevano](https://github.com/ChelseaLuevano), [Christianmsm](https://github.com/Christianmsm), [CodeByDex](https://github.com/CodeByDex), [Cyanasaurusrex](https://github.com/Cyanasaurusrex), [xwykoff](https://github.com/xwyckoff), [that_devguy](https://github.com/that_devguy)
+
+If you have any questions or issues, feel free to reach out to us via my GitHub repo: [OIO Dev] (https://github.com/CodeByDex/OIODev)
