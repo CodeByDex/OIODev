@@ -88,8 +88,7 @@ export default function Navbar() {
   };
 
   const urlCheck = (url) => {
-    console.log(url);
-    console.log(window.location.pathname);
+
     if (typeof window !== "undefined" && window.location.pathname === url) {
       return true;
     }
