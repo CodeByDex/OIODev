@@ -1,6 +1,6 @@
 # OIO Dev 
 
-OIO is a full-stack web application built using Next.JS to enables our dev team to market their software development services as freelance developers. Users can browse portfolios, create an account, and book a consult with developers. Consults are scheduled using the Calendly API to streamline for process.
+OIO Dev is a full-stack web application built using Next.JS to enables our dev team to market their software development services as freelance developers. Users can browse portfolios, create an account, and book a consult with developers. Consults are scheduled using the Calendly API to streamline for process.
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
