@@ -4,7 +4,6 @@ OIO Dev is a full-stack web application built using Next.JS to enables our dev t
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
-- [Application Demo](#application-demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Links](#project-links)
@@ -26,9 +25,6 @@ OIO Dev is a full-stack web application built using Next.JS to enables our dev t
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-
-## Application Demo
-PHOTOS OF APP GO HERE
 
 ## Installation
 
@@ -82,6 +78,25 @@ To use this project, follow these steps:
 4. Manage your account settings.
 
 
+### Web Browser Full Page Views
+![Full Screen Home Page](https://github.com/CodeByDex/OIODev/assets/120981491/f344d64a-34f7-4258-b966-c24533f9826a)
+
+
+![Login Page](https://github.com/CodeByDex/OIODev/assets/120981491/623bd8eb-1cae-4ec2-90e9-442216265052)
+
+![Browse Developers Full Page](https://github.com/CodeByDex/OIODev/assets/120981491/a66f90af-ef3b-422f-bb0e-1feb26bc9fcb)
+
+![Dashboard Full Page Example](https://github.com/CodeByDex/OIODev/assets/120981491/48e614f5-6b35-4494-a833-a00f47f102cc)
+
+
+### Mobile Photo Views
+
+![Short Home Page Mobile](https://github.com/CodeByDex/OIODev/assets/120981491/2bc8648a-31ca-4d72-8a91-0cbf2b193e06)    
+![Mobile Home Nav Bar](https://github.com/CodeByDex/OIODev/assets/120981491/0c818f6f-052b-4a05-9190-b85bcf2315a0)
+
+![Browser Developers Mobile Preview](https://github.com/CodeByDex/OIODev/assets/120981491/8d157e32-9cb1-44cd-8c96-eed4d538a2f6)
+
+
 ## Project Links
   
 Deployed Application: https://www.oiodev.com/ 
@@ -91,3 +106,7 @@ Github Repository: https://github.com/CodeByDex/OIODev
 Team: [ChelseaLuevano](https://github.com/ChelseaLuevano), [Christianmsm](https://github.com/Christianmsm), [CodeByDex](https://github.com/CodeByDex), [Cyanasaurusrex](https://github.com/Cyanasaurusrex), [xwykoff](https://github.com/xwyckoff), [that_devguy](https://github.com/that_devguy)
 
 
+
+## Questions
+
+If you have any questions or issues, feel free to reach out to us via my GitHub repo: [OIO Dev](https://github.com/CodeByDex/OIODev)
