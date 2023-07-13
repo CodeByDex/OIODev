@@ -21,7 +21,7 @@ export default function UserPanel(props) {
 
   return (
     <>
-      <section className="userDash--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto">
+      <section className="userDash--container flex bg-brand-primary/60 border-gray-800 border rounded-lg mb-6 mx-auto">
         <div className="bg-gray-200/5 rounded-lg h-full w-full">
           <div className="userDash--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:py-12 md:gap-4">
             <div className="flex mr-auto gap-4">
@@ -111,7 +111,7 @@ export default function UserPanel(props) {
           </div>
         </div>
       </section>
-      <section className="flex flex-grow items-center bg-brand-primary/60 rounded-lg mb-6 mx-auto">
+      <section className="flex flex-grow items-center bg-brand-primary/60 border-gray-800 border rounded-lg mb-6 mx-auto">
         {/* Portfolio form dashboard component */}
         <div
           className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${

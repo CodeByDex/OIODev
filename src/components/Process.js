@@ -72,7 +72,7 @@ export default function Process() {
           <Link
             href="/developers"
             className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
-            alt="Find a Developer"
+            alt="Start Your Process"
           >
             Start Your Process
             <FontAwesomeIcon icon={faAngleRight} className="" />
