@@ -94,7 +94,8 @@ To use this project, follow these steps:
 ![Short Home Page Mobile](https://github.com/CodeByDex/OIODev/assets/120981491/2bc8648a-31ca-4d72-8a91-0cbf2b193e06)    
 ![Mobile Home Nav Bar](https://github.com/CodeByDex/OIODev/assets/120981491/0c818f6f-052b-4a05-9190-b85bcf2315a0)
 
-![Browser Developers Mobile Preview](https://github.com/CodeByDex/OIODev/assets/120981491/8d157e32-9cb1-44cd-8c96-eed4d538a2f6)
+![Browse Developers Mobile Preview](https://github.com/CodeByDex/OIODev/assets/120981491/8c07850f-123d-4382-9a64-45297edd9a6a)
+
 
 
 ## Project Links
