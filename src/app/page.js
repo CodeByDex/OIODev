@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="flex flex-col max-w-6xl mx-auto">
       <Mission />
-      <div>
+      <div className="flex flex-col gap-10 mb-36">
         <AboutUs />
         <div className="w-full mx-none p-0">
           <Benefits />

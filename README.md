@@ -53,8 +53,16 @@ In order to make Next-Auth work on you machine you will need to create a .env.lo
 
 GITHUB_ID=<GITHUB_CLIENT_ID>  
 GITHUB_SECRET=<GITHUB_CLIENT_SECRET>  
+
+GOOGLE_CLIENT_ID=<GOOGLE_CLIENT_ID>  
+GOOGLE_CLIENT_SECRET=<GOOGLE_CLIENT_SECRET>  
+
+FACEBOOK_CLIENT_ID=<FACEBOOK_CLIENT_ID>  
+FACEBOOK_CLIENT_SECRET=<FACEBOOK_CLIENT_SECRET>  
+
 NEXTAUTH_URL=http://localhost:3000  
-NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>  
+NEXTAUTH_SECRET=<NEXTAUTH_SECRET_KEY>
+
 WHITELIST_EMAILS="foo@foo.foo, bar@foo.foo"  
   
 https://blog.logrocket.com/how-to-use-nextauth-js-client-side-authentication-next-js/

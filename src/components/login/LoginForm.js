@@ -1,4 +1,5 @@
-//TODO - add form for login
+//TODO - CURRENTLY NOT BEING USED
+
 import { Link } from 'next/link';
 import Signup from '../../components/login/SignupForm'; 
 export default function loginForm() {

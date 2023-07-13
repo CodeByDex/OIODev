@@ -6,7 +6,9 @@ export const typeDef = `
     type User {
         _id: ID,
         email: String,
-        name: String
+        name: String, 
+        image: String,
+        company: String
     }
 
     extend type Query {
@@ -15,7 +17,7 @@ export const typeDef = `
     }
 
     extend type Mutation {
-        updateUser(ID: ID!, name: String!): User
+        updateUser(ID: ID!, name: String!, email: String!, image: String, company: String): User
     }
 `;
 
@@ -29,7 +31,7 @@ export const resolvers = {
         }
     },
     Mutation: {
-        updateUser: async (parent, {ID, name}, contextValue) => {
+        updateUser: async (parent, {ID, name, email, image, company}, contextValue) => {
             IsAuthenticated(contextValue);
 
             if(ID != contextValue.user.id) {
@@ -41,7 +43,7 @@ export const resolvers = {
                 });
             }
 
-            return await User.findByIdAndUpdate(ID, {name}, {new: true});
+            return await User.findByIdAndUpdate(ID, {name, email, image, company}, {new: true});
         }
     }
 }

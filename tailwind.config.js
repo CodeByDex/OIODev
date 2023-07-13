@@ -32,6 +32,7 @@ module.exports = {
           secondary: "#22d3ee",
           tertiary: "#1F2431",
           quaternary: "#0B1622",
+          navBg: "#0F141E",
           accent: "#f97316",
           textBody: "#d1d5db",
           textHeader: "#ffffff",

@@ -30,3 +30,8 @@ h3 {
 .rotate-180 {
     transform: rotate(180deg);
 }
+
+.slick-item {
+    margin: 0 5px;
+    max-width: fit-content;
+}
