@@ -19,5 +19,16 @@ export default function MobileSessionData() {
       </div>
     );
   }
-  return <></>;
+  return (
+    <>
+      <div className="flex justify-end gap-3 pt-8 pb-5 items-center border-b border-gray-800">
+        <button
+          className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-primary py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
+          onClick={() => signIn()}
+        >
+          Sign in
+        </button>
+      </div>
+    </>
+  );
 }

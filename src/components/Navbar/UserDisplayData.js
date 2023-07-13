@@ -103,7 +103,7 @@ export default function UserDisplayData() {
   }
   return (
     <div>
-      <button className=" hover:text-brand-textHover" onClick={() => signIn()}>
+      <button className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-primary py-2 px-4 flex gap-3 items-center rounded-lg w-fit" onClick={() => signIn()}>
         Sign in
       </button>
     </div>

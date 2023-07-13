@@ -12,7 +12,7 @@ export default function LoggingButton() {
   }
   return (
     <>
-      <button className= "pb-3 text-right hover:text-brand-textHover" onClick={() => signIn()}>Sign in</button>
+      <button className= "pb-3 text-right hover:text-brand-textHover" onClick={() => signIn()}>Sign up</button>
     </>
   )
 }
