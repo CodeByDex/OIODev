@@ -146,12 +146,12 @@ export default function Navbar() {
             className="hover:text-brand-textHover cursor-pointer"
             onClick={() => {
               closeMenu;
-              urlCheck("/services")
+              urlCheck("/developers")
                 ? scrollToTop()
-                : redirectToPath("/services");
+                : redirectToPath("/developers");
             }}
           >
-            Services
+            Find a Dev
           </div>
           <UserDisplayData />
         </div>
@@ -180,12 +180,12 @@ export default function Navbar() {
               className="hover:text-brand-textHover cursor-pointer"
               onClick={() => {
                 closeMenu();
-                urlCheck("/services")
+                urlCheck("/developers")
                   ? scrollToTop()
-                  : redirectToPath("/services");
+                  : redirectToPath("/developers");
               }}
             >
-              Services
+              Find a Dev
             </div>
             <div
               className="hover:text-brand-textHover cursor-pointer"
