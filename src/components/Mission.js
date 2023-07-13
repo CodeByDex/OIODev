@@ -31,7 +31,7 @@ export default function Mission() {
       </div>
       <h2 className="slogan--message text-lg text-left text-brand-textHeader font-secondary px-4 pt-1 mr-auto sm:w-4/5 lg:w-3/5">
         Unleash your digital potential with OIO Dev. Our developers transform
-        your ideas into remarkable websites and server applications.
+        your ideas into remarkable web applications.
       </h2>
     </section>
   );
