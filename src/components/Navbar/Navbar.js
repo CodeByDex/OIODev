@@ -109,13 +109,13 @@ export default function Navbar() {
       >
         <div className="z-40 p-4">
           <div
-            className="text-brand-textHover cursor-pointer font-primary"
+            className="text-brand-textHover cursor-pointer font-primary font-semibold text-xl"
             onClick={() => {
               closeMenu;
               urlCheck("/") ? scrollToTop() : redirectToPath("/");
             }}
           >
-            OIO Dev
+            OI<span className="text-brand-secondary">/</span>O Dev
           </div>
         </div>
 
@@ -151,7 +151,7 @@ export default function Navbar() {
                 : redirectToPath("/developers");
             }}
           >
-            Find a Dev
+            Browse Developers
           </div>
           <UserDisplayData />
         </div>
@@ -185,7 +185,7 @@ export default function Navbar() {
                   : redirectToPath("/developers");
               }}
             >
-              Find a Dev
+              Browse Developers
             </div>
             <div
               className="hover:text-brand-textHover cursor-pointer"

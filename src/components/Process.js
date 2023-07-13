@@ -8,7 +8,7 @@ export default function Process() {
   return (
     <section className="about--container flex flex-col items-center justify-start gap-3 max-w-6xl px-4 w-full md:w-4/5 lg:w-full">
       <h2 className="font-primary font-semibold text-brand-textHeader text-left text-3xl md:text-4xl lg:text-5xl mr-auto">
-        Our Process
+        How to Get Started
       </h2>
       <div className="flex">
         <div className="flex flex-col gap-7 lg:gap-5 lg:w-2/5 lg:my-auto">
