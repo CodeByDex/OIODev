@@ -23,6 +23,7 @@ const BenefitsSlider = () => {
       {
         breakpoint: 1024,
         settings: {
+          arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
@@ -31,6 +32,7 @@ const BenefitsSlider = () => {
       {
         breakpoint: 722,
         settings: {
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
         },

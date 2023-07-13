@@ -12,8 +12,14 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
+const ToggleEnum = {
+  Profile: 1,
+  Appointment: 2,
+  Settings: 3
+}
+
 export default function UserPanel(props) {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(props.user.role === "admin" ? ToggleEnum.Profile : ToggleEnum.Settings);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -21,7 +27,7 @@ export default function UserPanel(props) {
 
   return (
     <>
-      <section className="userDash--container flex bg-brand-primary/60 rounded-lg mb-6 mx-auto">
+      <section className="userDash--container flex bg-brand-primary/60 border-gray-800 border rounded-lg mb-6 mx-auto">
         <div className="bg-gray-200/5 rounded-lg h-full w-full">
           <div className="userDash--infoContainer p-5 flex flex-col items-center md:flex-row md:px-8 md:py-12 md:gap-4">
             <div className="flex mr-auto gap-4">
@@ -41,60 +47,66 @@ export default function UserPanel(props) {
             </div>
           </div>
           <div className="userDash--linksContainer px-5 pb-5 flex gap-4 text-lg font-primary lg:flex-col md:px-8 lg:pb-10 lg:gap-2">
-            <button
-              onClick={() => toggleTab(1)}
-              className="flex items-center justify-between"
-            >
-              <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
-                />
-                <p className="hidden sm:flex">Profile</p>
-              </div>
-              <FontAwesomeIcon
-                icon={faAngleRight}
-                className={
-                  toggleState === 1 ? "hidden lg:flex w-4 h-4" : "hidden"
-                }
-              />
-            </button>
-            <button
-              onClick={() => toggleTab(2)}
-              className="flex items-center justify-between"
-            >
-              <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
-                <FontAwesomeIcon
-                  icon={faCalendarCheck}
-                  className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
-                />
-                <p className="hidden sm:flex gap-1"><span className="hidden lg:flex">Upcoming</span>Appointments</p>
-              </div>
-              <FontAwesomeIcon
-                icon={faAngleRight}
-                className={
-                  toggleState === 2 ? "hidden lg:flex w-4 h-4" : "hidden"
-                }
-              />
-            </button>
-            <button
-                  onClick={() => toggleTab(3)}
-                  className="flex items-center justify-between"
-                >
-                  <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
-                    <FontAwesomeIcon
-                      icon={faGear}
-                      className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
-                    />
-                    <p className="hidden sm:flex">Settings</p>
-                  </div>
+            {props.user.role === "admin" ? 
+              <>
+              <button
+                onClick={() => toggleTab(ToggleEnum.Profile)}
+                className="flex items-center justify-between"
+              >
+                <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
                   <FontAwesomeIcon
-                    icon={faAngleRight}
-                    className={
-                      toggleState === 3 ? "hidden lg:flex w-4 h-4" : "hidden"
-                    }
+                    icon={faUser}
+                    className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
                   />
-                </button>
+                  <p className="hidden sm:flex">Profile</p>
+                </div>
+                <FontAwesomeIcon
+                  icon={faAngleRight}
+                  className={
+                    toggleState === ToggleEnum.Profile ? "hidden lg:flex w-4 h-4" : "hidden"
+                  }
+                />
+              </button>
+              <button
+                onClick={() => toggleTab(ToggleEnum.Appointment)}
+                className="flex items-center justify-between"
+              >
+                <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
+                  <FontAwesomeIcon
+                    icon={faCalendarCheck}
+                    className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                  />
+                  <p className="hidden sm:flex gap-1"><span className="hidden lg:flex">Upcoming</span>Appointments</p>
+                </div>
+                <FontAwesomeIcon
+                  icon={faAngleRight}
+                  className={
+                    toggleState === ToggleEnum.Appointment ? "hidden lg:flex w-4 h-4" : "hidden"
+                  }
+                />
+              </button> 
+              </>
+              : 
+              <></>
+            }
+            <button
+              onClick={() => toggleTab(ToggleEnum.Settings)}
+              className="flex items-center justify-between"
+            >
+              <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
+                <FontAwesomeIcon
+                  icon={faGear}
+                  className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary p-2 rounded-lg w-5 h-5"
+                />
+                <p className="hidden sm:flex">Settings</p>
+              </div>
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                className={
+                  toggleState === ToggleEnum.Settings ? "hidden lg:flex w-4 h-4" : "hidden"
+                }
+              />
+            </button>
             <button
               href="/dashboard"
               className="flex items-center justify-between"
@@ -111,30 +123,27 @@ export default function UserPanel(props) {
           </div>
         </div>
       </section>
-      <section className="flex flex-grow items-center bg-brand-primary/60 rounded-lg mb-6 mx-auto">
+      <section className="flex flex-grow items-center bg-brand-primary/60 border-gray-800 border rounded-lg mb-6 mx-auto">
         {/* Portfolio form dashboard component */}
         <div
-          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
-            toggleState === 1 ? "" : "hidden"
-          }
+          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${toggleState === ToggleEnum.Profile ? "" : "hidden"
+            }
                   `}
         >
           <ProfilePanel {...props} />
         </div>
         {/* Upcoming appoinments dashboard component */}
         <div
-          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${
-            toggleState === 2 ? "" : "hidden"
-          }
+          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${toggleState === ToggleEnum.Appointment ? "" : "hidden"
+            }
                   `}
         >
           <AppointmentDash />
         </div>
         {/* User form dashboard component */}
         <div
-          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
-            toggleState === 3 ? "" : "hidden"
-          }
+          className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${toggleState === ToggleEnum.Settings ? "" : "hidden"
+            }
                   `}
         >
           <SettingsPanel {...props} />

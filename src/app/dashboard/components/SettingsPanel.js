@@ -124,7 +124,7 @@ export default function ProfilePanel(props) {
                 <input
                   className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg ${
                     isEditable
-                      ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                      ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
@@ -138,7 +138,7 @@ export default function ProfilePanel(props) {
                 <input
                   className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
                     isEditable
-                      ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                      ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
@@ -154,7 +154,7 @@ export default function ProfilePanel(props) {
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
                   isEditable
-                    ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                    ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
                     : "bg-transparent outline-none"
                 }`}
                 type="text"

@@ -28,7 +28,7 @@ const portfolioQuery = gql`
 `;
 
 export default function Services() {
-  const { data, error, loading } = useQuery(portfolioQuery);
+  let { data, error, loading } = useQuery(portfolioQuery);
 
   let devCards;
 
@@ -47,9 +47,26 @@ export default function Services() {
       </main>
     );
   } else {
-    devCards = data.portfolios.map((item) => {
-      return <DevCards {...item} key={item.id} />;
-    });
+    let ports = data.portfolios.map((x) => {return {...x}});
+
+    devCards = ports.sort((a, b) => {
+        //both a and b are available so lets sort them by name
+        if(a.available && b.available)
+        {
+          return a.lastName.localeCompare(b.lastName);
+        } else if (a.available) 
+        {
+          return -1;
+        } else 
+        {
+          return 1;
+        }
+      })
+      .map((item, i) => {
+      return <DevCards {...item} key={i} />;
+      });
+
+      console.log(devCards);
   }
 
   return (
