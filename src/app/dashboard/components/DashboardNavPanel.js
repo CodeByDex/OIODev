@@ -12,8 +12,14 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
+const ToggleEnum = {
+  Profile: 1,
+  Appointment: 2,
+  Settings: 3
+}
+
 export default function UserPanel(props) {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(props.user.role === "admin" ? ToggleEnum.Profile : ToggleEnum.Settings);
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -42,7 +48,7 @@ export default function UserPanel(props) {
           </div>
           <div className="userDash--linksContainer px-5 pb-5 flex gap-4 text-lg font-primary lg:flex-col md:px-8 lg:pb-10 lg:gap-2">
             <button
-              onClick={() => toggleTab(1)}
+              onClick={() => toggleTab(ToggleEnum.Profile)}
               className="flex items-center justify-between"
             >
               <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
@@ -55,12 +61,12 @@ export default function UserPanel(props) {
               <FontAwesomeIcon
                 icon={faAngleRight}
                 className={
-                  toggleState === 1 ? "hidden lg:flex w-4 h-4" : "hidden"
+                  toggleState === ToggleEnum.Profile ? "hidden lg:flex w-4 h-4" : "hidden"
                 }
               />
             </button>
             <button
-              onClick={() => toggleTab(2)}
+              onClick={() => toggleTab(ToggleEnum.Appointment)}
               className="flex items-center justify-between"
             >
               <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
@@ -73,12 +79,12 @@ export default function UserPanel(props) {
               <FontAwesomeIcon
                 icon={faAngleRight}
                 className={
-                  toggleState === 2 ? "hidden lg:flex w-4 h-4" : "hidden"
+                  toggleState === ToggleEnum.Appointment ? "hidden lg:flex w-4 h-4" : "hidden"
                 }
               />
             </button>
             <button
-                  onClick={() => toggleTab(3)}
+                  onClick={() => toggleTab(ToggleEnum.Settings)}
                   className="flex items-center justify-between"
                 >
                   <div className="delay-75 duration-300 py-1 rounded-lg w-fill flex items-center gap-3">
@@ -91,7 +97,7 @@ export default function UserPanel(props) {
                   <FontAwesomeIcon
                     icon={faAngleRight}
                     className={
-                      toggleState === 3 ? "hidden lg:flex w-4 h-4" : "hidden"
+                      toggleState === ToggleEnum.Settings ? "hidden lg:flex w-4 h-4" : "hidden"
                     }
                   />
                 </button>
@@ -115,7 +121,7 @@ export default function UserPanel(props) {
         {/* Portfolio form dashboard component */}
         <div
           className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
-            toggleState === 1 ? "" : "hidden"
+            toggleState === ToggleEnum.Profile ? "" : "hidden"
           }
                   `}
         >
@@ -124,7 +130,7 @@ export default function UserPanel(props) {
         {/* Upcoming appoinments dashboard component */}
         <div
           className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:py-12 ${
-            toggleState === 2 ? "" : "hidden"
+            toggleState === ToggleEnum.Appointment ? "" : "hidden"
           }
                   `}
         >
@@ -133,7 +139,7 @@ export default function UserPanel(props) {
         {/* User form dashboard component */}
         <div
           className={`bg-gray-200/5 rounded-lg w-full h-full md:px-8 md:pb-12 ${
-            toggleState === 3 ? "" : "hidden"
+            toggleState === ToggleEnum.Settings ? "" : "hidden"
           }
                   `}
         >
