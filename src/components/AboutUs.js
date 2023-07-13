@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section className="about--container flex flex-col items-center justify-start gap-3 max-w-6xl px-4 w-full md:w-4/5 lg:w-3/4">
       <h2 className="font-primary font-semibold text-brand-textHeader text-left text-3xl md:text-4xl lg:text-5xl mr-auto">
-        Welcome to OIO Dev
+        Welcome to OI<span className="text-brand-secondary">/</span>O Dev
       </h2>
       <p>
         Your gateway to skilled freelance developers who specialize in creating

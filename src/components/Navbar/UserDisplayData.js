@@ -1,25 +1,29 @@
-"use client"
+"use client";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useState} from "react";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSliders,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function UserDisplayData() {
   const { data: session } = useSession();
   const [subNav, setSubNav] = useState(false);
 
   const OpenSubNav = () => {
-    setSubNav(true)
-  }
+    setSubNav(true);
+  };
 
   const toggleSubNav = () => {
-    setSubNav(!subNav)
-  }
+    setSubNav(!subNav);
+  };
 
   const CloseSubNav = () => {
     setSubNav(false);
   };
 
   const urlCheck = (url) => {
-
     if (typeof window !== "undefined" && window.location.pathname === url) {
       return true;
     }
@@ -45,7 +49,7 @@ export default function UserDisplayData() {
     return (
       <>
         <img
-          className=" rounded-full border-4 border-brand-tertiary hover: bg-white mb"
+          className="rounded-full hover:cursor-pointer"
           alt="Your Profile Picture"
           onMouseEnter={OpenSubNav}
           onClick={OpenSubNav}
@@ -61,11 +65,20 @@ export default function UserDisplayData() {
           onMouseLeave={CloseSubNav}
           className={
             subNav
-              ? "fixed top-24 right-0 pr-32 bg-brand-quaternary rounded-bl-2xl items-center p-5 duration-500"
-              : "fixed right-[-30%] top-24 p-5 duration-500 ease-in"
+              ? "fixed top-16 right-8 px-6 bg-brand-navBg border border-gray-800 rounded-lg items-center text-right p-5 duration-500"
+              : "hidden"
           }
         >
-          <p className="py-3 pt-0 text-brand-accent">{session.user.name}</p>
+          <p className="py-3 mb-3 pt-0 flex gap-4 font-primary text-lg cursor-default text-brand-textHeader border-b border-gray-800">
+            <img
+              className="rounded-full"
+              alt="Your Profile Picture"
+              src={session.user.image}
+              width={25}
+              height={25}
+            />
+            {session.user.name}
+          </p>
           <div
             className="hover:text-brand-textHover cursor-pointer pb-3"
             onClick={() => {
@@ -75,16 +88,24 @@ export default function UserDisplayData() {
             }}
           >
             Dashboard
-          </div>       
-          <button className="hover:text-brand-textHover" onClick={() => signOut()}>Sign out</button>
-          
+            <FontAwesomeIcon icon={faSliders} className="pl-3" />
+          </div>
+          <button
+            className="hover:text-brand-textHover"
+            onClick={() => signOut()}
+          >
+            Log out
+            <FontAwesomeIcon icon={faRightFromBracket} className="pl-3" />
+          </button>
         </div>
       </>
     );
   }
   return (
     <div>
-      <button className=" hover:text-brand-textHover" onClick={() => signIn()}>Sign in</button>
+      <button className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-primary py-2 px-4 flex gap-3 items-center rounded-lg w-fit" onClick={() => signIn()}>
+        Sign in
+      </button>
     </div>
   );
 }

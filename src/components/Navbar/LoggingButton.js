@@ -6,13 +6,13 @@ export default function LoggingButton() {
   if (session) {
     return (
       <>
-        <button className="pb-3 hover:text-brand-textHover" onClick={() => signOut()}>Sign out</button>
+        <button className="pb-3 text-right hover:text-brand-textHover" onClick={() => signOut()}>Sign out</button>
       </>
     )
   }
   return (
     <>
-      <button className= "pb-3 hover:text-brand-textHover" onClick={() => signIn()}>Sign in</button>
+      <button className= "pb-3 text-right hover:text-brand-textHover" onClick={() => signIn()}>Sign up</button>
     </>
   )
 }

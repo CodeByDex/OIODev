@@ -208,7 +208,7 @@ export default function ProfilePanel(props) {
               <label className="text-sm md:text-base">First Name</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                   : "bg-transparent outline-none"
                   }`}
                 type="text"
@@ -222,7 +222,7 @@ export default function ProfilePanel(props) {
               <label className="text-sm md:text-base">Last Name</label>
               <input
                 className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                  ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                   : "bg-transparent outline-none"
                   }`}
                 type="text"
@@ -238,7 +238,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Title</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="text"
@@ -253,7 +253,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Hourly Rate</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="number"
@@ -268,7 +268,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Bio</label>
             <textarea
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               rows="5"
@@ -283,7 +283,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Portfolio URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="url"
@@ -298,7 +298,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">GitHub URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="url"
@@ -313,7 +313,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">LinkedIn URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="url"
@@ -328,7 +328,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Calendly URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="url"
@@ -343,7 +343,7 @@ export default function ProfilePanel(props) {
             <label className="text-sm md:text-base">Image URL</label>
             <input
               className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${isEditable
-                ? "bg-brand-primary/50 caret-brand-accent outline-none border-none"
+                ? "bg-brand-primary/50 caret-brand-accent outline-none border-gray-800/60 border"
                 : "bg-transparent outline-none"
                 }`}
               type="url"
