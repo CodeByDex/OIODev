@@ -15,7 +15,7 @@ export default function Benefits() {
         />
       </h2>
       <p className="mr-auto px-4">A modern and up-to-date website offers numerous advantages!</p>
-      <div className="block relative w-full sm:hidden">
+      <div className="block relative w-full">
         <BenefitsSlider />
       </div>
     </section>
