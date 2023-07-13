@@ -10,3 +10,16 @@ export function IsAuthenticated(contextValue) {
         });
     }
 }
+
+export function IsAdmin(contextValue) {
+
+    if (!(contextValue.user.role === "admin")) {
+
+        throw new GraphQLError('User is not authorized', {
+            extensions: {
+                code: 'UNAUTHENTICATED',
+                http: { status: 401 },
+            },
+        });
+    }
+}
