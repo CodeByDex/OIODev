@@ -76,8 +76,7 @@ export default function DevCards(props) {
             {/* Social Links */}
             <div className="devCards--socialsContainer flex justify-between items-center gap-2 h-fit mb-2">
               <Link
-                href={"/calendly"}
-                target="_blank"
+                href={`./calendly/${props.calendlyUrl}`}
                 className="bg-brand-secondary/5 hover:bg-brand-secondary/10 delay-75 duration-300 text-brand-secondary font-primary text-base pl-3 flex items-center rounded-lg w-fit"
                 alt="CalendlyModal"
               >

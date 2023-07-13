@@ -1,6 +1,6 @@
 import { Portfolio } from "../models/";
 import { ObjectId } from "mongodb";
-import { IsAuthenticated } from "./util";
+import { IsAuthenticated, IsAdmin } from "./util";
 
 export const typeDef = `
     type Portfolio {
@@ -67,11 +67,15 @@ export const resolvers = {
         updatePortfolio: async(parent, args, context) => {
             IsAuthenticated(context);
 
+            IsAdmin(context);
+
             return await Portfolio.findOneAndUpdate({_id: args.ID, user: new ObjectId(context.user.id) }, {$set: {...args.portfolio}}, {upsert: true, new: true});
         },
 
         createPortfolio: async(parent, args, context) => {
             IsAuthenticated(context);
+
+            IsAdmin(context);
 
             return await Portfolio.create({...args.portfolio});
         },
@@ -79,11 +83,15 @@ export const resolvers = {
         createPortfolioByField: async (parent, args, context) => {
             IsAuthenticated(context);
 
+            IsAdmin(context);
+
             return await Portfolio.create({...args})
         },
 
         updatePortfolioByField: async (parent, args, context) => {
             IsAuthenticated(context);
+
+            IsAdmin(context);
 
             return await Portfolio.findOneAndUpdate({_id: args.portID, user: new ObjectId(context.user.id) }, {$set: {...args}}, {upsert: true, new: true});
         }
