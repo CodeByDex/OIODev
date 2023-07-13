@@ -59,7 +59,6 @@ export default function ProfilePanel(props) {
   useEffect(() => {
     if (!loading) {
       setUserState({...data.user})
-      console.log("loaded",userState);
     }
   }, [loading]);
 
