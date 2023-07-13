@@ -62,7 +62,7 @@ export default function UserDisplayData() {
           className={
             subNav
               ? "fixed top-24 right-0 pr-32 bg-brand-quaternary rounded-bl-2xl items-center p-5 duration-500"
-              : "fixed right-[-10%] top-24 p-5 duration-500 ease-in"
+              : "fixed right-[-30%] top-24 p-5 duration-500 ease-in"
           }
         >
           <p className="py-3 pt-0 text-brand-accent">{session.user.name}</p>
