@@ -50,7 +50,17 @@ export const authOptions = {
         }), 
         FacebookProvider({
             clientId: process.env.FACEBOOK_CLIENT_ID,
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+            clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+            profile(profile) {
+                return {
+                    id: profile.id,
+                    name: profile.name,
+                    email: profile.email,
+                    image: profile.picture.data.url,
+                    created_at: new Date(),
+                    role: GetUserRole(profile.email)
+                }
+            }
         })
     ],
 
