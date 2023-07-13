@@ -173,7 +173,9 @@ export default function ProfilePanel(props) {
         <button
           onClick={handleEditClick}
           className={`flex items-center justify-end text-lg font-primary pt-5 pr-5 md:pr-0 w-fit ml-auto ${isEditable ? "hidden" : ""
-            } `}
+            } `
+          }
+          disabled={!(props.user.role === "admin")}
         >
           <div className="delay-75 duration-300 rounded-lg flex items-center gap-3">
             <p className="flex gap-1">
