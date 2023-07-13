@@ -44,7 +44,10 @@ export default function ProfilePanel(props) {
   };
 
   const handleSaveClick = () => {
-    setIsEditable(false);
+
+    updateUser({
+      variables: {...userState, id: userState._id}
+    });
   };
 
   const { data, error, loading } = useQuery(userQuery, {
@@ -128,22 +131,9 @@ export default function ProfilePanel(props) {
                       : "bg-transparent outline-none"
                   }`}
                   type="text"
-                  defaultValue={props.user.name}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  readOnly={!isEditable}
-                ></input>
-              </div>
-              <div className="flex flex-col w-1/2">
-                <label className="text-sm md:text-base">Last Name</label>
-                <input
-                  className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
-                    isEditable
-                      ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
-                      : "bg-transparent outline-none"
-                  }`}
-                  type="text"
-                  defaultValue={props.user.lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  name="name"
+                  defaultValue={userState.name}
+                  onChange={handleUserChange}
                   readOnly={!isEditable}
                 ></input>
               </div>
@@ -157,13 +147,43 @@ export default function ProfilePanel(props) {
                     ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
                     : "bg-transparent outline-none"
                 }`}
-                type="text"
-                defaultValue={props.user.email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                name="email"
+                defaultValue={userState.email}
+                onChange={handleUserChange}
                 readOnly={!isEditable}
               ></input>
             </div>
-            
+            <div className="flex flex-col">
+              <label className="text-sm md:text-base">Company</label>
+              <input
+                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
+                  isEditable
+                    ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
+                    : "bg-transparent outline-none"
+                }`}
+                type="text"
+                name="company"
+                defaultValue={userState.company}
+                onChange={handleUserChange}
+                readOnly={!isEditable}
+              ></input>
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm md:text-base">Profile Photo URL</label>
+              <input
+                className={`font-primary text-brand-textHeader text-base md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg  ${
+                  isEditable
+                    ? "bg-brand-primary/50 caret-brand-accent border-gray-800/60 border"
+                    : "bg-transparent outline-none"
+                }`}
+                type="url"
+                name="image"
+                defaultValue={userState.image}
+                onChange={handleUserChange}
+                readOnly={!isEditable}
+              ></input>
+            </div>
           </form>
         </div>
       </>
