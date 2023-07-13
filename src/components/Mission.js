@@ -17,8 +17,8 @@ export default function Mission() {
             Web Apps Tailored for You & Your <span className="text-brand-secondary font-secondary pr-1">{`<`}</span>Brand<span className="text-brand-secondary font-secondary pl-2">{`/>`}</span>
           </h1>
           <Link
-            href="/services"
-            className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent font-semibold font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
+            href="/developers"
+            className="bg-brand-accent/5 hover:bg-brand-accent/10 delay-75 duration-300 text-brand-accent font-primary text-xl py-2 px-4 flex gap-3 items-center rounded-lg w-fit"
             alt="Find a Developer"
           >
             Find a Developer
