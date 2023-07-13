@@ -98,18 +98,18 @@ export default function Navbar() {
   return (
     <div>
       {/* Spacer div */}
-      <div id="home" className=" pb-20" />
+      <div id="home" className="pb-24" />
 
       {/* Navbar */}
       <nav
         ref={navbarRef}
-        className={`navbar--container flex flex-row justify-between px-10 py-5 mx-auto items-center fixed top-0 w-full z-50 transition-colors duration-700 ${
-          scrollBackground ? " bg-brand-tertiary" : "bg-transparent"
+        className={`navbar--container flex flex-row justify-between px-2 py-2 mx-auto items-center fixed top-0 w-full z-50 transition-colors duration-200 xl:px-10 ${
+          scrollBackground ? " bg-brand-navBg/95 border-b border-gray-800 backdrop-blur-md" : "bg-transparent border-b border-gray-800/0"
         }`}
       >
         <div className="z-40 p-4">
           <div
-            className="text-brand-textHover cursor-pointer font-primary font-semibold text-xl"
+            className="text-brand-textHover cursor-pointer font-primary font-semibold text-xl md:text-2xl"
             onClick={() => {
               closeMenu;
               urlCheck("/") ? scrollToTop() : redirectToPath("/");
@@ -132,7 +132,7 @@ export default function Navbar() {
         >
           <FontAwesomeIcon className="w-5" icon={faXmark} />
         </div>
-        <div className="navbar--routeLinks hidden gap-4 items-center sm:flex">
+        <div className="navbar--routeLinks hidden gap-4 items-center px-4 sm:flex">
           <div
             className="hover:text-brand-textHover cursor-pointer"
             onClick={() => {
@@ -161,11 +161,11 @@ export default function Navbar() {
           ref={menuRef}
           className={
             nav
-              ? "fixed top-24 right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-300"
-              : "fixed top-[-100%] right-0 left-0 bg-brand-primary flex flex-col justify-start items-center p-5 sm:hidden duration-500 ease-in"
+              ? "fixed w-4/6 top-4 right-3 px-6 bg-brand-navBg border border-gray-800 rounded-lg items-center text-right p-5 duration-500 sm:hidden z-40"
+              : "hidden"
           }
         >
-          <div className="flex flex-col items-center justify-center gap-5">
+          <div className="flex flex-col text-right text-lg gap-5">
             <MobileSessionData onClick={closeMenu}/>
             <div
               className="hover:text-brand-textHover cursor-pointer"
