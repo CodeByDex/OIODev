@@ -62,9 +62,11 @@ export default function Services() {
           return 1;
         }
       })
-      .map((item) => {
-      return <DevCards {...item} key={item.id} />;
+      .map((item, i) => {
+      return <DevCards {...item} key={i} />;
       });
+
+      console.log(devCards);
   }
 
   return (
