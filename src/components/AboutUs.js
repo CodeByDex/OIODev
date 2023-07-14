@@ -21,18 +21,18 @@ export default function AboutUs() {
         ongoing collaboration, we have the perfect match for you.
       </p>
       <p>
-        By working with a freelance developer from OIO Dev, you gain the
-        advantage of flexibility and cost-effectiveness. You have the freedom to
-        collaborate directly with the freelancer, providing input and feedback
-        throughout the development process. Our platform streamlines the hiring
-        and onboarding process, making it easy for you to connect with the right
+        By working with a developer from OIO Dev, you gain the advantage of
+        flexibility and cost-effectiveness. You have the freedom to collaborate
+        directly with the freelancer, providing input and feedback throughout
+        the development process. Our platform streamlines the hiring and
+        onboarding process, making it easy for you to connect with the right
         freelance developer and start your project without any hassle.
       </p>
       <p>
-        Unlock the full potential of your digital presence with a freelance
-        developer from OIO Dev. Let our talented freelancers transform your
-        ideas into remarkable websites and server applications that align with
-        your vision and goals.
+        Unlock the full potential of your digital presence with a developer from
+        OIO Dev. Let our talented freelancers transform your ideas into
+        remarkable web applications that align with your vision
+        and goals.
       </p>
     </section>
   );
