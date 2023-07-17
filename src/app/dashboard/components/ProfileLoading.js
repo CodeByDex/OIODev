@@ -76,6 +76,11 @@ export default function ProfileLoading() {
             <label className="text-sm md:text-base">Calendly URL</label>
             <div className="bg-gray-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
           </div>
+          {/* Image Field */}
+          <div className="flex flex-col">
+            <label className="text-sm md:text-base">Image URL</label>
+            <div className="bg-gray-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />
+          </div>
           {/* Availability Field */}
           <div className="flex items-center">
             <div className="bg-gray-800 w-1/2 h-6 md:h-7 md:text-lg my-1 mr-4 px-2 -mx-2 rounded-lg animate-pulse" />

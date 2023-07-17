@@ -30,7 +30,7 @@ export const metadata = {
 // Home Landing Page
 export default function Home() {
   return (
-    <main className="flex flex-col max-w-6xl mx-auto">
+    <main className="flex flex-col max-w-6xl gap-10 mx-auto">
       <Mission />
       <div className="flex flex-col gap-10 mb-36">
         <AboutUs />

@@ -14,7 +14,7 @@ export default function Mission() {
         </div>
         <div className="flex flex-col gap-5 w-full sm:mt-auto md:w-1/2 px-4 sm:pr-0">
           <h1 className="mission--message text-left text-brand-textHeader font-primary font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
-            Web Apps Tailored for You & Your <span className="text-brand-secondary font-secondary pr-1">{`<`}</span>Brand<span className="text-brand-secondary font-secondary pl-2">{`/>`}</span>
+            Web Apps Tailored for You & Your <span className="text-brand-secondary/50 font-secondary pr-1">{`{/*`}</span>Brand<span className="text-brand-secondary/50 font-secondary pl-1">{`*/}`}</span>
           </h1>
           <Link
             href="/developers"
@@ -31,7 +31,7 @@ export default function Mission() {
       </div>
       <h2 className="slogan--message text-lg text-left text-brand-textHeader font-secondary px-4 pt-1 mr-auto sm:w-4/5 lg:w-3/5">
         Unleash your digital potential with OIO Dev. Our developers transform
-        your ideas into remarkable websites and server applications.
+        your ideas into remarkable web applications.
       </h2>
     </section>
   );
