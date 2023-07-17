@@ -1,6 +1,6 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSliders,
@@ -44,6 +44,23 @@ export default function UserDisplayData() {
       });
     }
   };
+
+  useEffect(() => {
+    // Function for closing submenu when window is resized
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        CloseSubNav();
+      }
+    };
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+    
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   if (session) {
     return (
